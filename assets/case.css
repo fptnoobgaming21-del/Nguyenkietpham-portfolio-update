@@ -1,0 +1,162 @@
+/* ─────────────────────────────────────────────────────────
+   Case-study pages (work/*). Loaded after site.css.
+   Same two inks, same type; layout tuned for long reading.
+   Every rule is scoped to body.case so it can't leak into the homepage.
+   ───────────────────────────────────────────────────────── */
+
+.case main { display: block; }
+.case .wrap { max-width: var(--max); width: auto; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.case figure { margin: 0; }
+.case img { width: 100%; height: auto; }
+
+/* section labels: real sequence (01–05), so numbers stay; sentence case */
+.case .eyebrow {
+  font-family: var(--display); font-weight: 650; font-stretch: 92%;
+  font-size: 0.95rem; letter-spacing: 0; text-transform: none;
+  color: var(--blue); margin: 0 0 14px;
+}
+
+.case h1 {
+  font-size: clamp(3.4rem, 8.4vw, 7.6rem); font-weight: 820; font-stretch: 62%;
+  line-height: 0.9; letter-spacing: -0.01em; margin: 0 0 24px;
+}
+.case h1 em { display: block; font-style: normal; color: var(--blue); }
+.case h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); margin: 0 0 24px; }
+.case h3 { font-size: 1.45rem; font-stretch: 86%; line-height: 1.15; margin: 0 0 16px; }
+.case h4 { font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: 1.2rem; margin: 8px 0 6px; }
+.case p { max-width: 62ch; }
+
+/* ── Hero ── */
+.case .hero {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px); align-items: center;
+  padding-top: clamp(40px, 6vw, 88px); padding-bottom: clamp(40px, 6vw, 80px);
+}
+.case .intro { font-size: clamp(1.25rem, 1.9vw, 1.5rem); line-height: 1.45; max-width: 32ch; margin-bottom: 28px; }
+.case .hero-art { background: var(--sheet); padding: 20px; border-radius: 4px; transform: none; }
+.case .hero-art img { max-height: 560px; object-fit: contain; margin: 12px 0; }
+.case .image-label { font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: 0.95rem; letter-spacing: 0; color: var(--ink); }
+.case .hero-art figcaption, .case figcaption, .case .caption { font-size: 0.98rem; color: var(--soft); margin: 10px 0 0; text-align: left; }
+
+/* ── Project facts strip ── */
+.case .facts {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  margin: 0 auto; padding-top: 22px; padding-bottom: 22px;
+  border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule);
+}
+.case .facts > div { display: block; padding: 0; border: 0; font-size: 1rem; }
+.case .facts span { display: block; font-family: var(--display); font-weight: 650; font-stretch: 92%; font-size: 0.92rem; text-transform: none; letter-spacing: 0; color: var(--soft); margin-bottom: 4px; }
+.case .facts strong { font-weight: 560; font-size: 1.05rem; }
+
+/* ── Two-column text sections ── */
+.case .section {
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+  gap: clamp(24px, 6vw, 88px);
+  padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(48px, 6vw, 80px);
+}
+.case .copy p { font-size: 1.1rem; color: var(--ink); }
+.case .note {
+  border-left: 3px solid var(--pink); padding: 2px 0 2px 16px; margin: 28px 0 0;
+  font-size: 1rem !important; color: var(--soft);
+}
+.case .line-list { list-style: none; padding: 0; margin: 20px 0; }
+.case .line-list li { border-top: 1px solid var(--rule); padding: 12px 0 12px 22px; position: relative; }
+.case .line-list li:last-child { border-bottom: 1px solid var(--rule); }
+.case .line-list li::before { content: ""; position: absolute; left: 0; top: 1.15em; width: 9px; height: 9px; border-radius: 50%; background: var(--pink); }
+
+.case .wide-figure { max-width: var(--max); }
+.case .wide-figure .zoom { max-width: 980px; }
+.case .zoom { display: block; width: 100%; padding: 0; border: 0; background: #fff; border-radius: 4px; overflow: hidden; cursor: zoom-in; }
+.case .zoom:hover img { filter: none; }
+
+/* ── Design decisions band ── */
+.case .rationale { background: var(--sheet); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: clamp(64px, 8vw, 104px) 0; margin-top: clamp(48px, 6vw, 80px); }
+.case .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: 36px; }
+.case .three-col p { font-size: 1.05rem; color: var(--ink); }
+.case .number {
+  display: block; font-family: var(--display); font-style: normal; font-weight: 800; font-stretch: 62%;
+  font-size: 3rem; line-height: 1; color: var(--pink);
+  border-top: 2px solid var(--ink); padding-top: 16px; margin-bottom: 16px;
+}
+.case .small { font-size: 1rem; color: var(--soft); margin: 28px 0 0; }
+
+/* ── Process: stage tabs ── */
+.case .process { padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(48px, 6vw, 80px); }
+.case .feedback { max-width: 66ch; }
+.case .feedback p { font-size: 1.1rem; color: var(--ink); }
+.case .stage-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; border: 0; }
+.case .stage-tabs button {
+  flex: 0 0 auto; font-family: var(--display); font-weight: 600; font-stretch: 92%; font-size: 0.98rem;
+  color: var(--ink); background: transparent; cursor: pointer;
+  border: 1.5px solid var(--rule); border-radius: 999px; padding: 8px 16px;
+}
+.case .stage-tabs button:hover { border-color: var(--ink); }
+.case .stage-tabs button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.case .stage-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: clamp(24px, 4vw, 48px); align-items: center; padding-top: 28px; }
+.case .stage-panel p { font-size: 1.05rem; color: var(--ink); }
+.case .stage-panel .hint { font-size: 0.98rem; color: var(--soft); margin-top: 20px; }
+.case .process-note { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: clamp(24px, 4vw, 48px); margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 1rem; }
+.case .process-note strong { font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: 1.1rem; }
+.case .process-note p { color: var(--soft); margin: 0; }
+
+/* ── Final design ── */
+.case .final-gallery { padding-top: clamp(48px, 6vw, 80px); padding-bottom: 16px; }
+
+/* ── Outcome evidence ── */
+.case .evidence { margin-top: 20px; border-top: 1px solid var(--rule); }
+.case .evidence > div { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.case .evidence p { margin: 0; color: var(--soft); }
+.case .status {
+  display: inline-block; font-family: var(--display); font-weight: 650; font-stretch: 92%;
+  font-size: 0.9rem; letter-spacing: 0; text-transform: none;
+  padding: 3px 12px; border-radius: 999px; background: var(--blue); color: #fff;
+}
+.case .status.pending { background: transparent; color: var(--ink); border: 1.5px dashed var(--ink); }
+
+/* ── Next steps ── */
+.case .next { padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); border-top: 2px solid var(--ink); }
+.case .next ol { list-style: none; counter-reset: step; padding: 0; margin: 0; }
+.case .next li { counter-increment: step; display: grid; grid-template-columns: 3.2rem minmax(0, 0.8fr) minmax(0, 1.4fr); gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--rule); font-size: 1.05rem; }
+.case .next li::before { content: counter(step); font-family: var(--display); font-weight: 800; font-stretch: 62%; font-size: 1.8rem; line-height: 1; color: var(--pink); }
+.case .next li strong { display: block; width: auto; font-family: var(--display); font-weight: 700; font-stretch: 88%; }
+.case .next li span { display: block; width: auto; color: var(--soft); }
+
+/* ── Footer ── */
+.case .case-foot {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px);
+  align-items: end; padding-top: clamp(56px, 7vw, 96px); padding-bottom: 32px; border-top: 2px solid var(--ink);
+}
+.case .case-email { font-family: var(--display); font-weight: 800; font-stretch: 64%; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--blue); text-decoration-thickness: 0.07em; }
+.case .case-next { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.case .case-next .eyebrow { margin: 0; }
+.case .case-next-link { font-family: var(--display); font-weight: 760; font-stretch: 74%; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.05; }
+.case .footer-bottom { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: none; margin: 32px 0 0; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 0.98rem; color: var(--soft); }
+
+/* ── Lightbox (their dialog#lightbox) ── */
+.case #lightbox { border: 0; padding: 56px 16px 16px; background: var(--paper); max-width: 1100px; width: 94vw; max-height: 94vh; border-radius: 4px; }
+.case #lightbox::backdrop { background: rgba(24, 32, 99, 0.9); }
+.case #lightbox img { max-height: 80vh; object-fit: contain; }
+.case #lightbox .close {
+  position: absolute; top: 12px; right: 16px; font-family: var(--display); font-weight: 650; font-size: 1rem;
+  color: var(--ink); background: transparent; border: 1.5px solid var(--ink); border-radius: 999px; padding: 6px 16px; cursor: pointer;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .case .hero, .case .section, .case .stage-panel, .case .process-note, .case .case-foot { grid-template-columns: 1fr; }
+  .case .facts { grid-template-columns: 1fr 1fr; }
+  .case .three-col { grid-template-columns: 1fr; }
+  .case .hero-art img { max-height: 420px; }
+}
+@media (max-width: 640px) {
+  .case .next li { grid-template-columns: 2.4rem 1fr; }
+  .case .next li span { grid-column: 2; }
+}
+
+/* Chói: three printed mockups at their own proportions (photos are 800px wide) */
+.case .choi-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.4vw, 28px); margin-top: 28px; align-items: start; }
+.case .choi-gallery img { aspect-ratio: 4 / 3; object-fit: cover; }
+.case .hero-art .zoom { background: transparent; }
+.case .hero-art img { max-height: none; }
+@media (max-width: 900px) { .case .choi-gallery { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .case .choi-gallery { grid-template-columns: 1fr; } }
