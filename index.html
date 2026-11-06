@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nguyen Kiet Pham, graphic designer</title>
+  <meta name="description" content="Portfolio of Nguyen Kiet Pham, a graphic designer and UX student at the University of Minnesota: brand identity, packaging, editorial design, research and interfaces." />
+  <meta property="og:title" content="Nguyen Kiet Pham, graphic designer" />
+  <meta property="og:description" content="Brand identity, packaging, editorial design, research and interfaces." />
+  <meta property="og:image" content="assets/img/projects/mood-hero.jpg" />
+  <link rel="preload" href="assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <a class="skip" href="#work" data-t="skip">Skip to the work</a>
+
+  <header class="top" id="top">
+    <a class="mark" href="#top" aria-label="Nguyen Kiet Pham, back to top">
+      <span class="mark-name">Nguyen Kiet Pham</span>
+      <span class="mark-role" data-t="role">Graphic design and UX</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work" data-t="nav.work">Work</a>
+      <a href="#about" data-t="nav.about">About</a>
+      <a href="#contact" data-t="nav.contact">Contact</a>
+      <a href="resume/Nguyen_Kiet_Pham_Resume.pdf" target="_blank" rel="noopener" data-t="nav.resume">Resume</a>
+      <button class="lang" id="langBtn" type="button" lang="vi" aria-label="Xem bằng tiếng Việt">Tiếng Việt</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: the name, printed in two inks -->
+    <section class="hero" aria-labelledby="heroName">
+      <h1 class="ink" id="heroName" aria-label="Nguyen Kiet Pham">
+        <span class="ink-layer ink-pink" aria-hidden="true"><span>Nguyen</span><span>Kiet</span><span>Pham</span></span>
+        <span class="ink-layer ink-blue" aria-hidden="true"><span>Nguyen</span><span>Kiet</span><span>Pham</span></span>
+      </h1>
+
+      <div class="hero-side">
+        <p class="lead" data-t="hero.lead">Graphic designer and UX student at the University of Minnesota. I make brand identities, packaging, editorial layouts and websites, and I do the research that decides how they look.</p>
+        <p class="hero-note" data-t="hero.note">Based in Minneapolis, from Ho Chi Minh City. Open to design internships and freelance work.</p>
+        <div class="hero-links">
+          <a class="btn btn-solid" href="#work" data-t="hero.cta">See the work</a>
+          <a class="btn" href="mailto:pham0687@umn.edu" data-t="hero.email">Email me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work" id="work" aria-labelledby="workTitle">
+      <div class="section-intro">
+        <h2 id="workTitle" data-t="work.title">Selected work</h2>
+        <p data-t="work.intro">Seven projects in depth, then more projects and an archive of smaller pieces. Filter to see one kind of work.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter work" data-t-aria="work.filterLabel">
+        <button type="button" class="chip" aria-pressed="true" data-filter="all" data-t="f.all">All work</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="ux" data-t="f.ux">UX and digital</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="graphic" data-t="f.graphic">Graphic design</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="packaging" data-t="f.packaging">Packaging</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="research" data-t="f.research">Research</button>
+      </div>
+      <p class="filter-status" id="filterStatus" aria-live="polite"></p>
+
+      <!-- Featured: Moo'd -->
+      <article class="project project-feature" data-kind="graphic ux packaging">
+        <a class="feature-media" href="https://fptnoobgaming21-del.github.io/MoodStore/" target="_blank" rel="noopener" aria-label="Open the Moo'd store prototype">
+          <img src="assets/img/projects/mood-hero.jpg" srcset="assets/img/projects/mood-hero-sm.jpg 800w, assets/img/projects/mood-hero.jpg 1400w" sizes="(max-width: 900px) 100vw, 58vw" width="1400" height="1094" alt="Two Moo'd whole milk cartons, half gallon and pint, on a kitchen counter" />
+          <span class="cartons" aria-hidden="true">
+            <img src="assets/img/projects/carton-whole.jpg" alt="" loading="lazy" />
+            <img src="assets/img/projects/carton-two.jpg" alt="" loading="lazy" />
+            <img src="assets/img/projects/carton-one.jpg" alt="" loading="lazy" />
+            <img src="assets/img/projects/carton-straw.jpg" alt="" loading="lazy" />
+            <img src="assets/img/projects/carton-banana.jpg" alt="" loading="lazy" />
+            <img src="assets/img/projects/carton-choco.jpg" alt="" loading="lazy" />
+          </span>
+        </a>
+        <div class="project-text">
+          <p class="kind" data-t="mood.kind">Branding, packaging and web, 2026</p>
+          <h3>Moo'd</h3>
+          <p class="sub" data-t="mood.sub">An organic milk brand, from carton to checkout</p>
+          <p data-t="mood.desc">A self-initiated brand. I drew the identity and the cow mascot, designed six half-gallon cartons with front, nutrition and back panels, then built the online store as a working prototype: product pages with pack sizes, a cart, a three-step checkout, a contact form, and a UI kit where every control comes from one set of tokens.</p>
+          <dl class="facts">
+            <div><dt data-t="facts.role">My role</dt><dd data-t="mood.role">Identity, packaging, UX and UI, front-end code</dd></div>
+            <div><dt data-t="facts.tools">Tools</dt><dd>Illustrator, Photoshop, Figma, HTML, CSS, JavaScript</dd></div>
+            <div><dt data-t="facts.output">Delivered</dt><dd data-t="mood.output">Identity, 6 cartons, business card, banner, store prototype, design system</dd></div>
+          </dl>
+          <ul class="links">
+            <li><a href="https://fptnoobgaming21-del.github.io/MoodStore/" target="_blank" rel="noopener" data-t="mood.l1">Open the store</a></li>
+            <li><a href="https://fptnoobgaming21-del.github.io/MoodStore/#mockups" target="_blank" rel="noopener" data-t="mood.l2">See all six cartons</a></li>
+            <li><a href="https://fptnoobgaming21-del.github.io/MoodStore/#brand" target="_blank" rel="noopener" data-t="mood.l3">Read the brand guide</a></li>
+            <li><a href="https://fptnoobgaming21-del.github.io/MoodStore/#design-system" target="_blank" rel="noopener" data-t="mood.l4">View the design system</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="project-pair">
+        <article class="project" data-kind="graphic packaging">
+          <a class="media media-fit media-sour" href="work/sourprise/index.html" aria-label="Read the SOURPRISE! case study">
+            <img src="assets/img/projects/sourprise-hero.jpg" width="711" height="909" alt="SOURPRISE! candy box unfolded: tic-tac-toe instructions on the panel and a printed game grid" loading="lazy" />
+          </a>
+          <div class="project-text">
+            <p class="kind" data-t="sour.kind">Packaging and visual design, 2026</p>
+            <h3>SOURPRISE!</h3>
+            <p class="sub" data-t="sour.sub">A sour-candy box that unfolds into a game</p>
+            <p data-t="sour.desc">A redesign of a Warheads candy package. After the last candy, a panel opens into a two-player tic-tac-toe board, giving people a reason to keep the box. I took it from sketches and vector layouts to three rounds of printed prototypes.</p>
+            <ul class="links"><li><a href="work/sourprise/index.html" data-t="l.case">Read the case study</a></li></ul>
+          </div>
+        </article>
+
+        <article class="project" data-kind="graphic packaging">
+          <a class="media media-fit media-bath" href="work/bath-fizzers/index.html" aria-label="Read the bath fizzer packaging case study">
+            <img src="assets/img/projects/bath-hero.jpg" width="900" height="660" alt="Red box opened to show an illustrated pink bathtub scene on the lid and three bath fizzers in a tray" loading="lazy" />
+          </a>
+          <div class="project-text">
+            <p class="kind" data-t="bath.kind">Packaging and illustration, 2026</p>
+            <h3 data-t="bath.title">Small box, a little escape</h3>
+            <p class="sub" data-t="bath.sub">Bath fizzers packed like a tiny bathtub</p>
+            <p data-t="bath.desc">A redesign for three peppermint bath fizzers. A calm red outside opens to an illustrated bathroom scene, with each fizzer in its own spot in a bathtub-shaped tray. Class critique pushed the lid and interior further; I printed and assembled three versions.</p>
+            <ul class="links"><li><a href="work/bath-fizzers/index.html" data-t="l.case">Read the case study</a></li></ul>
+          </div>
+        </article>
+      </div>
+
+      <article class="project project-wide" data-kind="graphic packaging research">
+        <a class="media" href="work/choi/index.html" aria-label="Read the Chói album case study">
+          <img src="work/choi/assets/record.webp" width="800" height="600" alt="Printed Chói album sleeve with a red sun, a great wave and cherry blossoms, a black record sliding out with a matching label" loading="lazy" />
+        </a>
+        <div class="project-text">
+          <p class="kind" data-t="choi.kind">Album packaging and illustration, 2026</p>
+          <h3 lang="vi">Chói (Shine)</h3>
+          <p class="sub" data-t="choi.sub">An album redesigned in the language of Ukiyo-e</p>
+          <p data-t="choi.desc">The first album by Ánh Sáng AZA, rebuilt as a full vinyl packaging system: two sleeve directions, back covers with the song list, Side A and Side B labels, and printed mockups. Waves, blossoms, vertical text panels and seal marks translate Edo-period woodblock prints into a calm, modern sleeve.</p>
+          <ul class="links"><li><a href="work/choi/index.html" data-t="l.case">Read the case study</a></li></ul>
+        </div>
+      </article>
+
+      <div class="project-pair">
+        <article class="project" data-kind="ux research">
+          <a class="media media-oyo" href="https://www.figma.com/proto/gXiij2yF5OW20wN45eUAMV/Rp4--Final-Project--Designing-Attention--How-Social-Media-Interfaces-Retain-Users-?node-id=2-8&t=pGBKt5stQGZabJrl-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=165%3A726&show-proto-sidebar=1" target="_blank" rel="noopener" aria-label="Open the Oyo! Figma prototype">
+            <img src="assets/img/projects/oyo.jpg" width="362" height="254" alt="Oyo! welcome screen: 'Welcome to Oyo!' in a typewriter face on a mint background" loading="lazy" />
+          </a>
+          <div class="project-text">
+            <p class="kind" data-t="oyo.kind">UX research and interface, 2025</p>
+            <h3>Oyo!</h3>
+            <p class="sub" data-t="oyo.sub">A social app designed around attention</p>
+            <p data-t="oyo.desc">A research project on how social media interfaces keep people scrolling, turned into an app concept with my own interface design and an interactive Figma prototype.</p>
+            <ul class="links"><li><a href="https://www.figma.com/proto/gXiij2yF5OW20wN45eUAMV/Rp4--Final-Project--Designing-Attention--How-Social-Media-Interfaces-Retain-Users-?node-id=2-8&t=pGBKt5stQGZabJrl-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=165%3A726&show-proto-sidebar=1" target="_blank" rel="noopener" data-t="oyo.l1">Open the Figma prototype</a></li></ul>
+          </div>
+        </article>
+
+        <article class="project" data-kind="graphic">
+          <a class="media" href="https://www.behance.net/gallery/197037297/Vietnamese-Food-Magazine-(Typography-Project)" target="_blank" rel="noopener" aria-label="View the Vietnamese Food Magazine on Behance">
+            <img src="assets/img/projects/food-mag-sm.jpg" srcset="assets/img/projects/food-mag-sm.jpg 800w, assets/img/projects/food-mag.jpg 1600w" sizes="(max-width: 900px) 100vw, 45vw" width="1600" height="1173" alt="Vietnamese Food Magazine cover, floating against a blue background" loading="lazy" />
+          </a>
+          <div class="project-text">
+            <p class="kind" data-t="food.kind">Editorial and typography, 2024</p>
+            <h3 data-t="food.title">Vietnamese Food Magazine</h3>
+            <p class="sub" data-t="food.sub">Food stories told through type and layout</p>
+            <p data-t="food.desc">A typography project: a magazine about Vietnamese food, with a cover, feature spreads and a type system that works for long reading and for big display moments.</p>
+            <ul class="links"><li><a href="https://www.behance.net/gallery/197037297/Vietnamese-Food-Magazine-(Typography-Project)" target="_blank" rel="noopener" data-t="l.behance">View on Behance</a></li></ul>
+          </div>
+        </article>
+      </div>
+
+      <article class="project project-wide" data-kind="research graphic ux">
+        <a class="media" href="https://phamnguyenkiet21-max.github.io/Floating-Worlds-in-Print-by-Nguyen-Kiet-Pham/" target="_blank" rel="noopener" aria-label="Read Floating Worlds in Print">
+          <img src="assets/img/projects/floating-worlds-sm.jpg" srcset="assets/img/projects/floating-worlds-sm.jpg 800w, assets/img/projects/floating-worlds.jpg 1600w" sizes="(max-width: 900px) 100vw, 60vw" width="1600" height="909" alt="Floating Worlds in Print website: the title set over large Japanese characters in deep blue" loading="lazy" />
+        </a>
+        <div class="project-text">
+          <p class="kind" data-t="fw.kind">Research, typography and web, 2025</p>
+          <h3 data-t="fw.title">Floating Worlds in Print</h3>
+          <p class="sub" data-t="fw.sub">Ukiyo-e and the rise of modern visual communication</p>
+          <p data-t="fw.desc">A research project on how Japanese woodblock prints shaped Western graphic design, presented as an illustrated timeline website that I planned, designed and coded from scratch, without templates. Made for History of Graphic Design (GDES 4131W).</p>
+          <ul class="links"><li><a href="https://phamnguyenkiet21-max.github.io/Floating-Worlds-in-Print-by-Nguyen-Kiet-Pham/" target="_blank" rel="noopener" data-t="l.read">Read the project</a></li></ul>
+        </div>
+      </article>
+
+      <!-- More projects -->
+      <h2 class="sub-title" data-t="more.title">More projects</h2>
+      <ul class="more">
+        <li data-kind="research graphic">
+          <a href="https://phamnguyenkiet21-max.github.io/Research-Project1-The-Physical-Origins-of-Chinese-and-Roman-Letterforms-by-NguyenKietPham/" target="_blank" rel="noopener">
+            <img src="assets/img/projects/letterforms-sm.jpg" width="800" height="549" alt="" loading="lazy" />
+            <span class="more-title" data-t="more.1">The Physical Origins of Chinese and Roman Letterforms</span>
+            <span class="more-kind" data-t="more.1k">Research and typography website, 2026</span>
+          </a>
+        </li>
+        <li data-kind="ux">
+          <a href="https://phamnguyenkiet21-max.github.io/Van-Gogh-Shop-by-Nguyen-Kiet-Pham/" target="_blank" rel="noopener">
+            <img src="assets/img/projects/van-gogh-sm.jpg" width="800" height="450" alt="" loading="lazy" />
+            <span class="more-title">Van Gogh Shop</span>
+            <span class="more-kind" data-t="more.2k">Web and interaction, 2025</span>
+          </a>
+        </li>
+        <li data-kind="graphic">
+          <a href="https://www.behance.net/gallery/222851139/Corleone-Pizza-Restaurant-(Branding-Project)-(GD)" target="_blank" rel="noopener">
+            <img src="assets/img/projects/corleone-sm.jpg" width="800" height="571" alt="" loading="lazy" />
+            <span class="more-title">Corleone Pizza</span>
+            <span class="more-kind" data-t="more.3k">Brand identity, 2023</span>
+          </a>
+        </li>
+        <li data-kind="graphic">
+          <a href="https://www.behance.net/gallery/222976823/The-Concert-Design-(GD)" target="_blank" rel="noopener">
+            <img src="assets/img/projects/dream-city-sm.jpg" width="800" height="572" alt="" loading="lazy" />
+            <span class="more-title">Dream City</span>
+            <span class="more-kind" data-t="more.4k">Concert poster and motion, 2023</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Archive -->
+      <div class="archive-head">
+        <h2 class="sub-title" data-t="arc.title">Archive</h2>
+        <p data-t="arc.intro">Posters, packaging, type studies and other pieces. Select one to see it larger.</p>
+      </div>
+      <ul class="archive">
+        <li data-kind="graphic packaging"><button type="button" data-full="assets/img/archive-full/a-cafe-pho.jpg"><img src="assets/img/archive-thumbs/a-cafe-pho-sm.jpg" alt="Café Phở Gold packaging redesign, original and new cup and box" loading="lazy" /><span data-t="a.cafe">Café Phở Gold packaging redesign</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-currency.jpg"><img src="assets/img/archive-thumbs/a-currency-sm.jpg" alt="Vietnamese currency redesign: coin and banknote, front and back" loading="lazy" /><span data-t="a.currency">Vietnamese currency redesign</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-viet-thai.jpg"><img src="assets/img/archive-thumbs/a-viet-thai-sm.jpg" alt="Viet x Thai Kitchen event poster with hand-lettered title and a bowl of noodles" loading="lazy" /><span data-t="a.vietthai">Viet × Thai Kitchen, event poster</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-futura.jpg"><img src="assets/img/archive-thumbs/a-futura-sm.jpg" alt="Futura type specimen book spreads in red, black and grey" loading="lazy" /><span data-t="a.futura">Futura type specimen</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-interstellar.jpg"><img src="assets/img/archive-thumbs/a-interstellar-sm.jpg" alt="Interstellar poster with silhouetted figures under a glowing black hole" loading="lazy" /><span data-t="a.interstellar">Interstellar, film poster</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-squill.jpg"><img src="assets/img/archive-thumbs/a-squill-sm.jpg" alt="Siberian Squill poster in blue script with spring photographs" loading="lazy" /><span data-t="a.squill">Siberian Squill, poster</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-lauren-hom.jpg"><img src="assets/img/archive-thumbs/a-lauren-hom-sm.jpg" alt="Magazine spread profiling the lettering artist Lauren Hom" loading="lazy" /><span data-t="a.lauren">Lauren Hom, magazine spread</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-major.jpg"><img src="assets/img/archive-thumbs/a-major-sm.jpg" alt="Black and white typographic poster reading 4 Graphic Design Major" loading="lazy" /><span data-t="a.major">Graphic design major, type poster</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-anatomia.jpg"><img src="assets/img/archive-thumbs/a-anatomia-sm.jpg" alt="Anatomia Humani Corporis book cover study with an engraved anatomical figure" loading="lazy" /><span data-t="a.anatomia">Anatomia Humani Corporis, cover study</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-love.jpg"><img src="assets/img/archive-thumbs/a-love-sm.jpg" alt="Title card series for Can This Love Be Translated? over aurora landscapes" loading="lazy" /><span data-t="a.love">Can This Love Be Translated?, title cards</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-galaxy.jpg"><img src="assets/img/archive-thumbs/a-galaxy-sm.jpg" alt="Galaxy Dream Photoshop composite displayed in a gallery hall" loading="lazy" /><span data-t="a.galaxy">Galaxy Dream, photo composite</span></button></li>
+        <li data-kind="graphic"><button type="button" data-full="assets/img/archive-full/a-card.jpg"><img src="assets/img/archive-thumbs/a-card-sm.jpg" alt="A hand holding a cream business card with blue flower illustrations" loading="lazy" /><span data-t="a.card">Personal business card</span></button></li>
+      </ul>
+      <p class="empty" id="emptyNote" hidden data-t="empty">Nothing here for this filter. Choose All work to see everything.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="aboutTitle">
+      <figure class="portrait">
+        <img src="assets/img/projects/kiet-sm.jpg" width="727" height="1280" alt="Kiet smiling and waving at the camera" loading="lazy" />
+      </figure>
+      <div class="about-text">
+        <h2 id="aboutTitle" data-t="about.title">About me</h2>
+        <p class="lead" data-t="about.p1">I grew up in Ho Chi Minh City and now live in Minneapolis, where I'm studying for a BFA in Graphic Design with a minor in UX Design at the University of Minnesota, class of 2028.</p>
+        <p data-t="about.p2">I like projects where the hard part is making something clear: a dense research topic, a brand that has to feel friendly, a web page that has to work for everyone. Alongside school I've designed for the College of Liberal Arts, maintained Medical School web pages and written research news for the Department of Psychology. Vietnamese is my first language and English my second.</p>
+
+        <div class="about-cols">
+          <div>
+            <h3 data-t="about.design">What I design</h3>
+            <ul class="plain">
+              <li data-t="s.1">Brand identity</li>
+              <li data-t="s.2">Packaging</li>
+              <li data-t="s.3">Typography and editorial layout</li>
+              <li data-t="s.4">Interface design</li>
+              <li data-t="s.5">Prototyping</li>
+            </ul>
+          </div>
+          <div>
+            <h3 data-t="about.tools">Tools</h3>
+            <ul class="plain">
+              <li>Illustrator, Photoshop, InDesign, XD</li>
+              <li>Figma</li>
+              <li>Premiere Pro</li>
+              <li>Drupal, VS Code, GitHub</li>
+              <li>Asana</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 data-t="about.exp">Experience</h3>
+        <dl class="exp">
+          <div><dt data-t="e.1r">Graphic Design Intern</dt><dd><span data-t="e.1o">UMN College of Liberal Arts</span><span class="exp-date" data-t="e.1t">May–Aug 2026</span><span data-t="e.1d">Five projects for college events and outreach: T-shirts, socks, Welcome Week posters and Instagram graphics within the University brand.</span></dd></div>
+          <div><dt data-t="e.2r">Student Web Coordinator</dt><dd><span data-t="e.2o">UMN Medical School, Marketing and Communications</span><span class="exp-date" data-t="e.2t">Dec 2025–May 2026</span><span data-t="e.2d">Reviewed about 500 pages a month and adjusted Drupal layouts for accessibility, readability and brand consistency.</span></dd></div>
+          <div><dt data-t="e.3r">Communications Assistant</dt><dd><span data-t="e.3o">UMN Department of Psychology</span><span class="exp-date" data-t="e.3t">Dec 2025–May 2026</span><span data-t="e.3d">Research news stories, headlines and social captions that explain faculty research to the public.</span></dd></div>
+          <div><dt data-t="e.4r">Graphic Designer and Marketing Intern</dt><dd><span data-t="e.4o">Hong Nhut Thermal Refrigeration Mechanical Company, Ho Chi Minh City</span><span class="exp-date" data-t="e.4t">Jun–Sep 2025</span><span data-t="e.4d">Planned the company magazine redesign, laid out technical product information, and made promotional videos.</span></dd></div>
+          <div><dt data-t="e.5r">Teaching Assistant, Adult ESL Program</dt><dd><span data-t="e.5o">Our Saviour's Community Services, Minneapolis</span><span class="exp-date" data-t="e.5t">Jan–May 2026</span><span data-t="e.5d">Classroom exercises, small-group activities and tutoring for adult English learners.</span></dd></div>
+          <div><dt data-t="e.6r">Teaching Assistant</dt><dd><span data-t="e.6o">UMN College of Design</span><span class="exp-date" data-t="e.6t">Sep 2025–Jan 2026</span><span data-t="e.6d">Coached 15–20 students per class on design principles through critiques and individual feedback.</span></dd></div>
+          <div><dt data-t="e.7r">Social Media Content Creator</dt><dd><span data-t="e.7o">TikTok, @phamnguyenkiet2004</span><span class="exp-date" data-t="e.7t">Jun 2025–present</span><span data-t="e.7d">Short-form videos for a channel with more than 5,000 followers and 2 million likes.</span></dd></div>
+        </dl>
+        <a class="btn" href="resume/Nguyen_Kiet_Pham_Resume.pdf" target="_blank" rel="noopener" data-t="about.resume">Open my resume</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contactTitle">
+      <h2 id="contactTitle" data-t="c.title">Have a project or an internship in mind?</h2>
+      <p data-t="c.body">I'm open to design internships, freelance work and collaborations. Email is the fastest way to reach me.</p>
+      <div class="email-row">
+        <a class="email" href="mailto:pham0687@umn.edu">pham0687@umn.edu</a>
+        <button type="button" class="btn" id="copyBtn" data-t="c.copy">Copy email</button>
+        <span class="copied" id="copyNote" role="status"></span>
+      </div>
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/in/phamnguyenkiet/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.behance.net/kietpham21" target="_blank" rel="noopener">Behance</a></li>
+        <li><a href="https://www.tiktok.com/@phamnguyenkiet2004" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© 2026 Nguyen Kiet Pham</p>
+    <p><a href="playground.html" data-t="foot.play">The playful version of this site, with pets and a photo booth</a></p>
+    <p><a href="#top" data-t="foot.top">Back to top</a></p>
+  </footer>
+
+  <dialog class="viewer" id="viewer" aria-label="Image viewer">
+    <form method="dialog"><button class="viewer-close" type="submit" data-t="v.close">Close</button></form>
+    <img id="viewerImg" alt="" />
+    <p id="viewerCap"></p>
+  </dialog>
+
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
