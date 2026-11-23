@@ -12,7 +12,7 @@
     "research.intro": "Những việc ngoài thiết kế đồ họa, dành cho giảng viên, hội đồng PhD và nhóm nghiên cứu: rà soát khả năng tiếp cận của website đại học, và viết bài giải thích nghiên cứu tâm lý học cho công chúng.",
     "nav.contact": "Liên hệ",
     "nav.resume": "CV",
-    "hero.lead": "Sinh viên Thiết kế Đồ họa, chuyên ngành phụ UX tại Đại học Minnesota. Mình làm nhận diện thương hiệu, bao bì, dàn trang ấn phẩm và website, và tự nghiên cứu để quyết định chúng trông như thế nào.",
+    "hero.lead": "Nhà thiết kế đồ họa tập trung vào nhận diện thương hiệu và bao bì, học chuyên ngành phụ UX tại Đại học Minnesota. Mình xây dựng thương hiệu từ logo đến chiếc hộp trên kệ, và cả website để bán chúng.",
     "hero.note": "Sống ở Minneapolis, quê Thành phố Hồ Chí Minh. Đang tìm thực tập thiết kế và nhận dự án freelance.",
     "hero.cta": "Xem dự án",
     "hero.email": "Gửi email",
