@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Every published news story written by Nguyen Kiet Pham for the University of Minnesota Department of Psychology, with data."><title>Writing data, Nguyen Kiet Pham</title><link rel="icon" href="../../favicon.svg" type="image/svg+xml"><link rel="preload" href="../../assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/case.css">
+<style>
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,32px);margin-block:clamp(32px,5vw,64px)}
+.stats div{border-top:3px solid var(--ink);padding-top:12px}
+.stats strong{display:block;font-family:var(--display);font-size:clamp(40px,5vw,72px);line-height:1;color:var(--ink)}
+.stats span{color:var(--soft)}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
+.bars{list-style:none;padding:0;margin:16px 0;display:grid;gap:12px}
+.bars li{display:grid;grid-template-columns:150px 1fr 36px;align-items:center;gap:12px}
+.bars .bar{height:22px;background:var(--blue);border-radius:2px}
+.bars .c-Awards{background:var(--pink)}.bars .c-Research{background:var(--blue)}.bars .c-Media{background:var(--ink)}
+.bars b{font-family:var(--display);text-align:right}
+.note{color:var(--soft);font-size:.95rem}
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:24px 0 8px}
+.tools button{font:inherit;font-family:var(--display);font-size:.9rem;padding:6px 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.tools input{font:inherit;padding:6px 12px;border:1.5px solid var(--rule);border-radius:999px;min-width:220px;background:var(--sheet);color:var(--ink)}
+table.list{width:100%;border-collapse:collapse}
+table.list th,table.list td{text-align:left;vertical-align:top;padding:12px 10px;border-bottom:1px solid var(--rule)}
+table.list th{font-family:var(--display);color:var(--ink)}
+table.list td:nth-child(2),table.list td:nth-child(3){white-space:nowrap;color:var(--soft)}
+@media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.bars li{grid-template-columns:120px 1fr 30px}table.list td:nth-child(2){display:none}table.list th:nth-child(2){display:none}}
+</style></head><body class="case"><a class="skip" href="#main">Skip to content</a><header class="top" id="top"><a class="mark" href="../../index.html" aria-label="Nguyen Kiet Pham, portfolio home"><span class="mark-name">Nguyen Kiet Pham</span><span class="mark-role">Graphic design and UX</span></a><nav class="nav" aria-label="Main"><a href="../../index.html#writing">Back to portfolio</a><a href="#all">All stories</a><a href="mailto:pham0687@umn.edu">Email me</a></nav></header>
+<main id="main">
+<section class="hero wrap"><div><p class="eyebrow">Writing / UMN Department of Psychology</p><h1>23 stories.<br><em>Five months.</em></h1><p class="intro">Every news story I wrote and published as Communications Assistant for the University of Minnesota Department of Psychology. Each one carries the byline “Composed by Nguyen Kiet Pham, communications assistant” on the department's website, so every link below can be checked.</p></div></section>
+
+<section class="wrap" aria-label="Summary"><div class="stats">
+<div><strong>23</strong><span>published, bylined stories</span></div>
+<div><strong>8</strong><span>stories explaining faculty research to the public</span></div>
+<div><strong>11</strong><span>stories on faculty, staff and student awards</span></div>
+<div><strong>4</strong><span>stories on media features and community work</span></div>
+</div></section>
+
+<section class="wrap charts" aria-label="Charts">
+<div><h2 class="sub-title">Stories by month</h2><ul class="bars" aria-label="Stories published per month in 2026"><li><span>Jan</span><span class="bar" style="width:40%"></span><b>2</b></li>
+<li><span>Feb</span><span class="bar" style="width:100%"></span><b>5</b></li>
+<li><span>Mar</span><span class="bar" style="width:80%"></span><b>4</b></li>
+<li><span>Apr</span><span class="bar" style="width:100%"></span><b>5</b></li>
+<li><span>May</span><span class="bar" style="width:60%"></span><b>3</b></li></ul><p class="note">January to May 2026. 4 more stories have no date shown on their page and are not counted here.</p></div>
+<div><h2 class="sub-title">Stories by type</h2><ul class="bars" aria-label="Stories by type"><li><span>Awards and honors</span><span class="bar c-Awards" style="width:100%"></span><b>11</b></li>
+<li><span>Research stories</span><span class="bar c-Research" style="width:73%"></span><b>8</b></li>
+<li><span>Media and community</span><span class="bar c-Media" style="width:36%"></span><b>4</b></li></ul><p class="note">Research stories summarize a new paper or book for readers outside psychology.</p></div>
+</section>
+
+<section class="wrap" id="all" aria-labelledby="allTitle" style="margin-bottom:clamp(48px,7vw,96px)"><h2 class="sub-title" id="allTitle">All stories</h2>
+<div class="tools" role="group" aria-label="Filter stories"><button type="button" data-f="all" aria-pressed="true">All (23)</button><button type="button" data-f="Research" aria-pressed="false">Research (8)</button><button type="button" data-f="Awards" aria-pressed="false">Awards (11)</button><button type="button" data-f="Media" aria-pressed="false">Media (4)</button><label><span class="skip-label" style="position:absolute;left:-9999px">Search stories</span><input type="search" id="q" placeholder="Search by name or topic"></label></div>
+<p class="note" id="count" aria-live="polite">Showing 23 stories</p>
+<table class="list"><thead><tr><th scope="col">Story</th><th scope="col">Type</th><th scope="col">Published</th></tr></thead><tbody>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/angus-macdonald-stephen-engel-and-wilma-koutstaal-named-among-researchcoms-best-neuroscience" target="_blank" rel="noopener">Angus MacDonald, Stephen A. Engel, and Wilma Koutstaal Named Among Research.com&#x27;s Best Neuroscience Scientists</a></td><td>Awards and honors</td><td data-sort="2026-05-22">May 22, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/congratulations-amanda-schmit-and-hope-savaria-winning-2026-cla-outstanding-service-award" target="_blank" rel="noopener">Congratulations to Amanda Schmit and Hope Savaria on winning the 2026 CLA Outstanding Service Award</a></td><td>Awards and honors</td><td data-sort="2026-05-11">May 11, 2026</td></tr>
+<tr data-c="Media"><td><a href="https://cla.umn.edu/psychology/news-events/story/becoming-therapist-times-crisis-care-community-and-emotional-work" target="_blank" rel="noopener">Becoming a therapist in times of crisis: Care, Community, and Emotional work</a></td><td>Media and community</td><td data-sort="2026-05-01">May 1, 2026</td></tr>
+<tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/how-does-brain-adapt-after-disruption" target="_blank" rel="noopener">How does the Brain Adapt After Disruption?</a></td><td>Research stories</td><td data-sort="2026-04-20">Apr 20, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/christopher-federico-and-andrew-oxenham-honored-outstanding-contributions-postgraduate-and" target="_blank" rel="noopener">Christopher Federico and Andrew Oxenham Honored for Outstanding Contributions to Postgraduate and Professional Education in 2026</a></td><td>Awards and honors</td><td data-sort="2026-04-20">Apr 20, 2026</td></tr>
+<tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/robert-krueger-and-colin-deyoung-explore-new-way-understand-mental-health" target="_blank" rel="noopener">Robert Krueger and Colin DeYoung explore a New Way to Understand Mental Health</a></td><td>Research stories</td><td data-sort="2026-04-03">Apr 3, 2026</td></tr>
+<tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/katerina-marcoulides-rethinking-large-datasets" target="_blank" rel="noopener">Katerina Marcoulides is rethinking large datasets</a></td><td>Research stories</td><td data-sort="2026-04-03">Apr 3, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/cate-crawford-and-victoria-jaimes-win-2025-2026-mortensen-study-abroad-scholarship" target="_blank" rel="noopener">Cate Crawford and Victoria Jaimes Win the 2025-2026 Mortensen Study Abroad Scholarship</a></td><td>Awards and honors</td><td data-sort="2026-04-03">Apr 3, 2026</td></tr>
+<tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/new-study-vanessa-lee-explores-how-attention-shapes-memory" target="_blank" rel="noopener">New Study from Vanessa Lee Explores How Attention Shapes Memory</a></td><td>Research stories</td><td data-sort="2026-03-27">Mar 27, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/bonnie-klimes-dougan-honored-morse-alumni-teaching-award" target="_blank" rel="noopener">Bonnie Klimes-Dougan Honored with Morse-Alumni Teaching Award</a></td><td>Awards and honors</td><td data-sort="2026-03-27">Mar 27, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/dr-juan-del-toro-named-aps-fellow-contributions-psychological-science" target="_blank" rel="noopener">Dr. Juan Del Toro Named APS Fellow for Contributions to Psychological Science</a></td><td>Awards and honors</td><td data-sort="2026-03-27">Mar 27, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/lauren-hopkins-honored-regional-recognition-teaching-excellence" target="_blank" rel="noopener">Lauren Hopkins Honored with Regional Recognition for Teaching Excellence</a></td><td>Awards and honors</td><td data-sort="2026-03-06">Mar 6, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/nicola-grissom-receives-cla-midcareer-faculty-research-award" target="_blank" rel="noopener">Nicola Grissom Receives CLA MidCareer Faculty Research Award</a></td><td>Awards and honors</td><td data-sort="2026-02-27">Feb 27, 2026</td></tr>
+<tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/juan-del-toro-publishes-new-child-development-research-ethnic-racial-discrimination-and-adolescent" target="_blank" rel="noopener">Juan Del Toro Publishes New Child Development Research on Ethnic-Racial Discrimination and Adolescent Development</a></td><td>Research stories</td><td data-sort="2026-02-16">Feb 16, 2026</td></tr>
+<tr data-c="Media"><td><a href="https://cla.umn.edu/psychology/news-events/story/scientific-american-features-jeff-simpsons-research-how-and-why-romantic-relationships-matter-more-0" target="_blank" rel="noopener">Scientific American Features Jeff Simpson’s Research on How and Why Romantic Relationships Matter More to Men</a></td><td>Media and community</td><td data-sort="2026-02-13">Feb 13, 2026</td></tr>
+<tr data-c="Media"><td><a href="https://cla.umn.edu/psychology/news-events/story/connecting-hearing-research-live-music-minnesotas-orchestra-hall" target="_blank" rel="noopener">Connecting Hearing Research with Live Music at Minnesota’s Orchestra Hall</a></td><td>Media and community</td><td data-sort="2026-02-11">Feb 11, 2026</td></tr>
+<tr data-c="Media"><td><a href="https://cla.umn.edu/psychology/news-events/story/federico-explains-rural-consciousness-and-urban-rural-divide" target="_blank" rel="noopener">Federico Explains “Rural Consciousness” and the Urban-Rural Divide</a></td><td>Media and community</td><td data-sort="2026-02-05">Feb 5, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/drexler-james-elected-editorial-fellow-psychological-review" target="_blank" rel="noopener">Drexler James Elected Editorial Fellow for the Psychological Review</a></td><td>Awards and honors</td><td data-sort="2026-01-26">Jan 26, 2026</td></tr>
+<tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/rethinking-how-brain-sees-emily-j-allen-explores-hidden-player-vision" target="_blank" rel="noopener">Rethinking How the Brain Sees: Emily J. Allen Explores a Hidden Player in Vision</a></td><td>Research stories</td><td data-sort="2026-01-07">Jan 7, 2026</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/paul-sackett-and-research-team-win-siops-2026-william-owens-award-scholarly-achievement" target="_blank" rel="noopener">Paul Sackett and Research Team Win SIOP’s 2026 William A. Owens Award for Scholarly Achievement</a></td><td>Awards and honors</td><td data-sort="0">Date not shown</td></tr>
+<tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/do-individual-differences-sex-impact-cognitive-flexibility" target="_blank" rel="noopener">Do individual differences in sex impact cognitive flexibility?</a></td><td>Research stories</td><td data-sort="0">Date not shown</td></tr>
+<tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/gordon-legge-explores-science-and-experience-vision-loss-his-newly-published-book" target="_blank" rel="noopener">Gordon Legge Explores the Science and Experience of Vision Loss in His Newly Published Book</a></td><td>Research stories</td><td data-sort="0">Date not shown</td></tr>
+<tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/donald-g-paterson-award-and-mortensen-academic-award-winners-2025-2026" target="_blank" rel="noopener">Donald G. Paterson Award and Mortensen Academic Award Winners 2025-2026</a></td><td>Awards and honors</td><td data-sort="0">Date not shown</td></tr>
+</tbody></table>
+<p class="note">Collected November 2026 from cla.umn.edu by searching for the byline. Two Research.com ranking stories from May 2026 are not included because their pages do not show a byline. If a story is missing, it will be added.</p>
+</section>
+
+<footer class="wrap case-foot"><div><p class="eyebrow">Written by Nguyen Kiet Pham</p><h2>Science, in plain words.</h2><p><a class="case-email" href="mailto:pham0687@umn.edu">pham0687@umn.edu</a></p></div><nav class="case-next" aria-label="More work"><p class="eyebrow">Next</p><a class="case-next-link" href="../medical-school-accessibility/index.html">Medical School web accessibility</a><a class="btn" href="../../index.html#work">Back to all work</a></nav><p class="footer-bottom">Department of Psychology, University of Minnesota, 2026 <a href="#top">Back to top</a></p></footer></main>
+<script>
+(function(){var btns=document.querySelectorAll('.tools button'),q=document.getElementById('q'),rows=document.querySelectorAll('table.list tbody tr'),count=document.getElementById('count'),f='all';
+function run(){var s=q.value.trim().toLowerCase(),n=0;rows.forEach(function(r){var ok=(f==='all'||r.getAttribute('data-c')===f)&&(!s||r.textContent.toLowerCase().indexOf(s)!==-1);r.hidden=!ok;if(ok)n++;});count.textContent='Showing '+n+(n===1?' story':' stories');}
+btns.forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});run();});});q.addEventListener('input',run);})();
+</script></body></html>
