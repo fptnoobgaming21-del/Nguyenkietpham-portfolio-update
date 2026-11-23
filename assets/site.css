@@ -340,3 +340,21 @@ html[lang="vi"] .sub { font-style: normal; font-weight: 500; }
 @media (max-width: 760px) { .project-grid { grid-template-columns: 1fr; } }
 /* Research and writing section */
 .research { border-top: 2px solid var(--ink); padding-top: clamp(56px, 8vw, 112px); }
+
+/* Collapsible archive */
+.archive-box { margin: 0 0 clamp(80px, 10vw, 140px); border-top: 2px solid var(--ink); }
+.archive-box > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 20px; padding: 24px 0; }
+.archive-box > summary::-webkit-details-marker { display: none; }
+.archive-box > summary::after { content: "+"; margin-left: auto; font-family: var(--display); font-size: 2rem; line-height: 1; color: var(--pink); }
+.archive-box[open] > summary::after { content: "\2212"; }
+.archive-box > summary .sub-title { margin: 0; font-family: var(--display); font-weight: 780; font-stretch: 74%; line-height: 1; color: var(--ink); }
+.archive-count { color: var(--soft); }
+.archive-box > summary:focus-visible { outline: 3px solid var(--pink); outline-offset: 4px; }
+.archive-box .archive-head { display: none; }
+.archive-box .archive { margin-bottom: clamp(40px, 5vw, 64px); }
+.archive-sub { font-family: var(--display); color: var(--ink); font-size: 1.3rem; margin: 0 0 16px; }
+.more-archive { margin-bottom: 24px; }
+.archive-box .more-all { margin: 0 0 32px; }
+/* Odd last card in the two-column grid spans the full row */
+.project-grid > article:last-child:nth-child(odd) { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+@media (max-width: 760px) { .project-grid > article:last-child:nth-child(odd) { grid-template-columns: 1fr; } }
