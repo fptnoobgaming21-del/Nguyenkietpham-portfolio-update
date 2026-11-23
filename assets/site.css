@@ -358,3 +358,9 @@ html[lang="vi"] .sub { font-style: normal; font-weight: 500; }
 /* Odd last card in the two-column grid spans the full row */
 .project-grid > article:last-child:nth-child(odd) { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
 @media (max-width: 760px) { .project-grid > article:last-child:nth-child(odd) { grid-template-columns: 1fr; } }
+
+/* Archive page */
+.archive-page { max-width: var(--max); margin: 0 auto; padding: clamp(40px, 6vw, 80px) var(--gutter) 0; }
+.arch-intro { margin-bottom: clamp(32px, 5vw, 56px); }
+.arch-intro h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: .9; }
+.arch-back { margin: 0 0 clamp(72px, 9vw, 120px); }
