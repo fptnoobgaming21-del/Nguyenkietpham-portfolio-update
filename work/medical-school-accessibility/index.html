@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Web accessibility audit and remediation for University of Minnesota Medical School websites, by Nguyen Kiet Pham."><title>Medical School web accessibility, Nguyen Kiet Pham</title><link rel="icon" href="../../favicon.svg" type="image/svg+xml"><link rel="preload" href="../../assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/case.css"><meta property="og:image" content="https://fptnoobgaming21-del.github.io/Nguyenkietpham-portfolio-update/assets/img/projects/a11y-audit.svg">
+<style>
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,32px);margin-block:clamp(32px,5vw,64px)}
+.stats div{border-top:3px solid var(--ink);padding-top:12px}
+.stats strong{display:block;font-family:var(--display);font-size:clamp(40px,5vw,72px);line-height:1;color:var(--ink)}
+.stats span{color:var(--soft)}
+.bars{list-style:none;padding:0;margin:24px 0;display:grid;gap:12px}
+.bars li{display:grid;grid-template-columns:minmax(150px,220px) 1fr 48px;align-items:center;gap:12px}
+.bars .bar{height:22px;background:var(--pink);border-radius:2px}
+.bars li:nth-child(2) .bar{background:var(--blue)}.bars li:nth-child(3) .bar{background:var(--ink)}.bars li:nth-child(4) .bar{background:var(--soft)}
+.bars b{font-family:var(--display);text-align:right}
+.wcag{width:100%;border-collapse:collapse;margin-top:24px;font-size:1rem}
+.wcag th,.wcag td{text-align:left;vertical-align:top;padding:12px 10px;border-bottom:1px solid var(--rule)}
+.wcag th{font-family:var(--display);color:var(--ink)}
+.wcag td:nth-child(2){white-space:nowrap;color:var(--blue)}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.steps li{counter-increment:s;border-top:3px solid var(--pink);padding-top:12px}
+.steps li::before{content:"0" counter(s);display:block;font-family:var(--display);font-size:32px;color:var(--pink)}
+.steps strong{display:block;color:var(--ink)}
+@media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.wcag td:nth-child(2){white-space:normal}.bars li{grid-template-columns:1fr 2fr 40px}}
+</style></head><body class="case"><a class="skip" href="#main">Skip to content</a><header class="top" id="top"><a class="mark" href="../../index.html" aria-label="Nguyen Kiet Pham, portfolio home"><span class="mark-name">Nguyen Kiet Pham</span><span class="mark-role">Graphic design and UX</span></a><nav class="nav" aria-label="Main"><a href="../../index.html#work">All work</a><a href="#wcag">WCAG</a><a href="#process">Process</a><a href="#outcome">Outcome</a><a href="mailto:pham0687@umn.edu">Email me</a></nav></header>
+<main id="main">
+<section class="hero wrap"><div><p class="eyebrow">Web accessibility / UMN Medical School</p><h1>Find the barrier.<br><em>Fix the page.</em></h1><p class="intro">As a Student Web Coordinator, I audited and repaired Medical School webpages so that people using screen readers, keyboards and other assistive technology can use them, as part of the school's work toward the WCAG 2.1 Level AA standard.</p></div>
+<figure><img src="../../assets/img/projects/a11y-audit.svg" alt="Summary card: 2,117 accessibility issues fixed across 1,667 reviewed webpages, with bars for the most common issue types"></figure></section>
+
+<section class="facts wrap" aria-label="Project details"><div><span>My role</span><strong>Student Web Coordinator</strong></div><div><span>Team</span><strong>Medical School Marketing &amp; Communications</strong></div><div><span>Tools</span><strong>PopeTech, WAVE, Editoria11y, Drupal</strong></div><div><span>Timeline</span><strong>Dec 2025 – May 2026</strong></div></section>
+
+<section class="wrap" aria-label="Results in numbers"><div class="stats">
+<div><strong>1,667</strong><span>pages I reviewed and closed in my tracker</span></div>
+<div><strong>2,117</strong><span>accessibility issues fixed on those pages</span></div>
+<div><strong>614</strong><span>pages that needed repairs</span></div>
+<div><strong>122</strong><span>more pages in a second review round with PopeTech</span></div>
+</div></section>
+
+<section class="section wrap"><div><p class="eyebrow">01 / The challenge</p><h2>Hundreds of sites.<br>One standard.</h2></div><div class="copy"><h3>What problem did the work address?</h3><p>The Medical School runs hundreds of department, lab and program sites in Drupal. Many pages were built over years by different editors, and automated scans flagged thousands of them for accessibility issues. My job was to work through the pages assigned to me.</p><p>Those issues are not cosmetic. An image without alt text is silent to a screen reader. An empty heading or link breaks the outline that blind users rely on to move through a page.</p></div></section>
+
+<section class="section wrap" id="wcag"><div><p class="eyebrow">02 / What I fixed</p><h2>Each error maps<br>to a WCAG rule.</h2></div><div class="copy"><h3>Most common issues on my pages</h3><p>From my PopeTech review round (122 pages):</p>
+<ul class="bars" aria-label="Issue counts by type">
+<li><span>Empty headings</span><span class="bar" style="width:100%"></span><b>52</b></li>
+<li><span>Missing alt text</span><span class="bar" style="width:83%"></span><b>43</b></li>
+<li><span>Empty links</span><span class="bar" style="width:37%"></span><b>19</b></li>
+<li><span>Linked images without alt</span><span class="bar" style="width:12%"></span><b>6</b></li>
+</ul>
+<table class="wcag"><caption class="eyebrow" style="text-align:left">Issue types, the WCAG success criterion behind each, and the fix</caption>
+<thead><tr><th scope="col">Issue</th><th scope="col">WCAG 2.1</th><th scope="col">How I fixed it</th></tr></thead><tbody>
+<tr><td>Image has no alt text</td><td>1.1.1 Non-text Content</td><td>Wrote alt text that says what the image communicates; marked purely decorative images so screen readers skip them.</td></tr>
+<tr><td>Heading with no text</td><td>1.3.1 Info and Relationships</td><td>Removed empty heading tags left by the editor, or turned them into real headings with text.</td></tr>
+<tr><td>Link with no accessible text, linked image without alt</td><td>2.4.4 Link Purpose, 4.1.2 Name, Role, Value</td><td>Gave every link a readable name, either visible text or alt text on the linked image.</td></tr>
+<tr><td>Linked Word or PDF files</td><td>Applies WCAG to documents</td><td>Checked attached documents and flagged ones that needed accessible versions.</td></tr>
+</tbody></table></div></section>
+
+<section class="section wrap" id="process"><div><p class="eyebrow">03 / Process</p><h2>Scan, inspect,<br>fix, re-test.</h2></div><div class="copy"><ol class="steps">
+<li><strong>Scan</strong>PopeTech and Editoria11y reports listed pages and error counts.</li>
+<li><strong>Inspect</strong>WAVE showed where each error sat in the page.</li>
+<li><strong>Fix</strong>Edited content, alt text, headings and layouts in Drupal.</li>
+<li><strong>Re-test</strong>Ran the checker again until the error count reached zero.</li>
+<li><strong>Log</strong>Recorded status, dates and blockers in the shared tracker.</li>
+</ol><p>Not every page could be fixed by an editor. When a page was blocked by a firewall, unpublished, or needed a developer, I marked it in the tracker and wrote a note so the team could route it.</p></div></section>
+
+<section id="outcome" class="section wrap"><div><p class="eyebrow">04 / Outcome &amp; limits</p><h2>Fewer barriers.<br>More to test.</h2></div><div class="copy"><h3>What changed?</h3><p>Between January and April 2026 I closed 1,667 pages in my tracker and fixed 2,117 flagged issues.</p><h3>What I learned</h3><p>Automated checkers find missing alt text, but they cannot tell whether alt text is useful. The judgment calls, like what an image is for, were the design part of the job.</p></div></section>
+
+<section class="next wrap"><p class="eyebrow">Next steps</p><h2>What I want to learn next</h2><ol><li><strong>Screen reader testing</strong><span>Check pages with NVDA and VoiceOver, not only automated tools.</span></li><li><strong>Keyboard and focus</strong><span>Test that every control works without a mouse.</span></li><li><strong>Color contrast in design</strong><span>Build contrast checks into my own design systems from the start.</span></li></ol></section>
+
+<footer class="wrap case-foot"><div><p class="eyebrow">Work by Nguyen Kiet Pham</p><h2>Clear for everyone.</h2><p><a class="case-email" href="mailto:pham0687@umn.edu">pham0687@umn.edu</a></p></div><nav class="case-next" aria-label="More work"><p class="eyebrow">Next project</p><a class="case-next-link" href="../sourprise/index.html">SOURPRISE! candy packaging</a><a class="btn" href="../../index.html#work">Back to all work</a></nav><p class="footer-bottom">Student work at the UMN Medical School, 2025–2026 <a href="#top">Back to top</a></p></footer></main></body></html>
