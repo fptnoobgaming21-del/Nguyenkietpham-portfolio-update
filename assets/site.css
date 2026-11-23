@@ -304,7 +304,7 @@ h3 { font-size: 1.75rem; font-weight: 700; font-stretch: 86%; line-height: 1.05;
 }
 @media (max-width: 640px) {
   .top { flex-wrap: wrap; gap: 8px 16px; }
-  .nav { width: 100%; justify-content: space-between; gap: 8px; font-size: 0.95rem; }
+  .nav { width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: 6px 14px; font-size: 0.95rem; }
   .lang { padding: 4px 10px; }
   .cartons { gap: 4px; padding: 8px; }
   .facts > div, .exp > div { grid-template-columns: 1fr; gap: 2px; }
