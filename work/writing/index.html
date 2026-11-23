@@ -19,6 +19,10 @@ table.list{width:100%;border-collapse:collapse}
 table.list th,table.list td{text-align:left;vertical-align:top;padding:12px 10px;border-bottom:1px solid var(--rule)}
 table.list th{font-family:var(--display);color:var(--ink)}
 table.list td:nth-child(2),table.list td:nth-child(3){white-space:nowrap;color:var(--soft)}
+.pager{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 28px}
+.pager button{font:inherit;font-family:var(--display);min-width:40px;height:40px;padding:0 12px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.pager button[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.pager button:disabled{opacity:.35;cursor:default}
 @media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.bars li{grid-template-columns:120px 1fr 30px}table.list td:nth-child(2){display:none}table.list th:nth-child(2){display:none}}
 </style></head><body class="case"><a class="skip" href="#main">Skip to content</a><header class="top" id="top"><a class="mark" href="../../index.html" aria-label="Nguyen Kiet Pham, portfolio home"><span class="mark-name">Nguyen Kiet Pham</span><span class="mark-role">Graphic design and UX</span></a><nav class="nav" aria-label="Main"><a href="../../index.html#writing">Back to portfolio</a><a href="#all">All stories</a><a href="mailto:pham0687@umn.edu">Email me</a></nav></header>
 <main id="main">
@@ -70,12 +74,19 @@ table.list td:nth-child(2),table.list td:nth-child(3){white-space:nowrap;color:v
 <tr data-c="Research"><td><a href="https://cla.umn.edu/psychology/news-events/story/gordon-legge-explores-science-and-experience-vision-loss-his-newly-published-book" target="_blank" rel="noopener">Gordon Legge Explores the Science and Experience of Vision Loss in His Newly Published Book</a></td><td>Research stories</td><td data-sort="0">Date not shown</td></tr>
 <tr data-c="Awards"><td><a href="https://cla.umn.edu/psychology/news-events/story/donald-g-paterson-award-and-mortensen-academic-award-winners-2025-2026" target="_blank" rel="noopener">Donald G. Paterson Award and Mortensen Academic Award Winners 2025-2026</a></td><td>Awards and honors</td><td data-sort="0">Date not shown</td></tr>
 </tbody></table>
+<nav class="pager" id="pager" aria-label="Story pages"></nav>
 <p class="note">Collected November 2026 from cla.umn.edu by searching for the byline. Two Research.com ranking stories from May 2026 are not included because their pages do not show a byline. If a story is missing, it will be added.</p>
 </section>
 
 <footer class="wrap case-foot"><div><p class="eyebrow">Written by Nguyen Kiet Pham</p><h2>Science, in plain words.</h2><p><a class="case-email" href="mailto:pham0687@umn.edu">pham0687@umn.edu</a></p></div><nav class="case-next" aria-label="More work"><p class="eyebrow">Next</p><a class="case-next-link" href="../medical-school-accessibility/index.html">Medical School web accessibility</a><a class="btn" href="../../index.html#work">Back to all work</a></nav><p class="footer-bottom">Department of Psychology, University of Minnesota, 2026 <a href="#top">Back to top</a></p></footer></main>
 <script>
-(function(){var btns=document.querySelectorAll('.tools button'),q=document.getElementById('q'),rows=document.querySelectorAll('table.list tbody tr'),count=document.getElementById('count'),f='all';
-function run(){var s=q.value.trim().toLowerCase(),n=0;rows.forEach(function(r){var ok=(f==='all'||r.getAttribute('data-c')===f)&&(!s||r.textContent.toLowerCase().indexOf(s)!==-1);r.hidden=!ok;if(ok)n++;});count.textContent='Showing '+n+(n===1?' story':' stories');}
-btns.forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});run();});});q.addEventListener('input',run);})();
+(function(){var PER=5,btns=document.querySelectorAll('.tools button'),q=document.getElementById('q'),rows=[].slice.call(document.querySelectorAll('table.list tbody tr')),count=document.getElementById('count'),pager=document.getElementById('pager'),f='all',page=1;
+function mk(label,aria,target,opts){var b=document.createElement('button');b.type='button';b.textContent=label;b.setAttribute('aria-label',aria);if(opts&&opts.current)b.setAttribute('aria-current','page');if(opts&&opts.disabled)b.disabled=true;b.addEventListener('click',function(){page=target;render();document.getElementById('allTitle').scrollIntoView({behavior:'smooth',block:'start'});});return b;}
+function render(){var s=q.value.trim().toLowerCase();var match=rows.filter(function(r){return (f==='all'||r.getAttribute('data-c')===f)&&(!s||r.textContent.toLowerCase().indexOf(s)!==-1);});
+var pages=Math.max(1,Math.ceil(match.length/PER));if(page>pages)page=pages;var start=(page-1)*PER;
+rows.forEach(function(r){r.hidden=true;});match.slice(start,start+PER).forEach(function(r){r.hidden=false;});
+count.textContent=match.length===0?'No stories match':'Showing '+(start+1)+'\u2013'+Math.min(start+PER,match.length)+' of '+match.length+(match.length===1?' story':' stories');
+pager.innerHTML='';if(pages>1){pager.appendChild(mk('\u2039','Previous page',page-1,{disabled:page===1}));for(var i=1;i<=pages;i++)pager.appendChild(mk(String(i),'Page '+i,i,{current:i===page}));pager.appendChild(mk('\u203a','Next page',page+1,{disabled:page===pages}));}}
+btns.forEach(function(b){b.addEventListener('click',function(){f=b.getAttribute('data-f');page=1;btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});render();});});
+q.addEventListener('input',function(){page=1;render();});render();})();
 </script></body></html>
