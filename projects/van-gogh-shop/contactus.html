@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header class="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">VAN GOGH SHOP</a>
+      <nav class="links">
+        <a href="aboutus.html">About</a>
+        <a href="itemstore.html">Stores</a>
+        <a href="collections.html">Collections</a>
+        <a href="contactus.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+    <section class="hero" id="home" aria-label="Hero">
+    <div class="hero-overlay"></div>
+<video autoplay loop muted plays-inline class="back-video">
+    <source src="image/videobackground.mp4" type="video/mp4">
+</video>
+  </section>
+
+<!--contact us section-->
+  <div class="contact-wrapper">
+    <!-- contact form box -->
+    <div class="contact-card" role="form" aria-labelledby="contactTitle">
+      <h2 id="contactTitle">Contact Us</h2>
+
+      <form class="contact-card-form" action="thankyouforcontactus.html" method="get">
+        <label>
+          <span class="label">full name</span>
+          <input type="text" name="name" placeholder="Enter your name" required >
+        </label>
+        <label>
+          <span class="label">Email</span>
+          <input type="email" name="email" placeholder="Enter your email" required >
+        </label>
+        <label>
+          <span class="label">Comment or message</span>
+          <textarea name="message" rows="4" placeholder="Type your message…" required></textarea>
+        </label>
+        <button type="submit" class="button submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer class="footer" id="contact">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p>© <span id="year"></span> Van Gogh Shop. All rights reserved.</p>
+    </div>
+
+    <div class="footer-center">
+      <nav class="foot-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+      </nav>
+    </div>
+
+<div class="footer-right">
+      <a href="https://www.facebook.com/pham.nguyen.kiet.2025" target="_blank">
+        <img src="image/facebook (1).png" alt="facebook" width="40px">
+      </a>
+      <a href="https://www.instagram.com/kietisme_21/" target="_blank">
+        <img src="image/instagram.png" alt="instagram" width="40px">
+      </a>
+      <a href="https://www.linkedin.com/in/phamnguyenkiet/" target="_blank">
+        <img src="image/linkedin.png" alt="linkedin" width="40px">
+      </a>
+    </div>
+  </div>
+</footer>
+<!-- portfolio-back-bar --><a href="../../index.html#work" style="position:fixed;left:16px;bottom:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#182063;color:#F4F5F0;font:600 14px/1 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(24,32,99,.28);border:2px solid #FF4FA7" aria-label="Back to Nguyen Kiet Pham's portfolio">&larr; Nguyen Kiet Pham &middot; Portfolio</a>
+</body>
+</html>
