@@ -333,3 +333,10 @@ html[lang="vi"] .sub { font-style: normal; font-weight: 500; }
 /* Behance source tag + link under More projects */
 .more-src { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--rule); font-size: .78em; color: var(--soft); vertical-align: 1px; }
 .more-all { margin: calc(-1 * clamp(48px, 6vw, 96px)) 0 clamp(72px, 9vw, 128px); }
+
+/* Two-column project grid */
+.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 6vw, 88px) clamp(28px, 4vw, 56px); margin-bottom: clamp(72px, 9vw, 128px); align-items: start; }
+.project-grid .cartons { gap: 4px; padding: 8px; }
+@media (max-width: 760px) { .project-grid { grid-template-columns: 1fr; } }
+/* Research and writing section */
+.research { border-top: 2px solid var(--ink); padding-top: clamp(56px, 8vw, 112px); }

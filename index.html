@@ -22,6 +22,7 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#work" data-t="nav.work">Work</a>
+      <a href="#research" data-t="nav.research">Research</a>
       <a href="#about" data-t="nav.about">About</a>
       <a href="#contact" data-t="nav.contact">Contact</a>
       <a href="resume/Nguyen_Kiet_Pham_Resume.pdf" target="_blank" rel="noopener" data-t="nav.resume">Resume</a>
@@ -51,7 +52,7 @@
     <section class="work" id="work" aria-labelledby="workTitle">
       <div class="section-intro">
         <h2 id="workTitle" data-t="work.title">Selected work</h2>
-        <p data-t="work.intro">Nine projects in depth, then more projects and an archive of smaller pieces. Filter to see one kind of work.</p>
+        <p data-t="work.intro">Eight design projects in depth, then more projects and an archive of smaller pieces. Filter to see one kind of work.</p>
       </div>
 
       <div class="filters" role="group" aria-label="Filter work" data-t-aria="work.filterLabel">
@@ -63,8 +64,8 @@
       </div>
       <p class="filter-status" id="filterStatus" aria-live="polite"></p>
 
-      <!-- Featured: Moo'd -->
-      <article class="project project-feature" data-kind="graphic ux packaging">
+      <div class="project-grid">
+        <article class="project" data-kind="graphic ux packaging">
         <a class="feature-media" href="projects/moodstore/index.html" aria-label="Open the Moo'd store prototype">
           <img src="assets/img/projects/mood-hero.jpg" srcset="assets/img/projects/mood-hero-sm.jpg 800w, assets/img/projects/mood-hero.jpg 1400w" sizes="(max-width: 900px) 100vw, 58vw" width="1400" height="1094" alt="Two Moo'd whole milk cartons, half gallon and pint, on a kitchen counter" />
           <span class="cartons" aria-hidden="true">
@@ -88,27 +89,14 @@
           </dl>
           <ul class="links">
             <li><a href="projects/moodstore/index.html" data-t="mood.l1">Open the store</a></li>
-            <li><a href="projects/moodstore/index.html#mockups#mockups" data-t="mood.l2">See all six cartons</a></li>
-            <li><a href="projects/moodstore/index.html#brand#brand" data-t="mood.l3">Read the brand guide</a></li>
-            <li><a href="projects/moodstore/index.html#design-system#design-system" data-t="mood.l4">View the design system</a></li>
+            <li><a href="projects/moodstore/index.html#mockups" data-t="mood.l2">See all six cartons</a></li>
+            <li><a href="projects/moodstore/index.html#brand" data-t="mood.l3">Read the brand guide</a></li>
+            <li><a href="projects/moodstore/index.html#design-system" data-t="mood.l4">View the design system</a></li>
           </ul>
         </div>
       </article>
 
-      <article class="project project-wide" data-kind="ux research">
-        <a class="media" href="work/medical-school-accessibility/index.html" aria-label="Read the Medical School web accessibility case study">
-          <img src="assets/img/projects/a11y-audit.svg" width="1600" height="1000" alt="Summary card: 2,117 accessibility issues fixed across 1,667 Medical School webpages" loading="lazy" />
-        </a>
-        <div class="project-text">
-          <p class="kind" data-t="a11y.kind">Web accessibility and UX, 2026</p>
-          <h3 data-t="a11y.title">Medical School Web Accessibility</h3>
-          <p class="sub" data-t="a11y.sub">Auditing and fixing pages against WCAG 2.1 AA</p>
-          <p data-t="a11y.desc">As a Student Web Coordinator, I reviewed 1,667 Medical School webpages and fixed 2,117 accessibility issues: missing alt text, empty headings and links, heading order and tables. Tools: PopeTech, WAVE, Editoria11y and Drupal.</p>
-          <ul class="links"><li><a href="work/medical-school-accessibility/index.html" data-t="l.case">Read the case study</a></li></ul>
-        </div>
-      </article>
-
-      <article class="project project-wide" data-kind="graphic packaging research">
+        <article class="project" data-kind="graphic packaging research">
         <a class="media" href="work/choi/index.html" aria-label="Read the Chói album case study">
           <img src="work/choi/assets/record.webp" width="800" height="600" alt="Printed Chói album sleeve with a red sun, a great wave and cherry blossoms, a black record sliding out with a matching label" loading="lazy" />
         </a>
@@ -121,7 +109,6 @@
         </div>
       </article>
 
-      <div class="project-pair">
         <article class="project" data-kind="graphic packaging">
           <a class="media media-fit media-sour" href="work/sourprise/index.html" aria-label="Read the SOURPRISE! case study">
             <img src="assets/img/projects/sourprise-hero.jpg" width="711" height="909" alt="SOURPRISE! candy box unfolded: tic-tac-toe instructions on the panel and a printed game grid" loading="lazy" />
@@ -147,9 +134,8 @@
             <ul class="links"><li><a href="work/bath-fizzers/index.html" data-t="l.case">Read the case study</a></li></ul>
           </div>
         </article>
-      </div>
 
-      <article class="project project-wide" data-kind="graphic packaging">
+        <article class="project" data-kind="graphic packaging">
         <a class="media" href="work/buy-les/index.html" aria-label="Read the BUY LES croissant packaging case study">
           <img src="work/buy-les/assets/studio-mockup.png" width="1536" height="1024" alt="AI-assisted visualization of BUY LES café-shaped croissant boxes with red-and-white awnings" loading="lazy" />
         </a>
@@ -162,7 +148,6 @@
         </div>
       </article>
 
-      <div class="project-pair">
         <article class="project" data-kind="ux research">
           <a class="media media-oyo" href="work/oyo/index.html" aria-label="Read the Oyo! case study">
             <img src="assets/img/projects/oyo.jpg" width="362" height="254" alt="Oyo! welcome screen: 'Welcome to Oyo!' in a typewriter face on a mint background" loading="lazy" />
@@ -188,9 +173,8 @@
             <ul class="links"><li><a href="https://www.behance.net/gallery/197037297/Vietnamese-Food-Magazine-(Typography-Project)" target="_blank" rel="noopener" data-t="l.behance">View on Behance</a></li></ul>
           </div>
         </article>
-      </div>
 
-      <article class="project project-wide" data-kind="research graphic ux">
+        <article class="project" data-kind="research graphic ux">
         <a class="media" href="projects/floating-worlds/index.html" aria-label="Read Floating Worlds in Print">
           <img src="assets/img/projects/floating-worlds-sm.jpg" srcset="assets/img/projects/floating-worlds-sm.jpg 800w, assets/img/projects/floating-worlds.jpg 1600w" sizes="(max-width: 900px) 100vw, 60vw" width="1600" height="909" alt="Floating Worlds in Print website: the title set over large Japanese characters in deep blue" loading="lazy" />
         </a>
@@ -202,16 +186,7 @@
           <ul class="links"><li><a href="projects/floating-worlds/index.html" data-t="l.read">Read the project</a></li></ul>
         </div>
       </article>
-
-      <!-- Writing: published, bylined stories for the UMN Department of Psychology -->
-      <h2 class="sub-title writing-head" id="writing" data-t="writing.title">Writing</h2>
-      <p class="writing-intro"><span data-t="writing.intro">Four of the 23 stories I wrote and published as Communications Assistant for the UMN Department of Psychology.</span> <a href="work/writing/index.html" data-t="writing.all">See all 23 stories and the data</a></p>
-      <ul class="writing">
-        <li data-kind="research"><a href="https://cla.umn.edu/psychology/news-events/story/robert-krueger-and-colin-deyoung-explore-new-way-understand-mental-health" target="_blank" rel="noopener"><span class="more-title">Robert Krueger and Colin DeYoung explore a New Way to Understand Mental Health</span><span class="more-kind" data-t="w.1k">Mental health research, April 2026</span></a></li>
-        <li data-kind="research"><a href="https://cla.umn.edu/psychology/news-events/story/new-study-vanessa-lee-explores-how-attention-shapes-memory" target="_blank" rel="noopener"><span class="more-title">New Study from Vanessa Lee Explores How Attention Shapes Memory</span><span class="more-kind" data-t="w.2k">Attention and memory research, March 2026</span></a></li>
-        <li data-kind="research"><a href="https://cla.umn.edu/psychology/news-events/story/katerina-marcoulides-rethinking-large-datasets" target="_blank" rel="noopener"><span class="more-title">Katerina Marcoulides is rethinking large datasets</span><span class="more-kind" data-t="w.3k">Quantitative methods research, April 2026</span></a></li>
-        <li data-kind="research"><a href="https://cla.umn.edu/psychology/news-events/story/juan-del-toro-publishes-new-child-development-research-ethnic-racial-discrimination-and-adolescent" target="_blank" rel="noopener"><span class="more-title">Juan Del Toro Publishes New Child Development Research on Ethnic-Racial Discrimination and Adolescent Development</span><span class="more-kind" data-t="w.4k">Developmental psychology research, February 2026</span></a></li>
-      </ul>
+      </div>
 
       <!-- More projects -->
       <h2 class="sub-title" data-t="more.title">More projects</h2>
@@ -354,6 +329,36 @@
     </section>
 
     <!-- ABOUT -->
+    <section class="work research" id="research" aria-labelledby="researchTitle">
+      <div class="section-intro">
+        <h2 id="researchTitle" data-t="research.title">Research and writing</h2>
+        <p data-t="research.intro">Work outside graphic design for faculty, PhD committees and research teams: auditing university websites for accessibility, and explaining psychology research for the public.</p>
+      </div>
+      <article class="project project-wide">
+        <a class="media" href="work/medical-school-accessibility/index.html" aria-label="Read the Medical School web accessibility case study">
+          <img src="assets/img/projects/a11y-audit.svg" width="1600" height="1000" alt="Summary card: 2,117 accessibility issues fixed across 1,667 Medical School webpages" loading="lazy" />
+        </a>
+        <div class="project-text">
+          <p class="kind" data-t="a11y.kind">Web accessibility and UX, 2026</p>
+          <h3 data-t="a11y.title">Medical School Web Accessibility</h3>
+          <p class="sub" data-t="a11y.sub">Auditing and fixing pages against WCAG 2.1 AA</p>
+          <p data-t="a11y.desc">As a Student Web Coordinator, I reviewed 1,667 Medical School webpages and fixed 2,117 accessibility issues: missing alt text, empty headings and links, and linked documents. Tools: PopeTech, WAVE, Editoria11y and Drupal.</p>
+          <ul class="links"><li><a href="work/medical-school-accessibility/index.html" data-t="l.case">Read the case study</a></li></ul>
+        </div>
+      </article>
+
+      <!-- Writing: published, bylined stories for the UMN Department of Psychology -->
+      <h2 class="sub-title writing-head" id="writing" data-t="writing.title">Writing</h2>
+      <p class="writing-intro"><span data-t="writing.intro">Four of the 23 stories I wrote and published as Communications Assistant for the UMN Department of Psychology.</span> <a href="work/writing/index.html" data-t="writing.all">See all 23 stories and the data</a></p>
+      <ul class="writing">
+        <li><a href="https://cla.umn.edu/psychology/news-events/story/robert-krueger-and-colin-deyoung-explore-new-way-understand-mental-health" target="_blank" rel="noopener"><span class="more-title">Robert Krueger and Colin DeYoung explore a New Way to Understand Mental Health</span><span class="more-kind" data-t="w.1k">Mental health research, April 2026</span></a></li>
+        <li><a href="https://cla.umn.edu/psychology/news-events/story/new-study-vanessa-lee-explores-how-attention-shapes-memory" target="_blank" rel="noopener"><span class="more-title">New Study from Vanessa Lee Explores How Attention Shapes Memory</span><span class="more-kind" data-t="w.2k">Attention and memory research, March 2026</span></a></li>
+        <li><a href="https://cla.umn.edu/psychology/news-events/story/katerina-marcoulides-rethinking-large-datasets" target="_blank" rel="noopener"><span class="more-title">Katerina Marcoulides is rethinking large datasets</span><span class="more-kind" data-t="w.3k">Quantitative methods research, April 2026</span></a></li>
+        <li><a href="https://cla.umn.edu/psychology/news-events/story/juan-del-toro-publishes-new-child-development-research-ethnic-racial-discrimination-and-adolescent" target="_blank" rel="noopener"><span class="more-title">Juan Del Toro Publishes New Child Development Research on Ethnic-Racial Discrimination and Adolescent Development</span><span class="more-kind" data-t="w.4k">Developmental psychology research, February 2026</span></a></li>
+      </ul>
+
+    </section>
+
     <section class="about" id="about" aria-labelledby="aboutTitle">
       <figure class="portrait">
         <img src="assets/img/projects/kiet-sm.jpg" width="727" height="1280" alt="Kiet smiling and waving at the camera" loading="lazy" />
