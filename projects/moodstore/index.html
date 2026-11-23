@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Moo'd Store</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="35 0 127 66"><g>
+      <path fill="#f8d878" d="M66.31,14.35c.13-.34.35-1.21.49-1.94.2-1.05.34-1.33.69-1.38,1.09-.17,2.46,1.77,2.69,3.79.07.64.04,1.16-.06,1.15-.11-.01-.69-.15-1.29-.29-.6-.15-1.41-.28-1.8-.29-.86-.02-1.01-.24-.72-1.04h0Z"/>
+      <path fill="#fff8e8" d="M46.82,33c-.06,1.05-.21,2.05-.34,2.21-.13.16-.69.53-1.26.83-1.31.68-3.09.89-4.18.49-1.95-.71-3.1-2.18-2.24-2.87,1.86-1.48,4.74-2.55,6.92-2.57h1.21s-.11,1.91-.11,1.91h0Z"/>
+      <path fill="#fff8e8" d="M48.06,27.17l-.78-.67c-.85-.73-1.71-2.32-1.72-3.16,0-1.07.95-1.1,3.34-.1l1.05.44-.37.58c-.2.32-.63,1.1-.95,1.75l-.58,1.17h0Z"/>
+      <path fill="#fff8e8" d="M54.84,45.9c-.37,0-2.26-2.05-3.27-3.55-3.79-5.6-3.43-12.9.92-18.69,1.08-1.43,3.18-3.38,4.68-4.33l.58-.37.16.81c.41,2.15,2.04,4.35,3.6,4.85,1.38.44,2.97.14,4.35-.83l1.22-.86,1.36.72c1.18.62,1.51.7,2.44.59.59-.07,1.26-.2,1.47-.29.36-.15.38.08.36,3.72l-.03,3.88-1.91.64c-2.08.7-5.31,2.28-6.9,3.38-3.7,2.55-6.95,6.21-8.35,9.39-.23.51-.53.93-.68.93h0Z"/>
+      <path fill="#f3a5b6" d="M66.81,48.5c-.42.81-.64,1.01-1.29,1.12-2.05.36-4.87-.16-7.25-1.33-1.78-.88-1.82-.97-1.21-2.51,1.53-3.85,5.92-8.18,10.69-10.52,1.46-.72,4.29-1.76,4.77-1.76.23,0,.28.51.26,2.4l-.12,6.22c0,.87-.04.93-1.33,1.68-1.5.88-3.76,3.23-4.53,4.71h0Z"/>
+      <path fill="#fff8e8" d="M72.44,54.49c-3.26,1.25-5.18-.06-4.53-3.1.28-1.32,1.5-3.37,2.64-4.45,1.8-1.71,3.93-2.58,4.27-1.74.08.19-.09.83-.37,1.44-.78,1.7-.68,2.5.44,3.44.74.63.93.93.93,1.49,0,.58-.19.86-1.08,1.58-.6.48-1.63,1.08-2.3,1.34h0Z"/>
+      <path fill="#69c9ee" fill-rule="evenodd" d="M139.01,25.82c-.63-.29-.73-1.14-.33-2.74.43-1.7.4-1.79-1.09-3.06-3.88-3.32-3.11-8.68,1.3-9.09,2.58-.24,4.48,1.29,5.17,4.14.68,2.83-.6,7.68-2.59,9.85-1.01,1.1-1.58,1.31-2.46.9h0Z"/>
+      <path fill="#173c68" fill-rule="evenodd" d="M155.3,58.1c-1.26-.64-2.37-2.32-2.77-4.17l-.27-1.25-1.48,1.41c-1.67,1.59-2.96,1.93-4.89,1.31-3.49-1.12-5.28-7.55-4.51-16.18.66-7.35,2.52-11.69,5.41-12.64,1.1-.36,1.45-.36,2.44-.02.64.22,1.56.74,2.07,1.16l.91.76-.07-2.35c-.04-1.29-.14-3.48-.23-4.86-.08-1.38-.05-3.15.08-3.94.49-2.96,2.33-4.57,4.84-4.24,1.7.23,2.61.96,3.4,2.74.6,1.34.62,1.63.4,6.27-.13,2.67-.49,7.79-.79,11.38-.63,7.39-.56,9.86.48,16.58.44,2.82.58,4.59.43,5.38-.54,2.88-2.82,3.99-5.46,2.64h0ZM151.15,43.04c.84-1.64,1.01-5.24.31-6.53-.75-1.37-1.51-1.28-2.28.27-.81,1.61-.92,5.36-.2,6.58.69,1.16,1.47,1.05,2.18-.33h0Z"/>
+      <path fill="#173c68" fill-rule="evenodd" d="M73.9,64.53c-2.08-1.73-2.35-3.81-1.73-13.13.54-8.09.56-18.2.04-28.59-.44-8.72-.31-10.82.82-13.24,2.5-5.38,8.49-5.88,10.19-.85.16.48.84,3.27,1.51,6.2,1.22,5.37,2.21,8.54,2.65,8.54.3,0,1.7-3.48,3.45-8.6,3.99-11.61,5.55-13.81,9.57-13.45,1.95.18,3.09,1.12,3.89,3.2.83,2.18.75,5.07-.37,12.42-.52,3.44-1.15,8.19-1.39,10.58-.55,5.41-.56,14.11-.02,19.18.69,6.5.54,8.17-.92,10.12-1.29,1.72-2.77,2.48-4.83,2.5-1.45.01-2.02-.14-2.62-.71-2.16-2.03-2.39-3.9-1.55-12.45.8-8.22.93-10.54.64-11.74l-.25-1.05-.58,1.61c-.32.89-1.03,3.72-1.57,6.29-.54,2.57-1.25,5.21-1.56,5.85-1.11,2.26-3.2,2.86-4.64,1.34-1.06-1.13-1.51-2.37-2.59-7.13-.49-2.15-.98-3.83-1.09-3.74-.79.62-.47,9.4.58,15.86.88,5.41.6,8.13-1.04,10-1.51,1.72-5.08,2.27-6.6,1.01h0Z"/>
+      <path fill="#173c68" fill-rule="evenodd" d="M128.5,53.25c-3.34-1.77-5.34-6.93-5.34-13.77,0-3.87.32-6.15,1.25-9.04,1.23-3.83,2.85-6.28,4.77-7.21,3.94-1.91,7.4,1.18,9.29,8.3.94,3.56,1.06,10.37.25,13.65-1.04,4.16-3.06,7.28-5.34,8.23-1.33.55-3.67.48-4.88-.16h0ZM132.71,39.55c.73-1.6.72-4.39-.01-6-.68-1.49-1.3-1.46-2.08.09-.75,1.5-.79,5.23-.06,6.34.74,1.13,1.52.98,2.16-.43h0Z"/>
+      <path fill="#173c68" fill-rule="evenodd" d="M109.41,54.33c-6.14-3.04-7.43-15.93-2.53-25.35,1.45-2.8,2.95-4.46,4.84-5.38,3.94-1.93,7.56.74,9.6,7.06,1.53,4.72,1.46,11.14-.17,15.93-1.31,3.87-3.44,6.72-5.83,7.8-1.59.72-4.39.69-5.91-.06h0ZM114.75,42.01c1.74-1.74,2.08-7.66.52-9.22-1.06-1.06-2.28.14-3.04,3-.68,2.55-.42,5.23.61,6.37.63.69,1.11.65,1.91-.14Z"/>
+      <path fill="#173c68" fill-rule="evenodd" d="M72.33,14.83c-.05-.15-.25-.82-.44-1.49-.88-3.07-3.74-5.21-5.63-4.22-.77.41-1.11,1.09-1.63,3.24-.19.81-.52,1.61-.71,1.78-.2.17-1.05.49-1.89.7-3.56.91-6.98,2.88-9.57,5.51l-1.51,1.54-1.44-.58c-2.68-1.08-4.93-.91-5.6.4-.65,1.3-.04,4.15,1.18,5.47.29.32.19.38-1.05.63-2.19.44-4.64,1.78-6.22,3.39-2.21,2.25-2.27,3.67-.23,5.67,1.91,1.88,4.94,2.45,7.63,1.44.69-.26,1.41-.52,1.6-.58.27-.08.42.13.62.92,1.85,7.09,9.47,13.15,16.45,13.09l1.81-.02.1,1.4c.12,1.65.81,2.72,2.19,3.4.94.47,3.07.56,4.32.19l.71-.21M66.31,14.35c.13-.34.35-1.21.49-1.94.2-1.05.34-1.33.69-1.38,1.09-.17,2.46,1.77,2.69,3.79.07.64.04,1.16-.06,1.15-.11-.01-.69-.15-1.29-.29-.6-.15-1.41-.28-1.8-.29-.86-.02-1.01-.24-.72-1.04h0ZM46.82,33c-.06,1.05-.21,2.05-.34,2.21-.13.16-.69.53-1.26.83-1.31.68-3.09.89-4.18.49-1.95-.71-3.1-2.18-2.24-2.87,1.86-1.48,4.74-2.55,6.92-2.57h1.21s-.11,1.91-.11,1.91h0ZM48.06,27.17l-.78-.67c-.85-.73-1.71-2.32-1.72-3.16,0-1.07.95-1.1,3.34-.1l1.05.44-.37.58c-.2.32-.63,1.1-.95,1.75l-.58,1.17h0ZM54.84,45.9c-.37,0-2.26-2.05-3.27-3.55-3.79-5.6-3.43-12.9.92-18.69,1.08-1.43,3.18-3.38,4.68-4.33l.58-.37.16.81c.41,2.15,2.04,4.35,3.6,4.85,1.38.44,2.97.14,4.35-.83l1.22-.86,1.36.72c1.18.62,1.51.7,2.44.59.59-.07,1.26-.2,1.47-.29.36-.15.38.08.36,3.72l-.03,3.88-1.91.64c-2.08.7-5.31,2.28-6.9,3.38-3.7,2.55-6.95,6.21-8.35,9.39-.23.51-.53.93-.68.93h0ZM66.81,48.5c-.42.81-.64,1.01-1.29,1.12-2.05.36-4.87-.16-7.25-1.33-1.78-.88-1.82-.97-1.21-2.51,1.53-3.85,5.92-8.18,10.69-10.52,1.46-.72,4.29-1.76,4.77-1.76.23,0,.28.51.26,2.4l-.12,6.22c0,.87-.04.93-1.33,1.68-1.5.88-3.76,3.23-4.53,4.71h0ZM72.44,54.49c-3.26,1.25-5.18-.06-4.53-3.1.28-1.32,1.5-3.37,2.64-4.45,1.8-1.71,3.93-2.58,4.27-1.74.08.19-.09.83-.37,1.44-.78,1.7-.68,2.5.44,3.44.74.63.93.93.93,1.49,0,.58-.19.86-1.08,1.58-.6.48-1.63,1.08-2.3,1.34h0Z"/>
+      <circle fill="#173c68" cx="56.13" cy="35.87" r="2.23"/><circle fill="#173c68" cx="67.25" cy="28.39" r="2.23"/><circle fill="#173c68" cx="61.65" cy="44.99" r="1.49"/><circle fill="#173c68" cx="71.5" cy="37.52" r="1.49"/>
+      <path fill="#fff8e8" fill-rule="evenodd" d="M72.27,54.53c-3.26,1.25-5.18-.06-4.53-3.1.28-1.32,1.5-3.37,2.64-4.45,1.8-1.71,3.93-2.58,4.27-1.74.08.19-.09.83-.37,1.44-.78,1.7-.68,2.5.44,3.44.74.63.93.93.93,1.49,0,.58-.19.86-1.08,1.58-.6.48-1.63,1.08-2.3,1.34h0Z"/>
+    </g></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.7L20 8H6.5"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-9 5-15 16-16-1 11-7 16-16 16z"/><path d="M4 20c4-5 7-8 11-11"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-4 9 4v9l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v9"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3s6 7 6 11.5a6 6 0 0 1-12 0C6 10 12 3 12 3z"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></symbol>
+    <symbol id="i-cow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8c-2 0-3.5-1.5-3.5-3.5M17 8c2 0 3.5-1.5 3.5-3.5"/><path d="M7 8h10l1.5 6a6.5 6.5 0 0 1-13 0z"/><circle cx="10" cy="12" r="1"/><circle cx="14" cy="12" r="1"/><path d="M9.5 17.5h5"/></symbol>
+    <symbol id="i-recycle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l3-5h4l3 5M17 14l-2 5H9M7 14l-3 3h4"/><path d="M9 8l-2 2 3 1M15 8l2 2-3 1"/></symbol>
+  </defs>
+</svg>
+
+<div class="annc">Free standard shipping on orders over $30 · Organic · Ultra-pasteurized · Half gallon (1.89 L)</div>
+<header class="hdr">
+  <div class="wrap">
+    <a href="#home" aria-label="Moo'd home"><svg class="logo" viewBox="0 0 127 66"><use href="#logo"/></svg></a>
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#mockups">Mockups</a><a href="#brand">Brand</a><a href="#contact">Contact</a><a href="#design-system">Design System</a>
+    </nav>
+    <button class="icon-btn mob" id="mobbtn" aria-label="Menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+    <button class="icon-btn cart-btn" id="cartbtn" aria-label="Open cart"><svg><use href="#i-cart"/></svg><span class="badge" id="badge" hidden>0</span></button>
+  </div>
+</header>
+<div class="mobnav" id="mobnav"><div class="wrap"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#mockups">Mockups</a><a href="#brand">Brand</a><a href="#contact">Contact</a><a href="#design-system">Design System</a></div></div>
+
+<main>
+<!-- HOME -->
+<div class="screen" id="s-home">
+  <section class="hero">
+    <div class="wrap">
+      <div class="stack">
+        <div class="slides" id="slides">
+          <div class="slide on"><span class="eyebrow">Six moods · one cow</span><h1>Pick your mood.<br>A little sip of joy!</h1><p class="lede">Organic half-gallon milk in six cartons, from Whole to Chocolate. Pick one, build a two-pack, or mix a case of six.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary btn-lg" href="#shop">Shop milk <svg><use href="#i-arrow"/></svg></a><a class="btn btn-ghost btn-lg" href="#mockups">See the cartons</a></div></div>
+          <div class="slide"><span class="eyebrow">Organic · Vitamin D · Ultra-pasteurized</span><h1>Fresh from the meadow,<br>good for weeks.</h1><p class="lede">Ultra-pasteurized means an unopened carton keeps in the fridge far longer than ordinary milk, with the same calcium, protein and vitamin D.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary btn-lg" href="#product-whole">Whole Milk <svg><use href="#i-arrow"/></svg></a><a class="btn btn-ghost btn-lg" href="#brand">Our story</a></div></div>
+          <div class="slide"><span class="eyebrow">New this season</span><h1>Chocolate and Banana<br>join the herd.</h1><p class="lede">Two new flavoured moods, real cocoa and real banana, in the same half-gallon carton. Try both in the mixed case.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary btn-lg" href="#product-choco">Chocolate Milk <svg><use href="#i-arrow"/></svg></a><a class="btn btn-ghost btn-lg" href="#product-banana">Banana Milk</a></div></div>
+        </div>
+        <div class="dots" role="tablist" aria-label="Hero slides"><button class="dot" role="tab" aria-selected="true" aria-label="Slide 1"></button><button class="dot" role="tab" aria-selected="false" aria-label="Slide 2"></button><button class="dot" role="tab" aria-selected="false" aria-label="Slide 3"></button></div>
+      </div>
+      <img class="render" src="img/whole-render.jpg" alt="Moo'd Whole Milk cartons on a kitchen counter" width="1400" height="1094">
+    </div>
+    <svg class="hero-sky" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 C 240 20 420 120 720 60 S 1200 10 1440 50 V120 H0Z" fill="#9fcfee"/><path d="M0 95 C 300 60 520 130 820 85 S 1250 50 1440 80 V120 H0Z" fill="#69c9ee"/></svg>
+  </section>
+  <div class="wrap badges">
+    <span><svg><use href="#i-leaf"/></svg>Organic milk</span><span><svg><use href="#i-sun"/></svg>Vitamin D</span><span><svg><use href="#i-snow"/></svg>Ultra-pasteurized</span><span><svg><use href="#i-drop"/></svg>Half gallon · 1.89 L</span><span><svg><use href="#i-recycle"/></svg>Recyclable carton</span>
+  </div>
+  <section class="wrap" style="padding-top:0">
+    <div class="sec-head"><div class="stack" style="gap:6px"><span class="eyebrow">Shop</span><h2>Six moods, one cow</h2></div><a class="btn btn-ghost" href="#shop">See all products</a></div>
+    <div class="pgrid" id="home-grid"></div>
+  </section>
+  <section class="wrap" style="padding-top:0">
+    <div class="new">
+      <div class="stack" style="gap:10px;justify-items:start"><span class="tag">New! New! New!</span><h2 style="color:var(--milk)">Chocolate &amp; Banana</h2><p style="opacity:.85;max-width:48ch">Real cocoa and real banana purée in organic milk. Same carton, same cow, two new moods for breakfast or after practice.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-sun" data-add="choco" data-pack="1">Add Chocolate · $4.99</button><button class="btn btn-milk" data-add="banana" data-pack="1">Add Banana · $4.99</button></div></div>
+      <div class="grid g2" style="gap:12px"><img class="render" src="img/choco-render.jpg" alt="Chocolate Milk cartons" loading="lazy" width="1400" height="1094"><img class="render" src="img/banana-render.jpg" alt="Banana Milk cartons" loading="lazy" width="1400" height="1094"></div>
+    </div>
+  </section>
+  <section class="wrap" style="padding-top:0">
+    <div class="banner-strip"><img src="img/banner.png" alt="Moo'd banner: the cow logo, the tagline A little sip of joy, cows grazing on green hills under a rising sun" width="1800" height="461"></div>
+  </section>
+  <section class="band" style="background:var(--sun)">
+    <div class="wrap stack" style="gap:var(--sp-5)">
+      <div class="stack" style="gap:6px"><span class="eyebrow">Care to make it good</span><h2>Three things we promise</h2></div>
+      <div class="care">
+        <div class="card"><span class="n">01</span><h3>Organic from the farm</h3><p class="muted">Milk from organic-certified herds, no added hormones, and grass in the diet whenever the season allows. The cow on the carton is the one who made it.</p></div>
+        <div class="card"><span class="n">02</span><h3>Ultra-pasteurized, not ultra-processed</h3><p class="muted">A few seconds at high heat, then straight into the carton. Unopened, it keeps in the fridge for weeks. Once opened, finish it within 7 days.</p></div>
+        <div class="card"><span class="n">03</span><h3>A carton you can recycle</h3><p class="muted">Paperboard gable top with a plant-based lining. Rinse, flatten, and put it with your paper. We are working toward a fully fibre-based cap by 2027.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SHOP -->
+<div class="screen" id="s-shop">
+  <section class="wrap">
+    <div class="sec-head">
+      <div class="stack" style="gap:6px"><span class="eyebrow">Shop</span><h2>All Moo'd milk</h2><p class="muted">Prices per half-gallon carton (1.89 L). Pick a pack size on each product.</p></div>
+      <div class="chips" id="filters">
+        <button class="chip" aria-pressed="true" data-f="all">All</button><button class="chip" aria-pressed="false" data-f="plain">Plain</button><button class="chip" aria-pressed="false" data-f="flavoured">Flavoured</button><button class="chip" aria-pressed="false" data-f="reduced">Reduced fat</button>
+      </div>
+    </div>
+    <div class="pgrid" id="shop-grid"></div>
+    <div class="bundle">
+      <div class="stack" style="gap:8px;justify-items:start"><span class="tag">Best value</span><h3>Mixed case of six</h3><p style="opacity:.85">One carton of every mood. Saves $0.45 against buying them one by one, and ships free.</p><div class="panels" style="grid-template-columns:repeat(6,56px);gap:8px" id="bundle-shelf"></div></div>
+      <div class="stack" style="gap:8px;justify-items:start"><div class="price-big" style="color:var(--milk)">$27.99 <small style="color:var(--sky-2)">· $4.67 per carton</small></div><button class="btn btn-sun btn-lg" id="add-bundle">Add mixed case <svg><use href="#i-cart"/></svg></button></div>
+    </div>
+  </section>
+</div>
+
+<!-- PRODUCT -->
+<div class="screen" id="s-product"><section class="wrap" id="pdp-root"></section></div>
+
+<!-- MOCKUPS -->
+<div class="screen" id="s-mockups">
+  <section class="wrap stack" style="gap:var(--sp-6)">
+    <div class="stack" style="gap:6px"><span class="eyebrow">Mockups</span><h2>Every carton, in the round</h2><p class="lede">Half-gallon and pint gable-top cartons rendered with the real panel artwork (Free Milk Packaging Mockup), with the flat front, nutrition-side and back panels beside each one.</p></div>
+    <div class="pgrid" id="lineup" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))"></div>
+    <div class="stack" style="gap:var(--sp-5)" id="mock-list"></div>
+    <div class="mock" id="mock-orig">
+      <div class="scene" style="background:rgba(70,188,92,.18)"><img src="img/orig-front.png" alt="Original whole milk carton, front panel" style="max-height:420px;width:auto;border-radius:8px;box-shadow:var(--shadow)" width="600" height="1088"></div>
+      <div class="stack"><span class="tag tag-grass">Original edition</span><h3>Whole Milk, navy edition</h3><p class="muted">The first pass at the whole-milk carton, with navy lettering on the grass band and a navy nutrition panel. Kept here as the brand's starting point; the shipping version uses white lettering so all six cartons read as one family.</p><div class="panels"><figure><img src="img/orig-front.png" alt="Original whole milk front panel"><figcaption>Front</figcaption></figure><figure><img src="img/orig-side.png" alt="Original whole milk nutrition panel"><figcaption>Side</figcaption></figure><figure><img src="img/orig-back.png" alt="Original whole milk back panel"><figcaption>Back</figcaption></figure></div></div>
+    </div>
+    <div class="storefront">
+      <div class="stack" style="gap:4px;color:var(--milk)"><span class="eyebrow" style="color:var(--sky-2)">Banner</span><h3 style="color:var(--milk)">Storefront sign</h3></div>
+      <div class="sign"><img src="img/banner.png" alt="Moo'd storefront banner" width="1800" height="461"></div>
+      <div class="awning"></div>
+    </div>
+    <div class="card stack">
+      <div class="stack" style="gap:4px"><span class="eyebrow">Stationery</span><h3>Business card</h3><p class="muted">3.5 × 2 in. Front carries the mascot and tagline over the meadow; the back carries contact details and the sun mark.</p></div>
+      <div class="bizcards"><img class="bizcard" src="img/card-front.png" alt="Business card front with Moo'd logo and tagline" width="1008" height="576"><img class="bizcard" src="img/card-back.png" alt="Business card back with name, phone, email and website" width="1008" height="576"></div>
+    </div>
+  </section>
+</div>
+
+<!-- BRAND -->
+<div class="screen" id="s-brand">
+  <section class="brand-hero">
+    <div class="wrap lockup">
+      <div class="stack"><span class="eyebrow" style="color:#3a5577">Brand</span><h1 style="font-size:clamp(2rem,5vw,3.4rem)">Small cow, big mood.</h1><p class="lede" style="color:#3a5577">Moo'd is organic milk with a personality. A cow who peeks in from the side, a tagline that reads like a smile, and six cartons that line up like a mood ring.</p></div>
+      <svg class="logo-big" viewBox="0 0 127 66" role="img" aria-label="Moo'd logo"><use href="#logo"/></svg>
+    </div>
+  </section>
+  <section class="wrap stack" style="gap:var(--sp-7)">
+    <div class="stack">
+      <div class="stack" style="gap:4px"><span class="eyebrow">Palette</span><h2>Colours</h2></div>
+      <div class="swatches">
+        <div class="sw" style="background:#173c68;color:#fff8e8">Navy<small>#173C68 · logo, text</small></div>
+        <div class="sw" style="background:#f3eade;color:#173c68">Cream<small>#F3EADE · carton ground</small></div>
+        <div class="sw" style="background:#fff8e8;color:#173c68">Milk<small>#FFF8E8 · surfaces</small></div>
+        <div class="sw" style="background:#69c9ee;color:#173c68">Sky<small>#69C9EE · the drop in the logo</small></div>
+        <div class="sw" style="background:#f8d878;color:#173c68">Sun<small>#F8D878 · banner sun, CTA</small></div>
+        <div class="sw" style="background:#f3a5b6;color:#173c68">Nose pink<small>#F3A5B6 · mascot</small></div>
+        <div class="sw" style="background:#46bc5c;color:#fff8e8">Whole<small>#46BC5C</small></div>
+        <div class="sw" style="background:#006e5b;color:#fff8e8">2% Milk<small>#006E5B</small></div>
+        <div class="sw" style="background:#0b3530;color:#fff8e8">1% Milk<small>#0B3530</small></div>
+        <div class="sw" style="background:#ff7bac;color:#fff8e8">Strawberry<small>#FF7BAC on #FFA9A9</small></div>
+        <div class="sw" style="background:#f3cd06;color:#173c68">Banana<small>#F3CD06 on #FCEE88</small></div>
+        <div class="sw" style="background:#412d1b;color:#fff8e8">Chocolate<small>#412D1B on #89674A</small></div>
+      </div>
+      <p class="spec">The plain milks share the cream ground and step through greens as fat drops: bright grass for Whole, deep teal for 2%, near-black pine for 1%. Flavoured milks flood the whole carton with their colour.</p>
+    </div>
+    <div class="stack">
+      <div class="stack" style="gap:4px"><span class="eyebrow">Carton anatomy</span><h2>How a carton is built</h2></div>
+      <div class="anatomy">
+        <figure><img src="img/two-front.png" alt="2% Milk front panel" width="600" height="1088"><figcaption><b>Front</b>Logo and tagline up top, one small cow in the sky, the name on a grass band, a big cow below, product facts and the half-gallon mark at the foot. Stripes finish the base.</figcaption></figure>
+        <figure><img src="img/two-side.png" alt="2% Milk nutrition panel" width="600" height="1088"><figcaption><b>Side</b>Nutrition panel in the flavour colour, per 100 mL and per 240 mL serving, ingredients, allergen and storage, barcode. The cows keep grazing around it.</figcaption></figure>
+        <figure><img src="img/two-back.png" alt="2% Milk back panel" width="600" height="1088"><figcaption><b>Back</b>Just the meadow and the herd. No text, so the carton reads as a scene from across the kitchen.</figcaption></figure>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="stack" style="gap:4px"><span class="eyebrow">Typography</span><h2>Two voices</h2></div>
+      <div class="card" style="display:grid">
+        <div class="typerow" style="border:0"><span class="l">Logo &amp; display</span><span style="font-family:var(--display);font-weight:600;font-size:2.2rem;line-height:1.05">A little sip of joy!</span></div>
+        <div class="typerow"><span class="l">Carton name</span><span style="font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:.02em;text-transform:uppercase">Strawberry Milk</span></div>
+        <div class="typerow"><span class="l">Body</span><span>Organic milk, vitamin D, ultra-pasteurized. Keep refrigerated. Once opened, use within 7 days.</span></div>
+      </div>
+      <p class="spec">Logo and tagline: Sweetie Bubble Gum (the web shows Fredoka). Carton names: a condensed bold sans in caps. Body: Acumin (the web shows Nunito). Rounded display, plain body, always navy or white.</p>
+    </div>
+    <div class="stack">
+      <div class="stack" style="gap:4px"><span class="eyebrow">Voice</span><h2>How Moo'd talks</h2></div>
+      <div class="grid g3">
+        <div class="card stack" style="gap:6px"><h3>Short and sunny</h3><p class="muted">"Pick your mood." Not "Discover our range of premium dairy products."</p></div>
+        <div class="card stack" style="gap:6px"><h3>Honest about the milk</h3><p class="muted">We say organic, ultra-pasteurized and half gallon because the carton says them. No claims the label cannot back.</p></div>
+        <div class="card stack" style="gap:6px"><h3>The cow is a character</h3><p class="muted">She peeks, she grazes, she never talks in first person. One cow per logo, a herd on the carton.</p></div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="stack" style="gap:4px"><span class="eyebrow">Research</span><h2>What we learned from Vinamilk</h2><p class="lede">Vinamilk's storefront was the reference for a milk brand that sells online like a real company. These are the patterns from vinamilk.com.vn that this site adopts, and how.</p></div>
+      <div class="card ref">
+        <div class="row" style="border:0"><div><b>Promo bar above the header</b>Free-shipping threshold stated before anything else.</div><div>The navy bar at the top: free standard shipping over $30, with the carton facts.</div></div>
+        <div class="row"><div><b>Rotating hero of short slogans</b>Three slides, each a headline and a subline, under a sticky nav.</div><div>Three slides: the mood pitch, the ultra-pasteurized promise, the new flavours. Dots to switch, auto-advance every 6 s.</div></div>
+        <div class="row"><div><b>Trust badges under the hero</b>A row of award and certification marks.</div><div>A row of carton facts as badges: organic, vitamin D, ultra-pasteurized, half gallon, recyclable.</div></div>
+        <div class="row"><div><b>Product cards that swap image on hover</b>Front packshot, then a second angle.</div><div>The render zooms on hover; the product page adds the flat front, side and back panels.</div></div>
+        <div class="row"><div><b>Variants as pack size</b>Volume and boxes-per-case chosen on the product page.</div><div>Single, two-pack and case of six on every product, price updating live.</div></div>
+        <div class="row"><div><b>A "New!" feature block and a numbered "care" section</b>Sustainability targets presented as 01, 02, 03.</div><div>The Chocolate &amp; Banana block, and three numbered promises on the yellow band.</div></div>
+        <div class="row"><div><b>Deep footer</b>Shop links, help links, policies, company details.</div><div>Shop, brand, help and policy columns with the company line.</div></div>
+      </div>
+      <p class="spec">Mockup conventions from the Behance "milk mockup" projects: a three-quarter angle as the hero view, a backdrop tinted in the flavour colour, soft contact shadows, a lineup of the full range, and flat panels shown beside the render. All six cartons here follow that.</p>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="screen" id="s-contact">
+  <section class="wrap">
+    <div class="stack" style="gap:6px;margin-bottom:var(--sp-6)"><span class="eyebrow">Contact</span><h2>Say moo</h2><p class="muted">Orders, stockists, press, or just a milk question. We answer within one working day.</p></div>
+    <div class="contact">
+      <form class="card stack" id="contact-form" novalidate>
+        <div class="f2">
+          <div class="field"><label for="c-name">Your name</label><input id="c-name" name="name" autocomplete="name" placeholder="Your name"><span class="error">Please tell us your name.</span></div>
+          <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><span class="error">Enter a valid email so we can reply.</span></div>
+        </div>
+        <div class="field"><label for="c-topic">Topic</label><select id="c-topic" name="topic"><option>Order question</option><option>Stock Moo'd in my shop</option><option>Press</option><option>Something else</option></select></div>
+        <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="Tell us what's on your mind."></textarea><span class="error">A message helps us help you.</span><span class="hint">We never share your details.</span></div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn btn-primary" type="submit">Send message <svg><use href="#i-arrow"/></svg></button><span class="muted" style="font-size:.85rem">Prototype: nothing is actually sent.</span></div>
+      </form>
+      <div class="info">
+        <div class="success" id="contact-ok" hidden><svg style="width:48px;height:48px"><use href="#i-check"/></svg><h3>Message received</h3><p class="muted" id="contact-ok-text">Thanks! We'll reply to you soon.</p><button class="btn btn-ghost btn-sm" id="contact-again">Send another</button></div>
+        <div class="info-row"><svg><use href="#i-mail"/></svg><div><b>Email</b><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span>pham0687@umn.edu</span><button class="copy" data-copy="pham0687@umn.edu">Copy</button></div></div></div>
+        <div class="info-row"><svg><use href="#i-phone"/></svg><div><b>Phone</b><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span>603-546-8449</span><button class="copy" data-copy="603-546-8449">Copy</button></div><div class="muted" style="font-size:.85rem">Mon to Fri, 9 to 5 Central</div></div></div>
+        <div class="info-row"><svg><use href="#i-pin"/></svg><div><b>Studio</b><div>Moo'd Dairy Co. · Minneapolis, MN</div><div class="muted" style="font-size:.85rem">www.moodmilk.com · Visits by appointment.</div></div></div>
+        <div class="card stack" style="gap:8px"><h4>Stock Moo'd in your shop</h4><p class="muted" style="font-size:.9rem">Wholesale cases of six from $22.50. Pick "Stock Moo'd in my shop" in the form and we'll send the sheet.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CHECKOUT -->
+<div class="screen" id="s-checkout">
+  <section class="wrap">
+    <div class="stack" style="gap:6px;margin-bottom:var(--sp-4)"><span class="eyebrow">Checkout</span><h2>Almost there</h2></div>
+    <div class="steps"><span class="step on" data-step="1">1 · Delivery</span><span class="step" data-step="2">2 · Payment</span><span class="step" data-step="3">3 · Review</span></div>
+    <div class="co">
+      <form class="card" id="co-form" novalidate>
+        <div class="pane on" data-pane="1">
+          <div class="f2">
+            <div class="field"><label for="d-name">Full name</label><input id="d-name" autocomplete="name" value="Kiet Pham"><span class="error">Name is required.</span></div>
+            <div class="field"><label for="d-email">Email</label><input id="d-email" type="email" autocomplete="email" value="pham0687@umn.edu"><span class="error">Enter a valid email.</span></div>
+          </div>
+          <div class="field"><label for="d-addr">Street address</label><input id="d-addr" autocomplete="street-address" value="89 Church St SE"><span class="error">Where should we deliver?</span></div>
+          <div class="f2">
+            <div class="field"><label for="d-city">City</label><input id="d-city" value="Minneapolis"><span class="error">City is required.</span></div>
+            <div class="field"><label for="d-zip">ZIP</label><input id="d-zip" inputmode="numeric" value="55455"><span class="error">5-digit ZIP.</span></div>
+          </div>
+          <div class="stack" style="gap:8px"><label class="eyebrow">Delivery (chilled)</label>
+            <label class="radio on"><input type="radio" name="ship" value="0" checked> <span><b>Standard cold-pack</b> · 2 to 3 days · <b>$4.95, free over $30</b></span></label>
+            <label class="radio"><input type="radio" name="ship" value="9"> <span><b>Next-day</b> · order by noon · <b>+$9.00</b></span></label>
+          </div>
+          <div style="display:flex;gap:10px;justify-content:flex-end"><button class="btn btn-primary" type="button" data-next="2">Continue to payment <svg><use href="#i-arrow"/></svg></button></div>
+        </div>
+        <div class="pane" data-pane="2">
+          <div class="field"><label for="p-card">Card number</label><input id="p-card" inputmode="numeric" placeholder="4242 4242 4242 4242" value="4242 4242 4242 4242"><span class="error">Enter 16 digits.</span><span class="hint">Prototype: use any 16 digits. Nothing is charged.</span></div>
+          <div class="f2">
+            <div class="field"><label for="p-exp">Expiry</label><input id="p-exp" placeholder="MM/YY" value="08/28"><span class="error">MM/YY</span></div>
+            <div class="field"><label for="p-cvc">CVC</label><input id="p-cvc" inputmode="numeric" placeholder="123" value="123"><span class="error">3 digits.</span></div>
+          </div>
+          <div style="display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap"><button class="btn btn-ghost" type="button" data-next="1">Back</button><button class="btn btn-primary" type="button" data-next="3">Review order <svg><use href="#i-arrow"/></svg></button></div>
+        </div>
+        <div class="pane" data-pane="3">
+          <div class="stack" style="gap:8px"><h3>Deliver to</h3><p id="rv-addr" class="muted"></p></div>
+          <div class="stack" style="gap:8px"><h3>Pay with</h3><p id="rv-card" class="muted"></p></div>
+          <div style="display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap"><button class="btn btn-ghost" type="button" data-next="2">Back</button><button class="btn btn-sun btn-lg" type="submit" id="place">Place order · <span id="place-total">$0.00</span></button></div>
+        </div>
+      </form>
+      <aside class="card summary stack">
+        <h3>Your order</h3>
+        <div class="stack" id="co-items" style="gap:8px"></div>
+        <div class="totals" id="co-totals"></div>
+        <a href="#shop" class="muted" style="font-size:.85rem">Add more milk</a>
+      </aside>
+    </div>
+  </section>
+</div>
+
+<!-- CONFIRMATION -->
+<div class="screen" id="s-thanks">
+  <section class="wrap confirm">
+    <div class="big"><svg><use href="#i-check"/></svg></div>
+    <h1 style="font-size:clamp(2rem,5vw,3rem)">Order placed. Moo!</h1>
+    <p class="lede" style="text-align:center" id="thanks-text">Your milk is on its way.</p>
+    <div class="card" style="min-width:min(100%,420px);text-align:left" id="thanks-items"></div>
+    <a class="btn btn-primary" href="#shop">Back to shop</a>
+  </section>
+</div>
+
+<!-- DESIGN SYSTEM -->
+<div class="screen" id="s-ds">
+  <section class="wrap ds">
+    <div class="stack" style="gap:6px"><span class="eyebrow">Design system · v2</span><h2>Moo'd UI kit</h2><p class="lede">Every control on this site is one of the components below, styled from one set of tokens. Change a token here and the whole store follows.</p></div>
+
+    <div class="ds-sec"><h3>Colour tokens</h3>
+      <div class="swatches">
+        <div class="sw" style="background:#173c68;color:#fff8e8">--navy<small>#173C68 · text, primary</small></div>
+        <div class="sw" style="background:#f3eade;color:#173c68">--cream<small>#F3EADE · page</small></div>
+        <div class="sw" style="background:#fff8e8;color:#173c68">--milk<small>#FFF8E8 · surfaces</small></div>
+        <div class="sw" style="background:#69c9ee;color:#173c68">--sky<small>#69C9EE · focus ring, cap</small></div>
+        <div class="sw" style="background:#f8d878;color:#173c68">--sun<small>#F8D878 · CTA, band</small></div>
+        <div class="sw" style="background:#f3a5b6;color:#173c68">--pink<small>#F3A5B6 · tags</small></div>
+        <div class="sw" style="background:#46bc5c;color:#fff8e8">--grass<small>#46BC5C · tags, done steps</small></div>
+        <div class="sw" style="background:#2e8b4e;color:#fff8e8">--ok<small>success</small></div>
+        <div class="sw" style="background:#c9474d;color:#fff8e8">--err<small>validation</small></div>
+        <div class="sw" style="background:#10243f;color:#fff8e8">dark --bg<small>#10243F · dark page</small></div>
+      </div>
+      <p class="spec">Navy on cream is the only text pairing. Flavour colours (see <a href="#brand">Brand</a>) tint carton backdrops and tags, never body text. Dark mode swaps cream for deep navy and keeps the flavour colours.</p>
+    </div>
+
+    <div class="ds-sec"><h3>Type scale</h3>
+      <div class="card" style="display:grid">
+        <div class="typerow" style="border:0"><span class="l">Display XL</span><span style="font-family:var(--display);font-weight:600;font-size:2.6rem;line-height:1.05">Pick your mood.</span></div>
+        <div class="typerow"><span class="l">Heading</span><span style="font-family:var(--display);font-weight:600;font-size:1.8rem">Six moods, one cow</span></div>
+        <div class="typerow"><span class="l">Subheading</span><span style="font-family:var(--display);font-weight:600;font-size:1.25rem">Nutrition per 240 mL</span></div>
+        <div class="typerow"><span class="l">Body</span><span>Organic half-gallon milk in six cartons, from Whole to Chocolate.</span></div>
+        <div class="typerow"><span class="l">Label</span><span class="eyebrow">Organic · Vitamin D · Ultra-pasteurized</span></div>
+        <div class="typerow"><span class="l">Price</span><span style="font-family:var(--display);font-weight:600;font-size:1.3rem;font-variant-numeric:tabular-nums">$4.49 <span class="muted" style="font-size:.85rem;font-family:var(--body)">· half gallon</span></span></div>
+      </div>
+      <p class="spec">Display: Fredoka 600 (web stand-in for Sweetie Bubble Gum). Body: Nunito 400/700 (stand-in for Acumin). Prices and quantities use tabular figures.</p>
+    </div>
+
+    <div class="ds-sec"><h3>Spacing &amp; radius</h3>
+      <div class="demo"><div class="spacing">
+        <div style="width:4px;height:4px"></div><div style="width:8px;height:8px"></div><div style="width:12px;height:12px"></div><div style="width:16px;height:16px"></div><div style="width:24px;height:24px"></div><div style="width:32px;height:32px"></div><div style="width:48px;height:48px">48</div><div style="width:72px;height:72px">72</div>
+      </div></div>
+      <p class="spec">Scale: 4, 8, 12, 16, 24, 32, 48, 72. Radii: 10 (small), 18 (fields, lines), 26 (cards), pill (buttons, chips, tags).</p>
+    </div>
+
+    <div class="ds-sec"><h3>Buttons</h3>
+      <div class="demo">
+        <button class="btn btn-primary">Primary</button><button class="btn btn-sun">Add to cart <svg><use href="#i-cart"/></svg></button><button class="btn btn-ghost">Ghost</button><button class="btn btn-milk">On navy</button><button class="btn btn-primary btn-sm">Small</button><button class="btn btn-primary btn-lg">Large</button><button class="btn btn-primary" disabled>Disabled</button>
+      </div>
+      <p class="spec"><code>.btn</code> + <code>.btn-primary</code> (navy, default action), <code>.btn-sun</code> (yellow, the one commerce action on a screen), <code>.btn-ghost</code> (secondary), <code>.btn-milk</code> (on navy grounds). Sizes <code>.btn-sm</code> / <code>.btn-lg</code>. Pill shape, Fredoka 500, 2px border reserved so sizes match across variants. Focus: 3px sky ring.</p>
+    </div>
+
+    <div class="ds-sec"><h3>Icon buttons, chips, tags, badge, dots</h3>
+      <div class="demo">
+        <button class="icon-btn" aria-label="Cart"><svg><use href="#i-cart"/></svg><span class="badge">3</span></button>
+        <button class="icon-btn" aria-label="Menu"><svg><use href="#i-menu"/></svg></button>
+        <div class="chips"><button class="chip" aria-pressed="true">All</button><button class="chip" aria-pressed="false">Plain</button><button class="chip" aria-pressed="false">Flavoured</button></div>
+        <span class="tag">New</span><span class="tag tag-sky">Original</span><span class="tag tag-pink">Flavoured</span><span class="tag tag-grass">Organic</span><span class="tag tag-navy">Reduced fat</span><span class="tag tag-choco">Cocoa</span>
+        <div class="dots"><button class="dot" aria-selected="true" aria-label="1"></button><button class="dot" aria-selected="false" aria-label="2"></button><button class="dot" aria-selected="false" aria-label="3"></button></div>
+      </div>
+    </div>
+
+    <div class="ds-sec"><h3>Icons</h3>
+      <div class="icons">
+        <div class="icon-cell"><svg><use href="#i-cart"/></svg>cart</div><div class="icon-cell"><svg><use href="#i-arrow"/></svg>arrow</div><div class="icon-cell"><svg><use href="#i-check"/></svg>check</div><div class="icon-cell"><svg><use href="#i-close"/></svg>close</div><div class="icon-cell"><svg><use href="#i-menu"/></svg>menu</div><div class="icon-cell"><svg><use href="#i-mail"/></svg>mail</div><div class="icon-cell"><svg><use href="#i-phone"/></svg>phone</div><div class="icon-cell"><svg><use href="#i-pin"/></svg>pin</div><div class="icon-cell"><svg><use href="#i-sun"/></svg>sun</div><div class="icon-cell"><svg><use href="#i-leaf"/></svg>leaf</div><div class="icon-cell"><svg><use href="#i-box"/></svg>box</div><div class="icon-cell"><svg><use href="#i-plus"/></svg>plus</div><div class="icon-cell"><svg><use href="#i-drop"/></svg>drop</div><div class="icon-cell"><svg><use href="#i-truck"/></svg>truck</div><div class="icon-cell"><svg><use href="#i-snow"/></svg>cold</div><div class="icon-cell"><svg><use href="#i-cow"/></svg>cow</div><div class="icon-cell"><svg><use href="#i-recycle"/></svg>recycle</div>
+      </div>
+      <p class="spec">24-unit grid, 2px rounded strokes, <code>currentColor</code>, so one symbol works on navy, cream or yellow. Add new icons as <code>&lt;symbol id="i-name"&gt;</code> and use with <code>&lt;use href="#i-name"&gt;</code>.</p>
+    </div>
+
+    <div class="ds-sec"><h3>Form fields &amp; stepper</h3>
+      <div class="demo col">
+        <div class="f2">
+          <div class="field"><label for="ds-in">Default</label><input id="ds-in" placeholder="Placeholder"><span class="hint">Helper text sits under the field.</span></div>
+          <div class="field invalid"><label for="ds-in2">Invalid</label><input id="ds-in2" value="moo"><span class="error">Enter a valid email.</span></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="qty"><button type="button">−</button><output>2</output><button type="button">+</button></div><span class="spec">Quantity stepper, min 1, max 10 per line.</span></div>
+      </div>
+    </div>
+
+    <div class="ds-sec"><h3>Product imagery</h3>
+      <div class="demo col"><img class="render" src="img/straw-render.jpg" alt="Strawberry Milk render" loading="lazy" width="1400" height="1094" style="max-width:520px"><pre>&lt;img class="render" src="img/{sku}-render.jpg"&gt;   // photo render, 1400 × 1094
+&lt;div class="panels"&gt; front · side · back &lt;/div&gt;  // flat panel PNGs, 600 × 1088</pre></div>
+      <p class="spec">Every product uses one photographic render (half gallon + pint on a counter, from the Free Milk Packaging Mockup) at 1400 × 1094, cropped with <code>object-fit: cover</code> in cards and shown whole on product and mockup pages. Flat panels sit beside it as reference, never as the hero image.</p>
+    </div>
+
+    <div class="ds-sec"><h3>Product card</h3>
+      <div class="pgrid" id="ds-card"></div>
+      <p class="spec">Render photo that zooms slightly on hover, tag, name, one-line description, price per half gallon, and the yellow add button. Clicking the card opens the product page; clicking the button adds without leaving.</p>
+    </div>
+
+    <div class="ds-sec"><h3>Toast</h3>
+      <div class="demo"><button class="btn btn-ghost" id="ds-toast">Show toast</button><span class="spec">Bottom-centre, navy, 2.2 s. Used for cart adds and copied text.</span></div>
+    </div>
+
+    <div class="ds-sec"><h3>Prototype flow map</h3>
+      <div class="card flow">
+        <div class="node" style="border:0"><b>Home</b><span>Hero dots and auto-advance · badges · card → Product · Add → cart drawer · New block adds · banner</span><a class="chip" href="#home">open</a></div>
+        <div class="node"><b>Shop</b><span>Filter chips · card → Product · Add → drawer · Mixed case → drawer</span><a class="chip" href="#shop">open</a></div>
+        <div class="node"><b>Product</b><span>Render photo · 360° carton (drag or view buttons) · pack size changes price · stepper · Add → drawer · other moods</span><a class="chip" href="#product-whole">open</a></div>
+        <div class="node"><b>Mockups</b><span>Six renders · per-carton render with flat panels · original edition · banner · business card</span><a class="chip" href="#mockups">open</a></div>
+        <div class="node"><b>Brand</b><span>Palette · anatomy · type · voice · Vinamilk research table</span><a class="chip" href="#brand">open</a></div>
+        <div class="node"><b>Cart drawer</b><span>Stepper, remove, totals with shipping rule · Checkout → Checkout · scrim or × closes</span><a class="chip" href="#shop">open</a></div>
+        <div class="node"><b>Checkout</b><span>3 steps with validation · delivery option changes total · Place order → Confirmation, cart empties</span><a class="chip" href="#checkout">open</a></div>
+        <div class="node"><b>Contact</b><span>Validated form → success state · copy buttons → toast</span><a class="chip" href="#contact">open</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="stack" style="gap:10px"><svg class="logo" viewBox="0 0 127 66"><use href="#logo"/></svg><p style="opacity:.85;max-width:34ch">A little sip of joy! Organic half-gallon milk in six moods.</p></div>
+    <div><h4>Shop</h4><a href="#product-whole">Whole Milk</a><a href="#product-two">2% Milk</a><a href="#product-one">1% Milk</a><a href="#product-straw">Strawberry</a><a href="#product-banana">Banana</a><a href="#product-choco">Chocolate</a><a href="#shop">Mixed case</a></div>
+    <div><h4>Moo'd</h4><a href="#brand">Our brand</a><a href="#mockups">Cartons</a><a href="#contact">Contact</a><a href="#contact">Stock Moo'd</a><a href="#design-system">Design system</a></div>
+    <div><h4>Help</h4><a href="#contact">Delivery &amp; cold-pack</a><a href="#contact">Returns</a><a href="#contact">Wholesale</a><a href="#contact">Privacy</a><a href="#contact">Terms</a></div>
+    <p class="small">© 2026 Moo'd Dairy Co. · Minneapolis, MN · www.moodmilk.com · 603-546-8449<br>Prototype: no real orders, payments or messages are processed. Nutrition figures come from the carton concept panels.</p>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Cart">
+  <header><h3>Your cart <span class="muted" id="cart-count" style="font-size:.9rem;font-family:var(--body);font-weight:600"></span></h3><button class="icon-btn" id="closecart" aria-label="Close cart"><svg><use href="#i-close"/></svg></button></header>
+  <div class="items" id="cart-items"></div>
+  <footer>
+    <div class="totals" id="cart-totals"></div>
+    <a class="btn btn-sun btn-lg" href="#checkout" id="to-checkout" style="justify-content:center">Checkout <svg><use href="#i-arrow"/></svg></a>
+    <button class="btn btn-ghost" id="keep">Keep shopping</button>
+  </footer>
+</aside>
+<div class="toast" id="toast" role="status"><svg><use href="#i-check"/></svg><span id="toast-text"></span></div>
+
+<script>
+(function(){
+  /* ---------- data ---------- */
+  const SKUS=[
+    {id:'whole',name:'Whole Milk',line:'The original. Bright grass, 3.5% fat.',cat:'plain',tag:'tag-sky',tagText:'Original',bg:'#f3eade',band:'#46bc5c',top:'#f3eade',price:4.49,kcal:145,fat:'8.4 g',carb:'9.8 g',protein:'7.4 g',calcium:'264 mg',story:'Just organic milk, gently ultra-pasteurized. The bright green band is the first one we drew, and the one the whole range grew from.',ing:'Organic whole milk, vitamin D3.'},
+    {id:'two',name:'2% Milk',line:'Deep teal. Lighter, still creamy.',cat:'reduced',tag:'tag-navy',tagText:'Reduced fat',bg:'#f3eade',band:'#006e5b',top:'#f3eade',price:4.49,kcal:122,fat:'4.8 g',carb:'11.7 g',protein:'8.0 g',calcium:'290 mg',story:'Reduced fat, same herd. The band deepens to teal as the fat comes down, so you can tell the plain milks apart from across the fridge.',ing:'Organic reduced-fat milk, vitamin A palmitate, vitamin D3.'},
+    {id:'one',name:'1% Milk',line:'Pine green. All the calcium, 1% fat.',cat:'reduced',tag:'tag-navy',tagText:'Low fat',bg:'#f3eade',band:'#0b3530',top:'#f3eade',price:4.49,kcal:102,fat:'2.4 g',carb:'12.2 g',protein:'8.2 g',calcium:'300 mg',story:'The lightest plain milk, and the darkest band. One percent fat, all the protein and calcium.',ing:'Organic low-fat milk, vitamin A palmitate, vitamin D3.'},
+    {id:'straw',name:'Strawberry Milk',line:'Pink mood. Real strawberry, no dyes.',cat:'flavoured',tag:'tag-pink',tagText:'Flavoured',bg:'#ffa9a9',band:'#ff7bac',top:'#ffa9a9',price:4.99,kcal:190,fat:'5.0 g',carb:'29 g',protein:'7.0 g',calcium:'260 mg',story:'Strawberry purée, not syrup. The pink comes from the fruit, and the strawberries on the carton balance on the cow.',ing:'Organic reduced-fat milk, organic cane sugar, organic strawberry purée (4%), natural flavour, vitamin D3.'},
+    {id:'banana',name:'Banana Milk',line:'Sunny mood. Sweet, mellow, breakfast-ready.',cat:'flavoured',tag:'',tagText:'New',bg:'#fcee88',band:'#f3cd06',top:'#fcee88',price:4.99,kcal:185,fat:'5.0 g',carb:'28 g',protein:'7.0 g',calcium:'260 mg',story:'Banana purée in reduced-fat milk, the kind of thing you drink on the way out the door. The whole carton goes yellow.',ing:'Organic reduced-fat milk, organic cane sugar, organic banana purée (4%), natural flavour, vitamin D3.'},
+    {id:'choco',name:'Chocolate Milk',line:'Cocoa mood. Real cocoa, after practice.',cat:'flavoured',tag:'tag-choco',tagText:'New',bg:'#89674a',band:'#412d1b',top:'#89674a',price:4.99,kcal:200,fat:'5.5 g',carb:'30 g',protein:'7.5 g',calcium:'280 mg',story:'Real cocoa in reduced-fat milk. The brown carton is the only one where the cows stand out white against the ground.',ing:'Organic reduced-fat milk, organic cane sugar, organic cocoa (2%), natural flavour, vitamin D3.'}
+  ];
+  const PACKS=[{id:'1',label:'Single',n:1,mult:1},{id:'2',label:'Two-pack',n:2,mult:1.9},{id:'6',label:'Case of 6',n:6,mult:5.35}];
+  const BUNDLE={id:'mixed',name:'Mixed case of six',sub:'1 × each mood',price:27.99};
+  const byId=id=>SKUS.find(s=>s.id===id);
+  const money=n=>'$'+n.toFixed(2);
+  const packPrice=(s,p)=>Math.round(s.price*p.mult*100)/100;
+
+  /* ---------- 360° carton component ---------- */
+  function cartonHTML(s,ry){return `<div class="stage" data-sku="${s.id}"><div class="shadow"></div><div class="carton" style="--ry:${ry}deg;--top:${s.top}">
+    <div class="face front" style="background-image:url(img/${s.id}-front.png)"></div>
+    <div class="face back" style="background-image:url(img/${s.id}-back.png)"></div>
+    <div class="face left" style="background-image:url(img/${s.id}-side.png)"></div>
+    <div class="face right" style="background-image:url(img/${s.id}-side.png)"></div>
+    <div class="roof roof-f"></div><div class="roof roof-b"></div>
+    <div class="gable gable-l"></div><div class="gable gable-r"></div>
+    <div class="ridge"></div>
+  </div></div>`}
+  function viewsHTML(){return `<div class="views"><button class="chip" aria-pressed="true" data-ry="-28">3/4</button><button class="chip" aria-pressed="false" data-ry="0">Front</button><button class="chip" aria-pressed="false" data-ry="90">Side</button><button class="chip" aria-pressed="false" data-ry="180">Back</button></div>`}
+  function bindSpin(root){root.querySelectorAll('.stage').forEach(st=>{if(st.dataset.bound)return;st.dataset.bound=1;
+    const c=st.querySelector('.carton');let sx=0,start=0,on=false;
+    const cur=()=>parseFloat(getComputedStyle(c).getPropertyValue('--ry'))||0;
+    st.addEventListener('pointerdown',e=>{on=true;sx=e.clientX;start=cur();c.classList.add('dragging');st.setPointerCapture(e.pointerId)});
+    st.addEventListener('pointermove',e=>{if(!on)return;c.style.setProperty('--ry',(start+(e.clientX-sx)*0.6)+'deg')});
+    const end=()=>{on=false;c.classList.remove('dragging')};
+    st.addEventListener('pointerup',end);st.addEventListener('pointercancel',end)});
+    root.querySelectorAll('.views').forEach(v=>{v.onclick=e=>{const b=e.target.closest('[data-ry]');if(!b)return;v.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));v.closest('.spin').querySelector('.carton').style.setProperty('--ry',b.dataset.ry+'deg')}})}
+  const tint=s=>s.bg==='#f3eade'?s.band+'2e':s.bg+'99';
+
+  /* ---------- product card ---------- */
+  function pcard(s){return `<article class="pcard" data-go="product-${s.id}">
+    <div class="art"><img src="img/${s.id}-render.jpg" alt="${s.name} cartons" loading="lazy" width="1400" height="1094"></div>
+    <div class="body">
+      <span class="tag ${s.tag}" style="justify-self:start">${s.tagText}</span>
+      <h3>${s.name}</h3><p class="muted" style="font-size:.9rem">${s.line}</p>
+      <div class="row"><span class="price">${money(s.price)} <small>· half gallon</small></span><button class="btn btn-sun btn-sm" data-add="${s.id}" data-pack="1">Add <svg><use href="#i-cart"/></svg></button></div>
+    </div></article>`}
+
+  /* ---------- cart state ---------- */
+  let cart=[];
+  const load=()=>{try{cart=JSON.parse(localStorage.getItem('mood-cart-v2')||'[]')}catch(e){cart=[]}};
+  const save=()=>{try{localStorage.setItem('mood-cart-v2',JSON.stringify(cart))}catch(e){}};
+  function lineInfo(l){if(l.sku==='mixed')return {name:BUNDLE.name,sub:BUNDLE.sub,unit:BUNDLE.price,s:SKUS[0],img:'img/whole-front.png',mixed:true};
+    const s=byId(l.sku),p=PACKS.find(p=>p.id===l.pack);return {name:s.name,sub:p.label+' · '+p.n+' × half gallon',unit:packPrice(s,p),s,img:`img/${s.id}-front.png`}}
+  const count=()=>cart.reduce((a,l)=>a+l.qty,0);
+  const subtotal=()=>cart.reduce((a,l)=>a+lineInfo(l).unit*l.qty,0);
+  function shipping(){const sub=subtotal();const ex=document.querySelector('input[name=ship]:checked');const extra=ex?+ex.value:0;const base=sub>=30||sub===0?0:4.95;return base+extra}
+  function add(sku,pack,qty){qty=qty||1;const key=sku+'-'+pack;const ex=cart.find(l=>l.key===key);if(ex)ex.qty=Math.min(10,ex.qty+qty);else cart.push({key,sku,pack,qty});save();render();
+    const b=document.getElementById('badge');b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');
+    const i=lineInfo({sku,pack});toast(`Added ${i.name}${i.mixed?'':' · '+i.sub.split(' · ')[0]}`);openCart()}
+  function setQty(key,q){const l=cart.find(l=>l.key===key);if(!l)return;l.qty=Math.max(0,Math.min(10,q));if(l.qty===0)cart=cart.filter(x=>x!==l);save();render()}
+
+  function totalsHTML(){const sub=subtotal(),sh=shipping();return `<div><span>Subtotal</span><span>${money(sub)}</span></div><div><span>Cold-pack shipping</span><span>${sh===0?'Free':money(sh)}</span></div><div><span>Sales tax</span><span>$0.00 <span class="muted" style="font-size:.8rem">(milk is exempt in MN)</span></span></div><div class="grand"><span>Total</span><span>${money(sub+sh)}</span></div>`}
+  function render(){
+    const n=count();const b=document.getElementById('badge');b.hidden=n===0;b.textContent=n;
+    document.getElementById('cart-count').textContent=n?`· ${n} item${n>1?'s':''}`:'';
+    const items=document.getElementById('cart-items');
+    if(!cart.length){items.innerHTML=`<div class="empty"><svg style="width:48px;height:48px;opacity:.5"><use href="#i-cart"/></svg><p>Your cart is empty.</p><a class="btn btn-primary btn-sm" href="#shop" data-close>Find a mood</a></div>`}
+    else items.innerHTML=cart.map(l=>{const i=lineInfo(l);return `<div class="line"><div class="thumb" style="background-image:url(${i.img})"></div><div><div class="nm">${i.name}</div><div class="sub">${i.sub}</div><div style="display:flex;gap:10px;align-items:center;margin-top:6px"><div class="qty"><button type="button" data-q="${l.key}" data-d="-1" aria-label="Less">−</button><output>${l.qty}</output><button type="button" data-q="${l.key}" data-d="1" aria-label="More">+</button></div><button class="rm" data-rm="${l.key}">Remove</button></div></div><div class="amt">${money(i.unit*l.qty)}</div></div>`}).join('');
+    document.getElementById('cart-totals').innerHTML=cart.length?totalsHTML():'';
+    document.getElementById('to-checkout').toggleAttribute('hidden',!cart.length);
+    renderCheckout();
+  }
+  function renderCheckout(){
+    const ci=document.getElementById('co-items');
+    ci.innerHTML=cart.length?cart.map(l=>{const i=lineInfo(l);return `<div style="display:flex;justify-content:space-between;gap:10px;font-size:.92rem"><span>${l.qty} × ${i.name} <span class="muted">(${i.sub.split(' · ')[0]})</span></span><b style="font-variant-numeric:tabular-nums">${money(i.unit*l.qty)}</b></div>`}).join(''):'<p class="muted">Nothing in your cart yet.</p>';
+    document.getElementById('co-totals').innerHTML=cart.length?totalsHTML():'';
+    document.getElementById('place-total').textContent=money(subtotal()+shipping());
+    document.getElementById('place').disabled=!cart.length;
+  }
+
+  /* ---------- drawer ---------- */
+  const drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+  function openCart(){drawer.classList.add('open');scrim.classList.add('open')}
+  function closeCart(){drawer.classList.remove('open');scrim.classList.remove('open')}
+  document.getElementById('cartbtn').onclick=openCart;document.getElementById('closecart').onclick=closeCart;scrim.onclick=closeCart;document.getElementById('keep').onclick=closeCart;
+  document.getElementById('to-checkout').onclick=closeCart;
+  drawer.addEventListener('click',e=>{const q=e.target.closest('[data-q]');if(q){const l=cart.find(l=>l.key===q.dataset.q);setQty(q.dataset.q,l.qty+ +q.dataset.d)}
+    const r=e.target.closest('[data-rm]');if(r)setQty(r.dataset.rm,0);
+    if(e.target.closest('[data-close]'))closeCart()});
+
+  /* ---------- toast ---------- */
+  let tt;function toast(msg){const t=document.getElementById('toast');document.getElementById('toast-text').textContent=msg;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200)}
+
+  /* ---------- hero slider ---------- */
+  let slide=0,timer;const slides=[...document.querySelectorAll('#slides .slide')],dots=[...document.querySelectorAll('.hero .dot')];
+  function goSlide(n){slide=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('on',i===slide));dots.forEach((d,i)=>d.setAttribute('aria-selected',i===slide))}
+  function autoplay(){clearInterval(timer);if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;timer=setInterval(()=>goSlide(slide+1),6000)}
+  dots.forEach((d,i)=>d.onclick=()=>{goSlide(i);autoplay()});autoplay();
+
+  /* ---------- router ---------- */
+  const screens={home:'s-home',shop:'s-shop',mockups:'s-mockups',brand:'s-brand',contact:'s-contact',checkout:'s-checkout',thanks:'s-thanks','design-system':'s-ds'};
+  function route(){let h=(location.hash||'#home').slice(1);let id=screens[h];let page=h;
+    if(h.startsWith('product-')){const s=byId(h.slice(8));if(s){id='s-product';renderPDP(s);page='shop'}else{id='s-home';page='home'}}
+    if(!id){id='s-home';page='home'}
+    if(h==='checkout'&&!cart.length){id='s-shop';page='shop';toast('Add some milk first')}
+    document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));
+    document.querySelectorAll('.nav a, .mobnav a').forEach(a=>{const t=a.getAttribute('href').slice(1);if(t===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    document.getElementById('mobnav').classList.remove('open');document.getElementById('mobbtn').setAttribute('aria-expanded','false');
+    closeCart();window.scrollTo({top:0,behavior:'instant'});
+    if(h==='checkout'){goStep(1);renderCheckout()}
+  }
+  window.addEventListener('hashchange',route);
+  document.getElementById('mobbtn').onclick=function(){const m=document.getElementById('mobnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))};
+
+  /* ---------- PDP ---------- */
+  let pdpPack='1',pdpQty=1;
+  function renderPDP(s){pdpPack='1';pdpQty=1;const root=document.getElementById('pdp-root');
+    root.innerHTML=`<div class="breadcrumb" style="margin-bottom:var(--sp-5)"><a href="#shop">Shop</a><span>›</span><span>${s.name}</span></div>
+    <div class="pdp">
+      <div class="gallery"><img class="render" src="img/${s.id}-render.jpg" alt="${s.name} half-gallon and pint cartons" width="1400" height="1094">
+        <div class="spin" style="background:${tint(s)}"><span class="eyebrow">360° view · drag to turn</span>${cartonHTML(s,-28)}${viewsHTML()}</div>
+        <a class="chip" href="#mockups" style="justify-self:center">See the carton mockups</a></div>
+      <div class="buy">
+        <span class="tag ${s.tag}" style="justify-self:start">${s.tagText}</span>
+        <h1 style="font-size:clamp(2rem,4vw,3rem)">${s.name}</h1>
+        <p class="lede">${s.line}</p>
+        <div class="price-big" id="pdp-price"></div>
+        <div class="stack" style="gap:8px"><span class="eyebrow">Pack size</span><div class="chips" id="packs">${PACKS.map(p=>`<button class="chip" aria-pressed="${p.id===pdpPack}" data-pack="${p.id}">${p.label} · ${money(packPrice(s,p))}</button>`).join('')}</div></div>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><div class="qty"><button type="button" id="pq-minus" aria-label="Less">−</button><output id="pq">1</output><button type="button" id="pq-plus" aria-label="More">+</button></div><button class="btn btn-sun btn-lg" id="pdp-add">Add to cart <svg><use href="#i-cart"/></svg></button></div>
+        <p class="muted" style="font-size:.9rem">${s.story}</p>
+        <div class="card stack" style="gap:8px"><h3>Nutrition per 240 mL serving</h3><table class="nutri"><tr><td>Energy</td><td>${s.kcal} kcal</td></tr><tr><td>Fat</td><td>${s.fat}</td></tr><tr><td>Carbohydrate</td><td>${s.carb}</td></tr><tr><td>Protein</td><td>${s.protein}</td></tr><tr><td>Calcium</td><td>${s.calcium}</td></tr><tr><td>Vitamin D3</td><td>144 IU</td></tr></table><p class="muted" style="font-size:.8rem">About 8 servings per half gallon. Ingredients: ${s.ing} Contains milk.</p></div>
+        <div class="stack" style="gap:8px"><span class="eyebrow">Other moods</span><div class="chips">${SKUS.filter(x=>x.id!==s.id).map(x=>`<a class="chip" href="#product-${x.id}">${x.name}</a>`).join('')}</div></div>
+      </div></div>`;
+    bindSpin(root);
+    const price=()=>{const p=PACKS.find(p=>p.id===pdpPack);const u=packPrice(s,p);document.getElementById('pdp-price').innerHTML=`${money(u*pdpQty)} <small>· ${money(u/p.n)} per carton</small>`;document.getElementById('pq').textContent=pdpQty};
+    price();
+    root.querySelector('#packs').onclick=e=>{const b=e.target.closest('[data-pack]');if(!b)return;pdpPack=b.dataset.pack;root.querySelectorAll('#packs .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));price()};
+    root.querySelector('#pq-minus').onclick=()=>{pdpQty=Math.max(1,pdpQty-1);price()};root.querySelector('#pq-plus').onclick=()=>{pdpQty=Math.min(10,pdpQty+1);price()};
+    root.querySelector('#pdp-add').onclick=()=>add(s.id,pdpPack,pdpQty);
+  }
+
+  /* ---------- mockups page ---------- */
+  function mockBlock(s,i){return `<div class="mock" style="${i%2?'direction:rtl':''}"><div class="scene" style="background:${tint(s)};direction:ltr"><img class="render" src="img/${s.id}-render.jpg" alt="${s.name} cartons rendered on a counter" loading="lazy" width="1400" height="1094"></div>
+    <div class="stack" style="direction:ltr"><span class="tag ${s.tag}" style="justify-self:start">${s.tagText}</span><h3>${s.name}</h3><p class="muted">${s.story}</p>
+    <div class="panels"><figure><img src="img/${s.id}-front.png" alt="${s.name} front panel" width="600" height="1088"><figcaption>Front</figcaption></figure><figure><img src="img/${s.id}-side.png" alt="${s.name} nutrition panel" width="600" height="1088"><figcaption>Side</figcaption></figure><figure><img src="img/${s.id}-back.png" alt="${s.name} back panel" width="600" height="1088"><figcaption>Back</figcaption></figure></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary btn-sm" href="#product-${s.id}">Product page <svg><use href="#i-arrow"/></svg></a><button class="btn btn-sun btn-sm" data-add="${s.id}" data-pack="1">Add · ${money(s.price)}</button></div></div></div>`}
+  document.getElementById('mock-list').innerHTML=SKUS.map(mockBlock).join('');
+  document.getElementById('lineup').innerHTML=SKUS.map(s=>`<figure style="margin:0;display:grid;gap:8px"><img class="render" src="img/${s.id}-render.jpg" alt="${s.name} cartons" loading="lazy" width="1400" height="1094"><figcaption style="font-family:var(--display);font-weight:500">${s.name}</figcaption></figure>`).join('');
+
+  /* ---------- global clicks ---------- */
+  document.addEventListener('click',e=>{
+    const addb=e.target.closest('[data-add]');if(addb){e.stopPropagation();add(addb.dataset.add,addb.dataset.pack,1);return}
+    const card=e.target.closest('[data-go]');if(card&&!e.target.closest('a,button')){location.hash='#'+card.dataset.go}
+    const cp=e.target.closest('[data-copy]');if(cp){const v=cp.dataset.copy;(navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(v):Promise.reject()).then(()=>toast('Copied '+v)).catch(()=>{const r=document.createRange();r.selectNodeContents(cp.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r);toast('Select and copy: '+v)})}
+  });
+  document.getElementById('add-bundle').onclick=()=>add('mixed','6',1);
+  document.getElementById('ds-toast').onclick=()=>toast('Added Whole Milk · Single');
+
+  /* ---------- shop filters ---------- */
+  function renderShop(f){const g=document.getElementById('shop-grid');g.innerHTML=SKUS.filter(s=>f==='all'||s.cat===f).map(pcard).join('')}
+  document.getElementById('filters').onclick=e=>{const b=e.target.closest('[data-f]');if(!b)return;document.querySelectorAll('#filters .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));renderShop(b.dataset.f)};
+
+  /* ---------- forms ---------- */
+  function validate(form,ids){let ok=true;ids.forEach(([id,test])=>{const el=form.querySelector('#'+CSS.escape(id));const f=el.closest('.field');const v=el.value.trim();const bad=!test(v);f.classList.toggle('invalid',bad);if(bad&&ok){el.focus();ok=false}});return ok}
+  const email=v=>/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v),req=v=>v.length>0;
+  const cform=document.getElementById('contact-form');
+  cform.addEventListener('submit',e=>{e.preventDefault();if(!validate(cform,[['c-name',req],['c-email',email],['c-msg',req]]))return;
+    document.getElementById('contact-ok-text').textContent=`Thanks, ${cform.querySelector('#c-name').value.trim().split(' ')[0]}. We'll reply to ${cform.querySelector('#c-email').value.trim()} within one working day.`;
+    document.getElementById('contact-ok').hidden=false;cform.hidden=true;toast('Message received')});
+  document.getElementById('contact-again').onclick=()=>{document.getElementById('contact-ok').hidden=true;cform.hidden=false;cform.reset();cform.querySelectorAll('.invalid').forEach(f=>f.classList.remove('invalid'))};
+  cform.addEventListener('input',e=>{const f=e.target.closest('.field');if(f)f.classList.remove('invalid')});
+
+  const co=document.getElementById('co-form');
+  const v=id=>co.querySelector('#'+id).value.trim();
+  function goStep(n){co.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.dataset.pane==String(n)));document.querySelectorAll('.step').forEach(s=>{const k=+s.dataset.step;s.classList.toggle('on',k===n);s.classList.toggle('done',k<n)});
+    if(n===3){document.getElementById('rv-addr').textContent=`${v('d-name')}, ${v('d-addr')}, ${v('d-city')} ${v('d-zip')} · ${co.querySelector('input[name=ship]:checked').value==='0'?'Standard cold-pack':'Next-day'}`;document.getElementById('rv-card').textContent='Card ending '+v('p-card').replace(/\s/g,'').slice(-4)+' · exp '+v('p-exp')}}
+  co.addEventListener('click',e=>{const b=e.target.closest('[data-next]');if(!b)return;const to=+b.dataset.next;const cur=+co.querySelector('.pane.on').dataset.pane;
+    if(to>cur){if(cur===1&&!validate(co,[['d-name',req],['d-email',email],['d-addr',req],['d-city',req],['d-zip',x=>/^\d{5}$/.test(x)]]))return;
+      if(cur===2&&!validate(co,[['p-card',x=>/^\d{16}$/.test(x.replace(/\s/g,''))],['p-exp',x=>/^\d{2}\/\d{2}$/.test(x)],['p-cvc',x=>/^\d{3,4}$/.test(x)]]))return}
+    goStep(to)});
+  co.addEventListener('change',e=>{if(e.target.name==='ship'){co.querySelectorAll('.radio').forEach(r=>r.classList.toggle('on',r.contains(e.target)));renderCheckout();render()}});
+  co.addEventListener('input',e=>{const f=e.target.closest('.field');if(f)f.classList.remove('invalid')});
+  co.addEventListener('submit',e=>{e.preventDefault();if(!cart.length)return;const n=count();const total=subtotal()+shipping();const num='MOO-'+String(Math.floor(1000+Math.random()*9000));
+    document.getElementById('thanks-text').textContent=`Order ${num} · ${money(total)} · ${n} item${n>1?'s':''} to ${v('d-city')}. A confirmation goes to ${v('d-email')}.`;
+    document.getElementById('thanks-items').innerHTML=cart.map(l=>{const i=lineInfo(l);return `<div style="display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid var(--line)"><span>${l.qty} × ${i.name} <span class="muted">(${i.sub.split(' · ')[0]})</span></span><b>${money(i.unit*l.qty)}</b></div>`}).join('');
+    cart=[];save();render();location.hash='#thanks'});
+
+  /* ---------- boot ---------- */
+  document.getElementById('bundle-shelf').innerHTML=SKUS.map(s=>`<figure><img src="img/${s.id}-front.png" alt="${s.name}" loading="lazy" width="600" height="1088"></figure>`).join('');
+  document.getElementById('home-grid').innerHTML=SKUS.map(pcard).join('');
+  document.getElementById('ds-card').innerHTML=pcard(SKUS[3]);
+  renderShop('all');
+  load();render();route();
+})();
+</script>
+<!-- portfolio-back-bar --><a href="../../index.html#work" style="position:fixed;left:16px;bottom:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#182063;color:#F4F5F0;font:600 14px/1 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(24,32,99,.28);border:2px solid #FF4FA7" aria-label="Back to Nguyen Kiet Pham's portfolio">&larr; Nguyen Kiet Pham &middot; Portfolio</a>
+</body>
+</html>

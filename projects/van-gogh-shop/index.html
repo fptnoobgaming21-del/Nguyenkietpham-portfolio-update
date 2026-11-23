@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">VAN GOGH SHOP</a>
+      <nav class="links">
+        <a href="aboutus.html">About</a>
+        <a href="itemstore.html">Stores</a>
+        <a href="collections.html">Collections</a>
+        <a href="contactus.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+    <section class="hero" id="home" aria-label="Hero">
+    <div class="hero-overlay"></div>
+<video autoplay loop muted plays-inline class="back-video">
+    <source src="image/videobackground.mp4" type="video/mp4">
+</video>
+    <div class="hero-content container">
+      <h1 class="title">VAN GOGH SHOP</h1>
+      <p class="tagline">AI is a tool to help you connect with Van Gogh</p>
+      <form class="search" role="search" aria-label="Search artworks">
+        <input type="search" placeholder="Search artworks, prints, stories…" >
+        <button type="submit" aria-label="Search">🔍</button>
+      </form>
+    </div>
+  </section>
+
+  <main class="container sections">
+    <!-- Section 1: text left, image right -->
+    <section class="split" id="about">
+      <div class="split-text">
+        <h2>Who is Van Gogh?</h2>
+        <p>
+          <mark>Vincent van Gogh</mark> was a Dutch Post-Impressionist artist whose work transformed the history of modern art through its emotional depth, vivid color, and expressive brushwork. Born on March 30, 1853, in Zundert, Netherlands,<mark> Van Gogh’s life was marked by passion, creativity, and hardship.</mark> Before becoming a painter, he worked in various professions, including art dealing and ministry, but it was his decision to dedicate himself to art in his late twenties that defined his legacy. Despite producing over 2,000 artworks around 900 paintings and 1,100 drawings he sold only a few pieces during his lifetime and lived in poverty, supported largely by his brother Theo.
+        <br><br>Throughout his life, Van Gogh faced severe mental health challenges. His well-known episode of cutting off part of his ear and his stays in psychiatric hospitals revealed his inner turmoil. Yet, even during those difficult times, he continued to paint with extraordinary energy and emotion. <mark>Tragically, Van Gogh died from a self-inflicted gunshot wound in 1890 at the age of 37.</mark> Though his life was short and troubled, his artistic vision left a lasting impact on the world. <mark>Today, his works are celebrated for their honesty, color, and powerful expression of the human soul, inspiring countless artists and admirers across generations.</mark>
+        </p>
+
+        <a class="button" href="https://en.wikipedia.org/wiki/Vincent_van_Gogh">Explore More!</a>
+      </div>
+      <div class="split-media">
+        <img src="image/vincentvangogh.webp" alt="Portrait of Vincent van Gogh">
+      </div>
+    </section>
+
+    <!-- Section 2: image left, text right -->
+    <section class="split">
+      <div class="split-media">
+        <img src="image/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg" alt="Almond blossom">
+      </div>
+      <div class="split-text">
+        <h2>Masterpieces</h2>
+        <p>
+          Van Gogh’s style evolved rapidly over the years. Early works such as <mark>The Potato Eaters</mark> (1885) were dark and somber, reflecting the struggles of rural laborers. However, after moving to France, he began experimenting with brighter colors and looser brushstrokes influenced by Impressionism and Japanese prints. His time in Arles, in the south of France, became one of his most productive periods. There, he painted masterpieces such as <mark>Sunflowers, Café Terrace at Night, and Bedroom in Arles,</mark> capturing scenes filled with light, warmth, and emotional intensity.
+        </p>
+        <a class="button" href="collections.html">View collections</a>
+      </div>
+    </section>
+
+    <!-- Section 3: text left, image right -->
+    <section class="split" id="collections">
+      <div class="split-text">
+        <h2>WHY IS VAN GOGH SHOP?</h2>
+        <p>
+            <mark> Welcome to The Van Gogh Shop </mark> — the ultimate destination where artists, creators, and dreamers bring their imagination to life in Van Gogh’s timeless style. Here, we celebrate the fusion of human creativity and artificial intelligence, transforming ordinary digital images into vibrant masterpieces filled with emotion, light, and movement. Our platform allows everyone from professional designers to casual creators to sell their own AI-generated artwork reimagined in the spirit of Vincent van Gogh. With our easy-to-use tools and global art community, your creativity can shine through swirling skies, golden fields, and bold brushstrokes that echo Van Gogh’s genius. Join us today and share your vision with the world—because every image deserves a touch of brilliance inspired by Van Gogh.
+        </p>
+        <a class="button" href="itemstore.html">Create and Sell Now</a>
+      </div>
+      <div class="split-media">
+        <img src="image/wp5960139.jpg" alt="Ai painting">
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p>© <span id="year"></span> Van Gogh Shop. All rights reserved.</p>
+    </div>
+
+    <div class="footer-center">
+      <nav class="foot-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+      </nav>
+    </div>
+
+<div class="footer-right">
+      <a href="https://www.facebook.com/pham.nguyen.kiet.2025" target="_blank">
+        <img src="image/facebook (1).png" alt="facebook" width="40px">
+      </a>
+      <a href="https://www.instagram.com/kietisme_21/" target="_blank">
+        <img src="image/instagram.png" alt="instagram" width="40px">
+      </a>
+      <a href="https://www.linkedin.com/in/phamnguyenkiet/" target="_blank">
+        <img src="image/linkedin.png" alt="linkedin" width="40px">
+      </a>
+    </div>
+  </div>
+</footer>
+<!-- portfolio-back-bar --><a href="../../index.html#work" style="position:fixed;left:16px;bottom:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#182063;color:#F4F5F0;font:600 14px/1 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(24,32,99,.28);border:2px solid #FF4FA7" aria-label="Back to Nguyen Kiet Pham's portfolio">&larr; Nguyen Kiet Pham &middot; Portfolio</a>
+</body>
+</html>

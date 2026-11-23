@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Floating Worlds in Print · Research Project 2 · Nguyen Kiet Pham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --washi:        #ece0c6;   /* aged paper base */
+  --washi-soft:   #f3e8cf;
+  --washi-dark:   #d9c8a6;
+  --sumi:         #141010;   /* ink black */
+  --sumi-soft:    #2a2420;
+  --ai:           #0e3557;   /* Prussian / Hokusai blue */
+  --ai-deep:      #082540;
+  --ai-light:     #3b6b95;
+  --shu:          #b83a26;   /* vermillion / hanko red */
+  --shu-deep:     #8a2614;
+  --kin:          #b08842;   /* aged gold */
+  --rust:         #8a4a2a;
+
+  --font-display: 'Shippori Mincho B1', 'Noto Serif JP', serif;
+  --font-body:    'Cormorant Garamond', 'Shippori Mincho B1', Georgia, serif;
+  --font-jp:      'Shippori Mincho B1', 'Noto Serif JP', serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  background: var(--washi);
+  color: var(--sumi);
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position:relative;
+}
+
+/* - global grain / washi texture - */
+body::before{
+  content:'';
+  position:fixed; inset:0;
+  pointer-events:none; z-index:100;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 0 0.04 0 0 0 0.38 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.55'/></svg>");
+  opacity:.45;
+  mix-blend-mode: multiply;
+}
+
+/* - seigaiha (wave) pattern used selectively - */
+.seigaiha{
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'><g fill='none' stroke='%230e3557' stroke-width='1' opacity='0.18'><path d='M0 40 a20 20 0 0 1 40 0 a20 20 0 0 1 40 0'/><path d='M-20 40 a20 20 0 0 1 40 0 a20 20 0 0 1 40 0 a20 20 0 0 1 40 0'/><path d='M0 40 a14 14 0 0 1 28 0 M26 40 a14 14 0 0 1 28 0 M52 40 a14 14 0 0 1 28 0'/></g></svg>");
+  background-size: 80px 40px;
+}
+
+/* ========== HERO ========== */
+.hero{
+  min-height: 100vh;
+  position: relative;
+  padding: 48px 5vw 64px;
+  display: grid;
+  grid-template-columns: 90px 1fr 90px;
+  grid-template-rows: auto 1fr auto;
+  gap: 32px;
+  overflow:hidden;
+}
+
+.hero-topbar{
+  grid-column: 1 / -1;
+  display:flex; justify-content:space-between; align-items:center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--sumi);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--sumi);
+}
+.hero-topbar .dot{
+  display:inline-block; width:7px; height:7px; background:var(--shu);
+  border-radius:50%; margin-right:10px; vertical-align:middle;
+}
+
+.hero-vertical-left,
+.hero-vertical-right{
+  writing-mode: vertical-rl;
+  font-family: var(--font-jp);
+  font-weight: 500;
+  letter-spacing: .4em;
+  color: var(--ai-deep);
+  display:flex; align-items:center; justify-content:center;
+  font-size: 15px;
+}
+.hero-vertical-right{ color: var(--shu); font-weight:400; }
+
+.hero-center{
+  grid-column: 2;
+  display:flex; flex-direction:column; justify-content:center;
+  position:relative;
+  padding: 40px 0;
+}
+
+.hero-kanji{
+  position: absolute;
+  top: -20px; right: -4vw;
+  font-family: var(--font-jp);
+  font-weight: 800;
+  font-size: clamp(240px, 38vw, 560px);
+  color: var(--ai);
+  opacity: .09;
+  line-height: .8;
+  letter-spacing: -.05em;
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+}
+
+.hero-eyebrow{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--shu);
+  margin-bottom: 24px;
+  position:relative; z-index:2;
+  display:flex; align-items:center; gap:14px;
+}
+.hero-eyebrow::before{
+  content:''; width:40px; height:1px; background:var(--shu);
+}
+
+.hero-title{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(58px, 9vw, 148px);
+  line-height: .92;
+  color: var(--sumi);
+  letter-spacing: -.02em;
+  position:relative; z-index:2;
+  margin-bottom: 8px;
+}
+.hero-title .accent{
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ai-deep);
+  display:block;
+  font-size: .82em;
+  letter-spacing: .01em;
+}
+.hero-title .big-and{
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--shu);
+  font-size: .7em;
+  padding: 0 .15em;
+}
+
+.hero-subtitle{
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2vw, 26px);
+  color: var(--sumi-soft);
+  max-width: 680px;
+  margin-top: 28px;
+  line-height: 1.45;
+  position:relative; z-index:2;
+}
+
+/* byline block */
+.hero-byline{
+  margin-top: 44px;
+  display:inline-flex; align-items:baseline; gap:16px;
+  padding: 14px 22px;
+  border-top: 1px solid var(--sumi);
+  border-bottom: 1px solid var(--sumi);
+  background: rgba(236,224,198,.5);
+  position:relative; z-index:2;
+  align-self:flex-start;
+}
+.hero-byline .by{
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--shu);
+}
+.hero-byline .nm{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--sumi);
+  letter-spacing: -.01em;
+}
+.hero-byline .pr{
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--sumi-soft);
+}
+
+.author-name{
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: .12em !important;
+  color: var(--shu) !important;
+}
+
+.hero-meta{
+  grid-column: 1 / -1;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-top: 28px;
+  border-top: 1px solid var(--sumi);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--sumi-soft);
+}
+.hero-meta-item .label{
+  color: var(--shu);
+  display:block;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.hero-meta-item .value{
+  color: var(--sumi);
+  font-family: var(--font-display);
+  text-transform: none;
+  font-size: 15px;
+  letter-spacing: .02em;
+  font-weight: 500;
+}
+
+/* hanko stamp decoration */
+.hanko{
+  position:absolute;
+  width: 110px; height: 110px;
+  background: var(--shu);
+  display:flex; align-items:center; justify-content:center;
+  transform: rotate(-8deg);
+  z-index: 3;
+  box-shadow:
+    inset 0 0 0 4px var(--shu),
+    inset 0 0 0 5px var(--washi),
+    inset 0 0 0 9px var(--shu);
+  filter: url(#roughen);
+}
+.hanko::before{
+  content:'浮世';
+  font-family: var(--font-jp);
+  color: var(--washi);
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1;
+  text-align:center;
+}
+.hanko-1{ bottom: 120px; right: 6vw; }
+
+/* scroll cue */
+.scroll-cue{
+  position:absolute;
+  bottom: 20px; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--sumi-soft);
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+.scroll-cue .line{
+  width:1px; height:40px; background:var(--sumi-soft);
+  animation: pulseLine 2.4s ease-in-out infinite;
+  transform-origin: top;
+}
+@keyframes pulseLine{
+  0%,100%{ transform: scaleY(.3); opacity:.4; }
+  50%{ transform: scaleY(1); opacity:1; }
+}
+
+/* ========== INTRODUCTION ========== */
+.intro{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 160px 5vw 140px;
+  position:relative;
+}
+
+.intro-label{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--shu);
+  display:flex; align-items:center; gap:14px;
+  margin-bottom: 36px;
+}
+.intro-label::before{ content:''; width:40px; height:1px; background:var(--shu); }
+
+.intro-grid{
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items:start;
+}
+
+.intro-heading{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(36px, 4.6vw, 66px);
+  line-height: 1.05;
+  color: var(--sumi);
+  letter-spacing: -.015em;
+  position:sticky; top:40px;
+}
+.intro-heading .jp{
+  display:block;
+  font-family: var(--font-jp);
+  color: var(--ai);
+  font-size: .55em;
+  letter-spacing: .08em;
+  font-weight: 400;
+  margin-bottom: 16px;
+  opacity: .85;
+}
+
+.intro-body p{
+  font-size: 20px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  color: var(--sumi-soft);
+}
+.intro-body p:first-of-type::first-letter{
+  font-family: var(--font-display);
+  font-size: 88px;
+  float:left;
+  line-height: .85;
+  padding: 8px 14px 0 0;
+  color: var(--ai);
+  font-weight: 700;
+}
+
+.pull-quote{
+  border-left: 3px solid var(--shu);
+  padding: 8px 0 8px 28px;
+  margin: 48px 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.35;
+  color: var(--ai-deep);
+  font-weight: 400;
+}
+
+/* ========== TIMELINE HEADER ========== */
+.timeline-hero{
+  text-align:center;
+  padding: 120px 5vw 100px;
+  position:relative;
+  background: linear-gradient(180deg, transparent, rgba(14,53,87,.04) 50%, transparent);
+}
+.timeline-hero .small{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--shu);
+  margin-bottom: 24px;
+}
+.timeline-hero h2{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(44px, 6vw, 96px);
+  line-height: 1;
+  color: var(--sumi);
+  letter-spacing: -.015em;
+}
+.timeline-hero .jp{
+  display:block;
+  font-family: var(--font-jp);
+  color: var(--ai);
+  font-size: .42em;
+  font-weight: 400;
+  margin-top: 18px;
+  letter-spacing: .35em;
+}
+.timeline-hero::after{
+  content:'';
+  position:absolute;
+  bottom: 0; left:50%;
+  width:1px; height:80px;
+  background: linear-gradient(180deg, var(--sumi), transparent);
+}
+
+/* ========== TIMELINE ========== */
+.timeline{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 5vw 120px;
+  position:relative;
+}
+
+/* central spine */
+.timeline::before{
+  content:'';
+  position:absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--sumi) 4%, var(--sumi) 96%, transparent);
+  transform: translateX(-.5px);
+}
+
+/* ERA block */
+.era{
+  position:relative;
+  padding: 100px 0;
+}
+
+.era-marker{
+  position:absolute;
+  left:50%;
+  top: 80px;
+  transform: translateX(-50%);
+  width: 130px; height: 130px;
+  display:flex; align-items:center; justify-content:center;
+  z-index: 5;
+}
+.era-marker::before{
+  content:'';
+  position:absolute; inset:0;
+  background: var(--washi);
+  border: 1.5px solid var(--sumi);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 6px var(--washi),
+    0 0 0 7px var(--sumi);
+}
+.era-marker .num{
+  position:relative;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--ai-deep);
+  text-align:center;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.era-marker .num small{
+  display:block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: .28em;
+  color: var(--shu);
+  margin-top: 6px;
+}
+
+.era-title-block{
+  text-align:center;
+  margin-bottom: 90px;
+  padding-top: 90px;
+  position:relative;
+}
+.era-kanji{
+  font-family: var(--font-jp);
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 700;
+  color: var(--ai);
+  opacity: .08;
+  line-height: .85;
+  letter-spacing: -.04em;
+  position:absolute;
+  top: 40px; left: 50%;
+  transform: translateX(-50%);
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+}
+.era-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(36px, 5vw, 68px);
+  line-height: 1.02;
+  color: var(--sumi);
+  letter-spacing: -.02em;
+  position:relative; z-index:2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.era-title .italic{
+  display:block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: .5em;
+  color: var(--sumi-soft);
+  margin-top: 16px;
+  letter-spacing: 0;
+}
+
+/* Card rows - alternate left/right */
+.row{
+  display:grid;
+  grid-template-columns: 1fr 160px 1fr;
+  gap: 24px;
+  align-items:start;
+  margin-bottom: 100px;
+  position:relative;
+}
+
+.row-year{
+  text-align:center;
+  position:sticky; top: 30px;
+}
+.row-year .yr{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--ai-deep);
+  letter-spacing: -.02em;
+  display:inline-block;
+  background: var(--washi);
+  padding: 16px 0;
+  position:relative;
+}
+.row-year .yr::before,
+.row-year .yr::after{
+  content:'';
+  position:absolute; left:50%;
+  width: 1px; background:var(--sumi);
+  transform: translateX(-50%);
+}
+.row-year .yr::before{ top: -60px; height: 60px; }
+.row-year .yr::after{ bottom: -60px; height: 60px; }
+
+.row-year .tag{
+  display:block;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--shu);
+}
+
+.card{
+  padding: 0;
+  position:relative;
+}
+
+/* alternate: put content in left or right column */
+.row.left  .card.content-card{ grid-column: 1; text-align:right; padding-right: 24px; }
+.row.left  .card.empty{ grid-column: 3; }
+.row.right .card.content-card{ grid-column: 3; text-align:left; padding-left: 24px; }
+.row.right .card.empty{ grid-column: 1; }
+
+.card-visual{
+  width: 100%;
+  margin-bottom: 24px;
+  background: var(--ai-deep);
+  position:relative;
+  overflow:hidden;
+  border: 1px solid var(--sumi);
+  box-shadow:
+    6px 6px 0 -1px var(--washi),
+    6px 6px 0 0 var(--sumi);
+  line-height: 0; /* kill inline-image gap */
+}
+.card-visual svg,
+.card-visual img{
+  width: 100%;
+  height: auto;
+  display:block;
+}
+.card-visual img{
+  filter: saturate(1.02) contrast(1.02);
+  transition: transform 1.2s cubic-bezier(.2,.8,.2,1), filter .6s ease;
+}
+.card-visual:hover img{
+  transform: scale(1.03);
+  filter: saturate(1.08) contrast(1.05);
+}
+
+.card-kicker{
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--shu);
+  margin-bottom: 10px;
+}
+
+.card-artist-jp{
+  font-family: var(--font-jp);
+  font-size: 14px;
+  letter-spacing: .3em;
+  color: var(--ai);
+  margin-bottom: 4px;
+}
+.row.left .card-artist-jp{ justify-self:end; }
+
+.card-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.1;
+  color: var(--sumi);
+  margin-bottom: 10px;
+  letter-spacing: -.01em;
+}
+.card-work{
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--ai-deep);
+  margin-bottom: 22px;
+  line-height: 1.3;
+}
+.card-body{
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--sumi-soft);
+  margin-bottom: 18px;
+}
+.card-caption{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--sumi-soft);
+  padding: 18px 0;
+  border-top: 1px solid var(--sumi);
+  border-bottom: 1px solid var(--sumi);
+  margin-top: 20px;
+  letter-spacing: .02em;
+  text-transform: none;
+}
+.card-caption strong{
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: none;
+  color: var(--sumi);
+  letter-spacing: -.01em;
+  font-size: 13px;
+  display:block;
+  margin-bottom: 6px;
+}
+
+/* linked-work inline style */
+.linked{
+  margin-top: 48px;
+  padding: 28px 0 0;
+  border-top: 1px dashed var(--sumi-soft);
+}
+.linked .card-kicker{ color: var(--ai); }
+
+/* what-changes summary */
+.whatchanges{
+  grid-column: 1 / -1;
+  display:flex; justify-content:center;
+  margin: 50px 0 10px;
+}
+.whatchanges-inner{
+  max-width: 760px;
+  text-align:center;
+  padding: 44px 48px;
+  background: var(--washi-soft);
+  border: 1px solid var(--sumi);
+  position:relative;
+}
+.whatchanges-inner::before,
+.whatchanges-inner::after{
+  content:'';
+  position:absolute;
+  width: 18px; height: 18px;
+  background: var(--shu);
+}
+.whatchanges-inner::before{ top: -6px; left: -6px; }
+.whatchanges-inner::after{ bottom: -6px; right: -6px; }
+
+.whatchanges .kicker{
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--shu);
+  margin-bottom: 16px;
+}
+.whatchanges h4{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--sumi);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.whatchanges ul{
+  list-style:none;
+  display:grid; gap: 10px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--sumi-soft);
+}
+.whatchanges li{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+}
+.whatchanges li .arrow{
+  color: var(--shu);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.whatchanges li strong{
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ai-deep);
+  font-style: normal;
+}
+
+/* ========== CONCLUSION ========== */
+.conclusion{
+  padding: 160px 5vw 100px;
+  background: var(--ai-deep);
+  color: var(--washi);
+  position:relative;
+  overflow:hidden;
+}
+.conclusion.seigaiha::before{
+  content:'';
+  position:absolute; inset:0;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'><g fill='none' stroke='%23ece0c6' stroke-width='1' opacity='0.12'><path d='M0 40 a20 20 0 0 1 40 0 a20 20 0 0 1 40 0'/><path d='M-20 40 a20 20 0 0 1 40 0 a20 20 0 0 1 40 0 a20 20 0 0 1 40 0'/><path d='M0 40 a14 14 0 0 1 28 0 M26 40 a14 14 0 0 1 28 0 M52 40 a14 14 0 0 1 28 0'/></g></svg>");
+  background-size: 80px 40px;
+  pointer-events:none;
+}
+.conclusion-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  position:relative; z-index:2;
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items:start;
+}
+.conclusion .label{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--shu);
+  margin-bottom: 28px;
+  display:flex; align-items:center; gap:14px;
+}
+.conclusion .label::before{ content:''; width:40px; height:1px; background:var(--shu); }
+
+.conclusion h2{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -.015em;
+  color: var(--washi);
+}
+.conclusion h2 .jp{
+  display:block;
+  font-family: var(--font-jp);
+  color: var(--kin);
+  font-size: .5em;
+  font-weight: 400;
+  margin-bottom: 18px;
+  letter-spacing: .1em;
+  opacity: .95;
+}
+.conclusion-body p{
+  font-size: 20px;
+  line-height: 1.75;
+  margin-bottom: 26px;
+  color: rgba(236,224,198,.85);
+}
+.conclusion-body p:first-of-type::first-letter{
+  font-family: var(--font-display);
+  font-size: 88px;
+  float:left;
+  line-height: .85;
+  padding: 8px 14px 0 0;
+  color: var(--kin);
+  font-weight: 700;
+}
+.conclusion-kanji{
+  position:absolute;
+  right: -60px; bottom: -100px;
+  font-family: var(--font-jp);
+  font-size: clamp(300px, 40vw, 600px);
+  font-weight: 800;
+  color: var(--washi);
+  opacity: .04;
+  line-height:.8;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* ========== REFERENCES ========== */
+.references{
+  padding: 140px 5vw 120px;
+  background: var(--washi);
+  position:relative;
+  border-top: 1px solid var(--sumi);
+}
+.references::before{
+  content:'';
+  position:absolute;
+  top: -1px; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px; height: 100px;
+  background: var(--washi);
+  border: 1px solid var(--sumi);
+  border-radius: 50%;
+  display:flex;
+}
+.references::after{
+  content:'参考';
+  position:absolute;
+  top: -1px; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px; height: 100px;
+  display:flex; align-items:center; justify-content:center;
+  font-family: var(--font-jp);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: .08em;
+  color: var(--shu);
+}
+.references-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.references-header{
+  text-align:center;
+  margin-bottom: 80px;
+}
+.references-header .kicker{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--shu);
+  margin-bottom: 20px;
+}
+.references-header h2{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.02;
+  color: var(--sumi);
+  letter-spacing: -.015em;
+}
+.references-header h2 .italic{
+  display:block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: .5em;
+  color: var(--sumi-soft);
+  margin-top: 12px;
+}
+
+.ref-group{
+  margin-bottom: 60px;
+}
+.ref-group-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--sumi);
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--sumi);
+  display:flex; align-items:baseline; justify-content:space-between;
+  letter-spacing: -.01em;
+}
+.ref-group-title .jp{
+  font-family: var(--font-jp);
+  font-size: 14px;
+  letter-spacing: .3em;
+  color: var(--ai);
+  font-weight: 400;
+}
+
+.ref-list{
+  list-style: none;
+  counter-reset: ref;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 48px;
+}
+.ref-list li{
+  counter-increment: ref;
+  position:relative;
+  padding-left: 44px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--sumi-soft);
+  font-family: var(--font-body);
+}
+.ref-list li::before{
+  content: counter(ref, decimal-leading-zero);
+  position:absolute;
+  left: 0; top: 1px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .15em;
+  color: var(--shu);
+  padding: 3px 8px;
+  border: 1px solid var(--shu);
+  background: var(--washi-soft);
+}
+.ref-list li .author{
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--sumi);
+}
+.ref-list li .title{
+  font-style: italic;
+  color: var(--ai-deep);
+}
+.ref-list li .pub{
+  color: var(--sumi-soft);
+}
+
+.ref-meta{
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1px solid var(--sumi);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--sumi-soft);
+}
+.ref-meta .label{ color: var(--shu); display:block; margin-bottom: 6px; font-size: 10px; }
+.ref-meta .value{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: var(--sumi);
+}
+
+@media (max-width: 720px){
+  .ref-list{ grid-template-columns: 1fr; }
+  .ref-meta{ grid-template-columns: 1fr; }
+}
+
+/* ========== FOOTER ========== */
+footer{
+  padding: 40px 5vw;
+  background: var(--sumi);
+  color: var(--washi);
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+footer .center{
+  font-family: var(--font-jp);
+  font-size: 14px;
+  letter-spacing: .6em;
+  color: var(--kin);
+}
+footer .right{ text-align:right; color: rgba(236,224,198,.55); }
+
+/* ========== REVEAL ANIMATIONS ========== */
+.reveal{ opacity: 0; transform: translateY(30px); transition: opacity 1.1s cubic-bezier(.2,.8,.2,1), transform 1.1s cubic-bezier(.2,.8,.2,1); }
+.reveal.in{ opacity:1; transform: translateY(0); }
+.reveal.delay-1{ transition-delay:.12s; }
+.reveal.delay-2{ transition-delay:.24s; }
+.reveal.delay-3{ transition-delay:.36s; }
+.reveal.delay-4{ transition-delay:.48s; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px){
+  .hero{ grid-template-columns: 1fr; padding: 32px 24px; }
+  .hero-vertical-left, .hero-vertical-right{ display:none; }
+  .hero-center{ grid-column: 1; }
+  .hero-meta{ grid-template-columns: 1fr 1fr; }
+  .hanko{ width:80px; height:80px; }
+  .hanko::before{ font-size:24px; }
+  .intro-grid{ grid-template-columns: 1fr; gap: 40px; }
+  .intro-heading{ position:static; }
+  .timeline::before{ left: 30px; }
+  .row{ grid-template-columns: 60px 1fr; }
+  .row-year{ grid-column: 1; position:sticky; top: 20px; }
+  .row-year .yr{ font-size: 26px; padding: 8px 0; }
+  .row-year .yr::before, .row-year .yr::after{ height: 30px; }
+  .row.left .card.content-card,
+  .row.right .card.content-card{ grid-column: 2; text-align:left; padding: 0 0 0 20px; }
+  .row .card.empty{ display:none; }
+  .era-marker{ left: 30px; width: 80px; height: 80px; }
+  .era-marker .num{ font-size: 20px; }
+  .era-marker::before{ box-shadow: 0 0 0 4px var(--washi), 0 0 0 5px var(--sumi); }
+  .conclusion-inner{ grid-template-columns: 1fr; gap: 36px; }
+  footer{ grid-template-columns: 1fr; text-align:center; }
+  footer .right{ text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- SVG filters for rough/ink effects -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="roughen">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="3"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ========================= HERO ========================= -->
+<section class="hero">
+  <div class="hero-topbar">
+    <span><span class="dot"></span>Research Project 2</span>
+    <span>Edo period → Modern design · 江戸 → 近代</span>
+    <span class="author-name">Nguyen Kiet Pham</span>
+  </div>
+
+  <div class="hero-vertical-left reveal">江戸 · 浮世 · 版画 · 近代</div>
+
+  <div class="hero-center">
+    <div class="hero-kanji reveal">浮世絵</div>
+    <div class="hero-eyebrow reveal">Pictures of the floating world</div>
+    <h1 class="hero-title reveal delay-1">
+      Floating Worlds<br/>
+      <span class="big-and">in</span>Print
+      <span class="accent">Ukiyo-e &amp; the rise of modern visual communication</span>
+    </h1>
+    <p class="hero-subtitle reveal delay-3">
+      An illustrated timeline of how Japan's woodblock printers - working across carver,
+      printer and publisher - quietly invented the language of modern graphic design.
+    </p>
+    <div class="hero-byline reveal delay-4">
+      <span class="by">Researched &amp; designed by</span>
+      <span class="nm">Nguyen Kiet Pham</span>
+      <span class="pr">- Research Project 2</span>
+    </div>
+  </div>
+
+  <div class="hero-vertical-right reveal">Prussian blue · bokashi · nishiki-e</div>
+
+  <div class="hanko hanko-1 reveal delay-4"></div>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="label">Period</span>
+      <span class="value">1603 - 1890</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">Origin</span>
+      <span class="value">Edo, Japan</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">Medium</span>
+      <span class="value">Woodblock print</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">Legacy</span>
+      <span class="value">Modern graphic design</span>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+
+<!-- ========================= INTRODUCTION ========================= -->
+<section class="intro">
+  <div class="intro-label reveal">§ 01 - Introduction</div>
+  <div class="intro-grid">
+    <h2 class="intro-heading reveal">
+      <span class="jp">序文 - はじめに</span>
+      Before the poster, there was the print.
+    </h2>
+    <div class="intro-body">
+      <p class="reveal delay-1">
+        Ukiyo-e - <em>pictures of the floating world</em> - developed in Japan during
+        the Edo period as one of the earliest systems of mass visual communication.
+        Unlike traditional painting, these works were never meant to be unique.
+        They were designed to be reproduced through woodblock printing and
+        distributed to the widest audience possible.
+      </p>
+      <p class="reveal delay-2">
+Through a collaborative process between the artist, carver, printer, and publisher, these prints could be produced in large quantities while still maintaining strong visual quality. This system also introduced key design principles that we still see today-flatness, bold outlines, controlled composition, and layered colo,which made the images clearer, easier to read, and more visually engaging.
+      </p>
+      <blockquote class="pull-quote reveal delay-3">
+        &ldquo;Ukiyo-e should be understood not only as art, but as an early form of
+        graphic design that combines image, text, and production.&rdquo;
+      </blockquote>
+      <p class="reveal delay-4">
+        Japan opened to global trade in the nineteenth century, these
+        prints began to circulate in Europe. Western artists and designers
+        studied their compositions and adapted their visual strategies.
+        Over time, these ideas helped shape modern poster design and
+        advertising. Because of this, ukiyo-e is not just part of Japanese
+        art history, which it opens more opportunity for the artists from Japan.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================= TIMELINE HEADER ========================= -->
+<section class="timeline-hero">
+  <div class="small reveal">§ 02 - A timeline in four movements</div>
+  <h2 class="reveal delay-1">
+    The Development of Ukiyo-e<br/>&amp; its Influence
+    <span class="jp">年 表</span>
+  </h2>
+</section>
+
+
+<!-- ========================= TIMELINE ========================= -->
+<div class="timeline">
+
+  <!-- ========== ERA 1 ========== -->
+  <section class="era">
+    <div class="era-marker reveal"><div class="num">I<small>MOVEMENT</small></div></div>
+
+    <div class="era-title-block">
+      <div class="era-kanji reveal">公開</div>
+      <h3 class="era-title reveal delay-1">
+        Late 1600s - Prints Become Public Media
+        <span class="italic">From painting traditions to reproducible images</span>
+      </h3>
+    </div>
+
+    <!-- Moronobu - LEFT -->
+    <div class="row left">
+      <div class="card content-card reveal">
+        <div class="card-kicker">Featured work</div>
+        <div class="card-artist-jp">菱川 師宣</div>
+        <h4 class="card-title">Hishikawa Moronobu</h4>
+        <div class="card-work">Scene in the Yoshiwara, ca. 1680</div>
+        <p class="card-body">
+          At this early stage, ukiyo-e prints begin to reflect everyday life rather
+          than elite subjects. Moronobu's work shows scenes from the Yoshiwara district
+          a space associated with entertainment, fashion, and social interaction.
+          The images were created for a broader audience, making them more accessible
+          than traditional paintings.
+        </p>
+        <p class="card-body">
+          The production process is simple but revolutionary: a drawing is transferred
+          onto a wooden block, carved so the lines remain raised, and printed onto
+          paper. Because the block can be reused, the image can be reproduced many
+          times. It stops being unique. It becomes part of a larger system of distribution.
+        </p>
+        <p class="card-body">
+          What stands out here is how much the design depends on line. With little
+          use of colour, contour and composition carry all the meaning. The image is
+          forced to be clear and structured, which shows a very early form of graphic design,
+          where readability is everything.
+        </p>
+        <div class="card-caption">
+          <strong>Hishikawa Moronobu · Scene in the Yoshiwara · ca. 1680</strong>
+          Woodblock print (ink on paper). Produced from a single carved block. The
+          work shows how early ukiyo-e relied on line and composition to communicate
+          clearly within a reproducible format.
+        </div>
+      </div>
+
+      <div class="row-year reveal"><span class="yr">1680</span><span class="tag">- Era of Ink -</span></div>
+
+      <div class="card empty">
+        <div class="card-visual reveal delay-1">
+          <img src="images/01 moronobu yoshiwara.jpg" alt="Hishikawa Moronobu, Scene in the Yoshiwara, ca. 1680. Woodblock print showing figures in an Edo entertainment district." loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Korin - RIGHT (linked work) -->
+    <div class="row right">
+      <div class="card empty">
+        <div class="card-visual reveal">
+          <img src="images/02-korin-plum-blossoms.jpg" alt="Ogata Kōrin, Red and White Plum Blossoms, c. 1710–1716. A pair of two-fold screens with ink, color, and gold leaf on paper." loading="lazy" />
+        </div>
+      </div>
+
+      <div class="row-year reveal delay-1"><span class="yr">1715</span><span class="tag">- Linked work -</span></div>
+
+      <div class="card content-card reveal delay-2">
+        <div class="card-kicker">Linked work</div>
+        <div class="card-artist-jp">尾形 光琳</div>
+        <h4 class="card-title">Ogata Kōrin</h4>
+        <div class="card-work">Red and White Plum Blossoms, c. 1710–1716</div>
+        <p class="card-body">
+          Kōrin's painted screen helps explain the visual background of ukiyo-e.
+          His work emphasises flat surfaces, decorative pattern, and strong contrast
+          rather than realistic depth. The use of gold backgrounds removes spatial
+          illusion and focuses attention on shape and arrangement and pictorial
+          grammar the printmakers would later inherit.
+        </p>
+      </div>
+    </div>
+
+    <!-- What changes -->
+    <div class="whatchanges reveal">
+      <div class="whatchanges-inner">
+        <div class="kicker">◎  What changes</div>
+        <h4>Moving from Kōrin to Moronobu, there is a shift </h4>
+        <ul>
+          <li><strong>painting</strong><span class="arrow">→</span><strong>print</strong></li>
+          <li><strong>unique object</strong><span class="arrow">→</span><strong>reproducible image</strong></li>
+          <li><strong>decoration</strong><span class="arrow">→</span><strong>communication</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== ERA 2 ========== -->
+  <section class="era">
+    <div class="era-marker reveal"><div class="num">II<small>MOVEMENT</small></div></div>
+
+    <div class="era-title-block">
+      <div class="era-kanji reveal">色彩</div>
+      <h3 class="era-title reveal delay-1">
+        1700s - Colour and Visual Complexity
+        <span class="italic">From line-based design to layered visual systems</span>
+      </h3>
+    </div>
+
+    <!-- Harunobu - LEFT -->
+    <div class="row left">
+      <div class="card content-card reveal">
+        <div class="card-kicker">Featured work · nishiki-e</div>
+        <div class="card-artist-jp">鈴木 春信</div>
+        <h4 class="card-title">Suzuki Harunobu</h4>
+        <div class="card-work">On the Veranda, 18th century</div>
+        <p class="card-body">
+          Harunobu introduces full-colour printing <em>nishiki-e</em>, or
+          &ldquo;brocade pictures.&rdquo; Instead of one block, multiple woodblocks
+          are used, each carrying a different colour. The printer must align the
+          blocks precisely so the image comes together correctly.
+        </p>
+        <p class="card-body">
+          This technical development changes how images function entirely. Colour
+          is no longer decorative; it becomes part of the structure. It creates
+          hierarchy, guides the viewer's attention, and adds emotional tone.
+          The image becomes more dynamic, and far more effective as a form
+          of communication.
+        </p>
+        <div class="card-caption">
+          <strong>Suzuki Harunobu · On the Veranda · 18th century</strong>
+          Multicolour woodblock print (nishiki-e). Produced using multiple carved
+          blocks and layered pigments. Demonstrates how colour became a structural
+          element in visual communication.
+        </div>
+      </div>
+
+      <div class="row-year reveal"><span class="yr">1765</span><span class="tag">- Era of Colour -</span></div>
+
+      <div class="card empty">
+        <div class="card-visual reveal delay-1">
+          <img src="images/03-harunobu-veranda.jpg" alt="Suzuki Harunobu, On the Veranda, 18th century. A full-color nishiki-e woodblock print." loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Utamaro - RIGHT -->
+    <div class="row right">
+      <div class="card empty">
+        <div class="card-visual reveal">
+          <img src="images/04-utamaro-hour-of-the-ox.jpg" alt="Kitagawa Utamaro, The Hour of the Ox, ca. 1794. A refined bijin-ga woodblock print." loading="lazy" />
+        </div>
+      </div>
+
+      <div class="row-year reveal delay-1"><span class="yr">1794</span><span class="tag">- Refinement -</span></div>
+
+      <div class="card content-card reveal delay-2">
+        <div class="card-kicker">Featured work · bijin-ga</div>
+        <div class="card-artist-jp">喜多川 歌麿</div>
+        <h4 class="card-title">Kitagawa Utamaro</h4>
+        <div class="card-work">The Hour of the Ox, ca. 1794</div>
+        <p class="card-body">
+          Utamaro builds on Harunobu's system but pursues refinement rather than
+          complexity. His compositions are closer, more controlled a single
+          figure with subtle gestures and expressions.
+        </p>
+        <p class="card-body">
+          The printing process is still complex, but the visual effect is simplified.
+          Instead of showing many elements, the design emphasises mood and identity.
+          It shows, beautifully, that communication can be achieved through restraint
+          as much as through detail.
+        </p>
+        <div class="card-caption">
+          <strong>Kitagawa Utamaro · The Hour of the Ox · ca. 1794</strong>
+          Multicolour woodblock print. The close composition and controlled use of
+          colour create a sense of intimacy ukiyo-e communicating emotion through
+          simplified design.
+        </div>
+      </div>
+    </div>
+
+    <!-- Sharaku - LEFT (linked) -->
+    <div class="row left">
+      <div class="card content-card reveal">
+        <div class="linked">
+          <div class="card-kicker">Linked work · yakusha-e</div>
+          <div class="card-artist-jp">東洲斎 写楽</div>
+          <h4 class="card-title">Tōshūsai Sharaku</h4>
+          <div class="card-work">Ōtani Oniji III, 1794</div>
+          <p class="card-body">
+            Sharaku's work contrasts with Utamaro by using exaggeration instead of
+            subtlety. The expression is intense and stylised, making the figure
+            immediately recognisable a vivid demonstration that ukiyo-e has
+            become a flexible system, able to carry many communicative tones.
+          </p>
+        </div>
+      </div>
+
+      <div class="row-year reveal delay-1"><span class="yr">1794</span><span class="tag">- Linked work -</span></div>
+
+      <div class="card empty">
+        <div class="card-visual reveal delay-2">
+          <img src="images/05-sharaku-actor.jpg" alt="Tōshūsai Sharaku, Ōtani Oniji III, 1794. A dramatic yakusha-e portrait of a kabuki actor with mica background." loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="whatchanges reveal">
+      <div class="whatchanges-inner">
+        <div class="kicker">◎  What changes</div>
+        <h4>Ukiyo-e evolves into a flexible system of communication.</h4>
+        <ul>
+          <li><strong>Harunobu</strong><span class="arrow">→</span>introduces colour</li>
+          <li><strong>Utamaro</strong><span class="arrow">→</span>refines composition</li>
+          <li><strong>Sharaku</strong><span class="arrow">→</span>exaggerates expression</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== ERA 3 ========== -->
+  <section class="era">
+    <div class="era-marker reveal"><div class="num">III<small>MOVEMENT</small></div></div>
+
+    <div class="era-title-block">
+      <div class="era-kanji reveal">頂点</div>
+      <h3 class="era-title reveal delay-1">
+        1800 - 1850 · Peak Ukiyo-e
+        <span class="italic">From representation to strong visual impact</span>
+      </h3>
+    </div>
+
+    <!-- Hokusai - LEFT -->
+    <div class="row left">
+      <div class="card content-card reveal">
+        <div class="card-kicker">Featured work · meisho-e</div>
+        <div class="card-artist-jp">葛飾 北斎</div>
+        <h4 class="card-title">Katsushika Hokusai</h4>
+        <div class="card-work">Under the Wave off Kanagawa, ca. 1830–32</div>
+        <p class="card-body">
+          Hokusai's <em>Great Wave</em> demonstrates a high level of design control.
+          The curved wave dominates the composition, directing the viewer's attention,
+          while Mount Fuji remains stable in the background which it helps deliberate tension
+          between movement and stillness.
+        </p>
+        <p class="card-body">
+          The use of <em>Prussian blue</em>, an imported pigment, is significant.
+          It produces a deeper, more durable colour than earlier materials. Global
+          trade, in other words, is literally influencing the visual palette.
+          Even mass-produced, the image maintains undeniable impact.
+        </p>
+        <div class="card-caption">
+          <strong>Katsushika Hokusai · Under the Wave off Kanagawa · ca. 1830–32</strong>
+          Multicolour woodblock print using Prussian blue pigment. Composition and
+          material innovation create a powerful, widely reproducible image.
+        </div>
+      </div>
+
+      <div class="row-year reveal"><span class="yr">1831</span><span class="tag">- The Great Wave -</span></div>
+
+      <div class="card empty">
+        <div class="card-visual reveal delay-1">
+          <img src="images/06-hokusai-great-wave.jpg" alt="Katsushika Hokusai, Under the Wave off Kanagawa (The Great Wave), ca. 1830–32. Multicolor woodblock print using Prussian blue." loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Hiroshige - RIGHT -->
+    <div class="row right">
+      <div class="card empty">
+        <div class="card-visual reveal">
+          <img src="images/07-hiroshige-shower.jpg" alt="Utagawa Hiroshige, Sudden Shower over Shin-Ōhashi Bridge and Atake, 1857. Multicolor woodblock print using bokashi gradation." loading="lazy" />
+        </div>
+      </div>
+
+      <div class="row-year reveal delay-1"><span class="yr">1857</span><span class="tag">- Bokashi gradation -</span></div>
+
+      <div class="card content-card reveal delay-2">
+        <div class="card-kicker">Featured work · atmosphere</div>
+        <div class="card-artist-jp">歌川 広重</div>
+        <h4 class="card-title">Utagawa Hiroshige</h4>
+        <div class="card-work">Sudden Shower over Shin-Ōhashi Bridge, 1857</div>
+        <p class="card-body">
+          Hiroshige's approach is more atmospheric. The rain is shown through
+          diagonal lines, and the composition feels like a captured moment in
+          time. The use of <em>bokashi</em> - colour gradation - creates subtle
+          transitions that add depth without traditional perspective.
+        </p>
+        <p class="card-body">
+          Here ukiyo-e is doing something new: it is communicating not just form,
+          but environment and experience. The viewer doesn't just see the scene.
+          They feel the weather.
+        </p>
+        <div class="card-caption">
+          <strong>Utagawa Hiroshige · Sudden Shower over Shin-Ōhashi Bridge · 1857</strong>
+          Multicolour woodblock print using bokashi gradation. The diagonal
+          composition and atmospheric effects create a sense of movement and
+          immediacy.
+        </div>
+      </div>
+    </div>
+
+    <div class="whatchanges reveal">
+      <div class="whatchanges-inner">
+        <div class="kicker">◎  What changes</div>
+        <h4>Ukiyo-e expands its visual language while holding its core principles.</h4>
+        <ul>
+          <li><strong>Hokusai</strong><span class="arrow">→</span>bold, iconic composition</li>
+          <li><strong>Hiroshige</strong><span class="arrow">→</span>atmospheric, immersive design</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== ERA 4 ========== -->
+  <section class="era">
+    <div class="era-marker reveal"><div class="num">IV<small>MOVEMENT</small></div></div>
+
+    <div class="era-title-block">
+      <div class="era-kanji reveal">影響</div>
+      <h3 class="era-title reveal delay-1">
+        Late 1800s - Global Influence
+        <span class="italic">From Japanese prints to modern graphic design</span>
+      </h3>
+    </div>
+
+    <!-- Van Gogh - LEFT -->
+    <div class="row left">
+      <div class="card content-card reveal">
+        <div class="card-kicker">Cross-cultural adaptation</div>
+        <div class="card-artist-jp">ゴッホ</div>
+        <h4 class="card-title">Vincent van Gogh</h4>
+        <div class="card-work">Bridge in the Rain (after Hiroshige), 1887</div>
+        <p class="card-body">
+          Van Gogh's work shows a direct line to ukiyo-e. He copies Hiroshige's
+          composition keeps the flat colour areas, the bold outlines, the
+          cropped framing. Even though the medium has changed from woodblock
+          to oil, the structural thinking remains the same.
+        </p>
+        <p class="card-body">
+          This is the proof that ukiyo-e is not simply a style. It is a
+          <em>system</em> that can cross continents and mediums and
+          still work.
+        </p>
+        <div class="card-caption">
+          <strong>Vincent van Gogh · Bridge in the Rain (after Hiroshige) · 1887</strong>
+          Oil on canvas. Based on a Japanese woodblock print, the work demonstrates
+          how ukiyo-e composition influenced Western art.
+        </div>
+      </div>
+
+      <div class="row-year reveal"><span class="yr">1887</span><span class="tag">- Japonisme -</span></div>
+
+      <div class="card empty">
+        <div class="card-visual reveal delay-1">
+          <img src="images/08-vangogh-bridge.jpg" alt="Vincent van Gogh, Bridge in the Rain (after Hiroshige), 1887. Oil on canvas." loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Toulouse-Lautrec - RIGHT -->
+    <div class="row right">
+      <div class="card empty">
+        <div class="card-visual reveal">
+          <img src="images/09-toulouse-lautrec-moulin.jpg" alt="Henri de Toulouse-Lautrec, Moulin Rouge: La Goulue, 1891. Color lithograph poster." loading="lazy" />
+        </div>
+      </div>
+
+      <div class="row-year reveal delay-1"><span class="yr">1891</span><span class="tag">- Poster design -</span></div>
+
+      <div class="card content-card reveal delay-2">
+        <div class="card-kicker">Art becomes advertising</div>
+        <div class="card-artist-jp">ロートレック</div>
+        <h4 class="card-title">Henri de Toulouse-Lautrec</h4>
+        <div class="card-work">Moulin Rouge: La Goulue, 1891</div>
+        <p class="card-body">
+          Lautrec applies ukiyo-e's principles in a commercial context. The
+          figures are simplified, the colours flat, the composition designed
+          for quick recognition from a distance on a wall, at night, at
+          speed.
+        </p>
+        <p class="card-body">
+          This marks the transition from <em>art</em> to <em>modern graphic design</em>
+          images made to communicate efficiently in public space. The poster is
+          the print's direct descendant.
+        </p>
+        <div class="card-caption">
+          <strong>Henri de Toulouse-Lautrec · Moulin Rouge: La Goulue · 1891</strong>
+          Lithographic poster. Flat colour, strong outlines, cropped composition and
+          reflecting the direct influence of ukiyo-e on modern advertising.
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div> <!-- /.timeline -->
+
+
+<!-- ========================= CONCLUSION ========================= -->
+<section class="conclusion seigaiha">
+  <div class="conclusion-kanji">終</div>
+  <div class="conclusion-inner">
+    <div>
+      <div class="label">§ 03 - In closing</div>
+      <h2 class="reveal">
+        <span class="jp">結語 - しゅうご</span>
+        A quiet revolution, still unfolding.
+      </h2>
+    </div>
+    <div class="conclusion-body">
+      <p class="reveal delay-1">
+        Ukiyo-e represents a major shift in the history of visual communication.
+        Through woodblock printing, images became reproducible, accessible, and
+        widely distributed. This changed the role of design makes it more
+        focused on clarity, impact, and communication than on preciousness or
+        one-of-a-kind virtuosity.
+      </p>
+      <p class="reveal delay-2">
+        In Europe, their design principles influenced Western artists and contributed to the development of modern graphic
+        design. For example, Claude Monet, Jules Chéret, Henri de Toulouse-Lautrec and Vincent van Gogh. Today, every time we admire a poster that works at a glance,
+        a magazine spread with confident negative space, or an interface whose
+        visual hierarchy simply <em>feels right</em>. We are looking at the
+        distant descendants of carved wood, layered ink, and the quiet
+        collaboration between artist, carver, printer, and publisher.
+      </p>
+      <p class="reveal delay-3">
+        The floating world never really stopped floating. It just kept moving
+        into new media.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================= REFERENCES ========================= -->
+<section class="references">
+  <div class="references-inner">
+    <div class="references-header">
+      <div class="kicker reveal">§ 04 - References &amp; further reading</div>
+      <h2 class="reveal delay-1">
+        References
+        <span class="italic">primary works, scholarly sources, and collections consulted</span>
+      </h2>
+    </div>
+
+    <!-- Primary works -->
+    <div class="ref-group reveal">
+      <div class="ref-group-title">
+        <span>I. Primary works · artworks referenced</span>
+        <span class="jp">一次資料</span>
+      </div>
+      <ol class="ref-list">
+        <li>
+          <span class="author">Moronobu, Hishikawa.</span>
+          <span class="title"> Scene in the Yoshiwara.</span>
+          <span class="pub"> ca. 1680. Woodblock print, ink on paper. The Metropolitan Museum of Art, New York.</span>
+        </li>
+        <li>
+          <span class="author">Kōrin, Ogata.</span>
+          <span class="title"> Red and White Plum Blossoms.</span>
+          <span class="pub"> ca. 1710–1716. Pair of two-fold screens; ink, colour, and gold leaf on paper. MOA Museum of Art, Atami.</span>
+        </li>
+        <li>
+          <span class="author">Harunobu, Suzuki.</span>
+          <span class="title"> On the Veranda.</span>
+          <span class="pub"> 18th century. Multicolour woodblock print (nishiki-e). The Metropolitan Museum of Art, New York.</span>
+        </li>
+        <li>
+          <span class="author">Utamaro, Kitagawa.</span>
+          <span class="title"> The Hour of the Ox.</span>
+          <span class="pub"> ca. 1794. Multicolour woodblock print. The Metropolitan Museum of Art, New York.</span>
+        </li>
+        <li>
+          <span class="author">Sharaku, Tōshūsai.</span>
+          <span class="title"> Ōtani Oniji III as the Servant Edobei.</span>
+          <span class="pub"> 1794. Multicolour woodblock print with mica ground. The Metropolitan Museum of Art, New York.</span>
+        </li>
+        <li>
+          <span class="author">Hokusai, Katsushika.</span>
+          <span class="title"> Under the Wave off Kanagawa (Kanagawa-oki nami-ura).</span>
+          <span class="pub"> ca. 1830–1832. From the series <em>Thirty-six Views of Mount Fuji</em>. Multicolour woodblock print. The Metropolitan Museum of Art, New York.</span>
+        </li>
+        <li>
+          <span class="author">Hiroshige, Utagawa.</span>
+          <span class="title"> Sudden Shower over Shin-Ōhashi Bridge and Atake (Ōhashi Atake no yūdachi).</span>
+          <span class="pub"> 1857. From the series <em>One Hundred Famous Views of Edo</em>. Multicolour woodblock print. Brooklyn Museum.</span>
+        </li>
+        <li>
+          <span class="author">Van Gogh, Vincent.</span>
+          <span class="title"> Bridge in the Rain (after Hiroshige).</span>
+          <span class="pub"> 1887. Oil on canvas. Van Gogh Museum, Amsterdam.</span>
+        </li>
+        <li>
+          <span class="author">Toulouse-Lautrec, Henri de.</span>
+          <span class="title"> Moulin Rouge: La Goulue.</span>
+          <span class="pub"> 1891. Colour lithograph poster. Museum of Modern Art, New York.</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Secondary sources -->
+    <div class="ref-group reveal">
+      <div class="ref-group-title">
+        <span>II. Secondary sources · books &amp; scholarship</span>
+        <span class="jp">参考文献</span>
+      </div>
+      <ol class="ref-list">
+        <li>
+          <span class="author">Clark, Timothy.</span>
+          <span class="title"> Hokusai: Beyond the Great Wave.</span>
+          <span class="pub"> London: Thames &amp; Hudson, 2017.</span>
+        </li>
+        <li>
+          <span class="author">Guth, Christine M. E.</span>
+          <span class="title"> Hokusai's Great Wave: Biography of a Global Icon.</span>
+          <span class="pub"> Honolulu: University of Hawai&lsquo;i Press, 2015.</span>
+        </li>
+        <li>
+          <span class="author">Lambourne, Lionel.</span>
+          <span class="title"> Japonisme: Cultural Crossings Between Japan and the West.</span>
+          <span class="pub"> London: Phaidon Press, 2005.</span>
+        </li>
+        <li>
+          <span class="author">Meggs, Philip B., and Alston W. Purvis.</span>
+          <span class="title"> Meggs' History of Graphic Design.</span>
+          <span class="pub"> 6th ed. Hoboken, NJ: John Wiley &amp; Sons, 2016.</span>
+        </li>
+        <li>
+          <span class="author">Salter, Rebecca.</span>
+          <span class="title"> Japanese Woodblock Printing.</span>
+          <span class="pub"> Honolulu: University of Hawai&lsquo;i Press, 2002.</span>
+        </li>
+        <li>
+          <span class="author">Thompson, Sarah E.</span>
+          <span class="title"> Hiroshige's One Hundred Famous Views of Edo.</span>
+          <span class="pub"> New York: George Braziller, 2009.</span>
+        </li>
+        <li>
+          <span class="author">Screech, Timon.</span>
+          <span class="title"> The Western Scientific Gaze and Popular Imagery in Later Edo Japan.</span>
+          <span class="pub"> Cambridge: Cambridge University Press, 2002.</span>
+        </li>
+        <li>
+          <span class="author">Weisberg, Gabriel P.</span>
+          <span class="title"> Japonisme: Japanese Influence on French Art 1854–1910.</span>
+          <span class="pub"> Cleveland: Cleveland Museum of Art, 1975.</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Institutional collections -->
+    <div class="ref-group reveal">
+      <div class="ref-group-title">
+        <span>III. Collections &amp; digital archives</span>
+        <span class="jp">所蔵機関</span>
+      </div>
+      <ol class="ref-list">
+        <li>
+          <span class="author">The Metropolitan Museum of Art.</span>
+          <span class="title"> Department of Asian Art - Japanese prints collection.</span>
+          <span class="pub"> New York, NY.</span>
+        </li>
+        <li>
+          <span class="author">Brooklyn Museum.</span>
+          <span class="title"> Asian Art collection - Utagawa Hiroshige holdings.</span>
+          <span class="pub"> Brooklyn, NY.</span>
+        </li>
+        <li>
+          <span class="author">The British Museum.</span>
+          <span class="title"> Department of Asia - Japanese woodblock prints.</span>
+          <span class="pub"> London, United Kingdom.</span>
+        </li>
+        <li>
+          <span class="author">Van Gogh Museum.</span>
+          <span class="title"> Japanese influence - permanent collection.</span>
+          <span class="pub"> Amsterdam, Netherlands.</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Colophon -->
+    <div class="ref-meta">
+      <div>
+        <span class="label">Researcher</span>
+        <span class="value">Nguyen Kiet Pham</span>
+      </div>
+      <div>
+        <span class="label">Project</span>
+        <span class="value">Research Project 2</span>
+      </div>
+      <div>
+        <span class="label">Subject</span>
+        <span class="value">Ukiyo-e &amp; modern design</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================= FOOTER ========================= -->
+<footer>
+  <div class="left">© Nguyen Kiet Pham · Research Project 2</div>
+  <div class="center">完 · 終 · 完</div>
+  <div class="right">Typeset in Shippori Mincho &amp; Cormorant Garamond</div>
+</footer>
+
+
+<script>
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+<!-- portfolio-back-bar --><a href="../../index.html#work" style="position:fixed;left:16px;bottom:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#182063;color:#F4F5F0;font:600 14px/1 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(24,32,99,.28);border:2px solid #FF4FA7" aria-label="Back to Nguyen Kiet Pham's portfolio">&larr; Nguyen Kiet Pham &middot; Portfolio</a>
+</body>
+</html>

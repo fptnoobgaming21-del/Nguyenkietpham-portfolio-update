@@ -1,0 +1,608 @@
+/*Video background */
+.back-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+video:fullscreen,
+video:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+:root {
+  --bg: #0f1a22;
+  --bg-2: #0b141a;
+  --ink: #eaf3fb;
+  --muted: #b8c7d6;
+  --accent: #ffd166;
+  --accent-2: #7cc2ff;
+  --maxw: 1200px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container{
+  width: min(92vw, var(--maxw));
+  margin-inline: auto;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 10;
+  background: rgba(10, 12, 22, 0.45);
+  backdrop-filter: blur(12px) saturate(120%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.nav-inner {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Cinzel", serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 36px;
+  margin-left: -100px;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  margin-right: -100px;
+}
+
+.links a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+  font-size: 22px;
+}
+.links a:hover {
+  color: #ffd166;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 70px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-family: "Cinzel", serif;
+  font-size: 100px;
+  text-shadow: 0 6px 30px rgb(17, 17, 17);
+  color: #e6e6e6;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  width: min(680px, 90vw);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 8px 16px;
+  backdrop-filter: blur(6px);
+}
+
+.search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ink);
+  font-size: 16px;
+}
+.search input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+.search button {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+
+.sections {
+  padding-block: 72px;
+}
+
+.sections{ padding-block: 72px; }
+
+.split{
+  display: grid;
+  align-items: center;
+  gap: clamp(24px, 5vw, 56px);
+  grid-template-columns: 1.1fr 1fr; /* text slightly wider like your design */
+  padding-block: clamp(36px, 8vw, 96px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.split:nth-of-type(even){
+  grid-template-columns: 1fr 1.1fr;
+}
+.split h2{
+  font-family: 'Cinzel', serif;
+  font-size: clamp(26px, 3vw, 40px);
+  margin: 0 0 12px;
+}
+.split p{
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 20px;
+}
+
+.split-media img{
+  width: 100%; height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+.button{
+  display: inline-block;
+  background: linear-gradient(180deg, var(--accent), #ffb703);
+  color: #1b1b1b;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+/**changing the color button when you the mouse overhere **/
+.button:hover {
+  background: linear-gradient(180deg, #ffffff, #ffffff); /* lighter gold */
+  color: #000; /* optional: darker text for contrast */
+  transform: translateY(-3px); /* subtle lift effect */
+  box-shadow: 0 8px 20px rgba(255, 209, 102, 0.3); /* glowing hover shadow */
+  transition: all 0.3s ease;
+  color: #ffb703;
+  text-align: center;
+}
+
+/* Footer */
+.footer{
+  background: color-mix(in oklab, var(--bg-2) 85%, black 15%);
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.footer-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.foot-links a{
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 16px;
+}
+.foot-links a:hover{ color: var(--accent-2); }
+
+.footer-right a{
+  color: #000000;
+  font-size: 1.3rem;
+  margin-left: 14px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-right a:hover {
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .links{ display: none; }
+  .links.open{
+    position: absolute; top: 64px; right: 4vw;
+    display: grid; gap: 12px;
+    background: color-mix(in oklab, var(--bg) 92%, black 8%);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 14px 16px; border-radius: 12px;
+  }
+}
+
+@media (max-width: 900px){
+  .split{
+    grid-template-columns: 1fr;
+  }
+  .split:nth-of-type(even){
+    grid-template-columns: 1fr;
+  }
+  .split-media img{ border-radius: 14px; }
+}
+
+/** about us code **/
+
+
+/* Split About section (sticky media / light content)*/
+:root{
+  --nav-h: 70px;                  /* matches your fixed navbar */
+  --about-bg: #0f1a22;;            /* dark panel color */
+  --about-ink: #ffffff;           /* light text on dark bg */
+  --about-muted: #ffffff;
+}
+
+/* container */
+.about-split{
+  display: grid;
+  grid-template-columns: minmax(360px, 1fr) minmax(520px, 0.9fr);
+  min-height: calc(100vh - var(--nav-h));      /* clears the fixed navbar */
+}
+
+/* left column: sticky media */
+.about-media{
+  position: sticky;
+  top: var(--nav-h);
+  height: calc(100vh - var(--nav-h));
+  overflow: hidden;
+}
+.about-media img,
+.about-media video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* right column: light panel */
+.about-panel{
+  background: var(--about-bg);
+  color: var(--about-ink);
+  padding: clamp(32px, 6vw, 72px);
+  display: grid;
+  align-content: start;
+  gap: clamp(16px, 2.5vw, 28px);
+  border-left: 1px solid rgba(0,0,0,.06);
+}
+
+/* big headline */
+.about-title{
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: clamp(48px, 10vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+/* lede + two-column copy */
+.about-lede{
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--about-ink);
+  max-width: 56ch;
+}
+
+.about-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 3vw, 32px);
+}
+.about-grid p{
+  color: var(--about-muted);
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1.75;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .about-split{
+    grid-template-columns: 1fr;         /* stack */
+  }
+  .about-media{
+    position: relative;
+    top: 0;
+    height: 42vh;                        /* hero-like banner */
+  }
+  .about-panel{
+    border-left: none;
+  }
+  .about-grid{
+    grid-template-columns: 1fr;          /* single column text */
+  }
+}
+
+/* contact us */
+.contact-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: stretch;           /* was (invalid). Use center or flex-start */
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;               /* stack on small screens */
+  z-index: 2;
+}
+
+
+/* ---- CONTACT CARD (no absolute here) ---- */
+.contact-card {
+  position: static;              /* IMPORTANT: remove absolute to avoid overlap */
+  width: 500px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);   /* glassy white */
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.contact-card h2 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  margin: 0 0 14px;
+  letter-spacing: 0.5px;
+  color:#000;
+}
+
+/* ---- FORM ---- */
+.contact-card-form {
+  display: grid;
+  gap: 14px;
+  color:#000;
+}
+.contact-card-form .label {
+  display: block;
+  font: 500 0.9rem/1 "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  margin-bottom: 6px;
+}
+.contact-card-form input,
+.contact-card-form textarea {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: 500 0.95rem/1.4 "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: #fff;
+  outline: none;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+.contact-card-form input:focus,
+.contact-card-form textarea:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 0 4px rgba(255, 183, 3, 0.2);
+}
+.contact-card { box-shadow:none; }
+
+/* ---- MOBILE ---- */
+@media (max-width: 768px) {
+  .contact-wrapper { flex-direction: column; gap: 20px; padding: 12px; }
+  .contact-card { width: min(560px, 92vw); padding: 20px; border-radius: 16px; }
+}
+
+/* collection part */
+
+/* container helper if you need it */
+.container { width: min(1200px, 92vw); margin-inline: auto; }
+
+/* --- Simple Gallery --- */
+.simple-gallery { padding-block: 28px; }
+
+.simple-gallery .gallery-grid{
+  --gap: 14px;
+  --cols: 5;                                   /* how many columns on desktop */
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  align-items: stretch;
+}
+
+/* uniform tiles (change aspect-ratio to 1/1 for squares) */
+.simple-gallery img{
+  width: 100%;
+  aspect-ratio: 1/2;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .2s ease;
+  will-change: transform;
+}
+.simple-gallery img:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.15);
+}
+
+/* Responsive columns */
+@media (max-width: 1280px){
+  .simple-gallery .gallery-grid{ --cols: 4; }
+}
+
+/* Selling and Product Section */
+.shop { padding: 40px 0 64px; }
+.shop-title {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 18px;
+}
+
+/* Grid: 3 per row desktop, 2 tablet, 1 mobile */
+.shop-grid{
+  --gap: 18px;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+@media (max-width: 960px){ .shop-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px){ .shop-grid{ grid-template-columns: 1fr; } }
+
+/* Card */
+.product-card{
+  background: #0f1720;                 /* dark card to match your site */
+  border: 1px solid #23303f;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+  color: #e9eef5;
+}
+.product-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.22);
+  border-color: #2e3c4f;
+}
+
+/* Media (image) */
+.product-media{
+  display: block;
+  aspect-ratio: 4/3;        /* consistent thumbnail size */
+  overflow: hidden;
+  background: #0b121a;
+}
+.product-media img{
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .25s ease;
+}
+.product-card:hover .product-media img{ transform: scale(1.03); }
+
+/* Body */
+.product-body{ padding: 14px 14px 16px; }
+.product-title{
+  font: 600 1rem/1.35 Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+/* Meta lines */
+.product-meta{
+  list-style: none; padding: 0; margin: 0 0 12px;
+  display: grid; gap: 4px;
+  color: #c8d3df;
+  font: 500 .9rem/1.4 Poppins, system-ui;
+}
+.product-meta strong{ color: #fff; font-weight: 600; }
+
+/* Price + Button */
+.product-buy{
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.price{
+  font: 700 1rem/1 Poppins, system-ui;
+  color: #ffd166;
+}
+/* Red pill button like Figma */
+.btn-cart{
+  padding: 8px 14px;
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font: 700 .9rem/1 Poppins, system-ui;
+  cursor: pointer;
+  transition: filter .15s ease, transform .06s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn-cart:hover{
+  background: linear-gradient(180deg, #ffffff, #ffffff); /* lighter gold */
+  color: #000; /* optional: darker text for contrast */
+  transform: translateY(-3px); /* subtle lift effect */
+  box-shadow: 0 8px 20px rgba(255, 209, 102, 0.3); /* glowing hover shadow */
+  transition: all 0.3s ease;
+  color: #ffb703;
+  text-align: center;
+}
+.btn-cart:active{ transform: translateY(1px); }
+
+.all-title {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  text-align: center;
+  color: #fff;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.all-title {
+  margin-top: 80px; /* extra space before the second section */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 40px; /* space after the divider line */
+}
+
+.buying-title {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  text-align: center;
+  color: #fff;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}

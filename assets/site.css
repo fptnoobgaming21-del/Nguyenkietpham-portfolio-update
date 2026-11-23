@@ -329,3 +329,7 @@ html[lang="vi"] .sub { font-style: normal; font-weight: 500; }
 .writing a:hover .more-title { text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 2px; }
 @media (max-width: 1000px) { .writing { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .writing { grid-template-columns: 1fr; } }
+
+/* Behance source tag + link under More projects */
+.more-src { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--rule); font-size: .78em; color: var(--soft); vertical-align: 1px; }
+.more-all { margin: calc(-1 * clamp(48px, 6vw, 96px)) 0 clamp(72px, 9vw, 128px); }
