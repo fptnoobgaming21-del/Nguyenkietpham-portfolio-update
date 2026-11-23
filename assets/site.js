@@ -14,7 +14,7 @@
     "hero.cta": "Xem dự án",
     "hero.email": "Gửi email",
     "work.title": "Dự án tiêu biểu",
-    "work.intro": "Tám dự án được trình bày kỹ, sau đó là các dự án khác và kho lưu trữ tác phẩm nhỏ. Dùng bộ lọc để xem từng loại.",
+    "work.intro": "Chín dự án được trình bày kỹ, sau đó là các dự án khác và kho lưu trữ tác phẩm nhỏ. Dùng bộ lọc để xem từng loại.",
     "work.filterLabel": "Lọc dự án",
     "f.all": "Tất cả",
     "f.ux": "UX và kỹ thuật số",
@@ -25,6 +25,17 @@
     "sour.sub": "Hộp kẹo chua mở ra thành một trò chơi",
     "sour.desc": "Thiết kế lại bao bì kẹo Warheads. Khi ăn hết kẹo, một mặt hộp mở ra thành bàn cờ caro cho hai người, để người dùng có lý do giữ lại chiếc hộp. Mình phát triển từ phác thảo, layout vector đến ba vòng prototype in thật.",
     "l.case": "Đọc case study",
+    "l.case.short": "Case study",
+    "a11y.kind": "Tiếp cận web và UX, 2026",
+    "a11y.title": "Tiếp cận web cho Medical School",
+    "a11y.sub": "Rà soát và sửa trang web theo chuẩn WCAG 2.1 AA",
+    "a11y.desc": "Trong vai trò Student Web Coordinator, mình rà soát 1.667 trang web của Medical School và sửa 2.117 lỗi tiếp cận: thiếu alt text, heading và link trống, thứ tự heading và bảng. Công cụ: PopeTech, WAVE, Editoria11y và Drupal.",
+    "writing.title": "Bài viết",
+    "writing.intro": "Tin nghiên cứu mình viết và đăng khi làm Communications Assistant cho Khoa Tâm lý học, Đại học Minnesota, giải thích nghiên cứu của giảng viên cho người đọc phổ thông.",
+    "w.1k": "Nghiên cứu sức khỏe tâm thần, tháng 4/2026",
+    "w.2k": "Nghiên cứu sự chú ý và trí nhớ, tháng 3/2026",
+    "w.3k": "Nghiên cứu phương pháp định lượng, tháng 4/2026",
+    "w.4k": "Nghiên cứu tâm lý học phát triển, tháng 2/2026",
     "choi.kind": "Bao bì album và minh họa, 2026",
     "choi.sub": "Album được thiết kế lại bằng ngôn ngữ Ukiyo-e",
     "choi.desc": "Album đầu tay của Ánh Sáng AZA, được làm lại thành một hệ thống bao bì đĩa than hoàn chỉnh: hai hướng bìa, bìa sau có danh sách bài hát, nhãn đĩa mặt A và mặt B, cùng mockup in thật. Sóng biển, hoa anh đào, khung chữ dọc và dấu triện chuyển ngôn ngữ tranh khắc gỗ thời Edo thành một vỏ đĩa hiện đại, nhẹ nhàng.",
@@ -101,7 +112,7 @@
     "e.2r": "Điều phối Web (sinh viên)",
     "e.2o": "Trường Y, Đại học Minnesota, phòng Marketing và Truyền thông",
     "e.2t": "12/2025–5/2026",
-    "e.2d": "Rà soát khoảng 500 trang mỗi tháng và chỉnh bố cục trên Drupal để trang dễ đọc, dễ tiếp cận và đúng nhận diện.",
+    "e.2d": "Rà soát 1.667 trang và sửa 2.117 lỗi tiếp cận (chuẩn WCAG 2.1 AA) trên Drupal.",
     "e.3r": "Trợ lý Truyền thông",
     "e.3o": "Khoa Tâm lý học, Đại học Minnesota",
     "e.3t": "12/2025–5/2026",
@@ -187,7 +198,10 @@
     // hide group headings whose lists are empty
     var moreVisible = document.querySelectorAll(".more > li:not(.is-hidden)").length > 0;
     var arcVisible = document.querySelectorAll(".archive > li:not(.is-hidden)").length > 0;
-    if (subTitles[0]) subTitles[0].hidden = !moreVisible;
+    var moreHead = document.querySelector('.work [data-t="more.title"]');
+    if (moreHead) moreHead.hidden = !moreVisible;
+    var writingVisible = document.querySelectorAll(".writing > li:not(.is-hidden)").length > 0;
+    document.querySelectorAll(".writing-head, .writing-intro").forEach(function (el) { el.hidden = !writingVisible; });
     var arcHead = document.querySelector(".archive-head");
     if (arcHead) arcHead.hidden = !arcVisible;
     emptyNote.hidden = shown !== 0;
