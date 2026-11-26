@@ -1,0 +1,16 @@
+.am-album,.am-group{position:absolute;width:0;height:0;transform-style:preserve-3d}
+.am-album{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.am-slide{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.am-cover{background-color:#efe2cf;outline:1px solid #0000001a}
+.am-edge{background:linear-gradient(90deg,#e4d2b8,#f1e5d3);outline:none}
+.am-open{background:linear-gradient(90deg,#d9c5a8,#efe2cf)}
+.am-disc{background-color:transparent;border-radius:50%;outline:none;backface-visibility:hidden}
+.am-spinning{animation:am-turn 6s linear infinite}
+@keyframes am-turn{to{transform:rotateZ(360deg)}}
+.am-shadow{position:absolute;left:50%;width:360px;height:40px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(40,25,20,.28),rgba(40,25,20,0));transform-origin:50% 50%;
+  pointer-events:none;transition:transform .7s ease}
+[data-album] .pv-stage{background:radial-gradient(120% 90% at 50% 25%,#fbf6ee 0%,#efe6d8 60%,#e3d6c3 100%)}
+[data-album] .pv-controls button[aria-pressed=true]{background:#c2445b;border-color:#c2445b}
+.am-group-label{font-size:13px;color:#555;margin-right:2px}
+@media(prefers-reduced-motion:reduce){.am-album,.am-slide,.am-shadow{transition:none}}
