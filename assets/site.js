@@ -29,6 +29,7 @@
     "sour.sub": "Hộp kẹo chua mở ra thành một trò chơi",
     "sour.desc": "Thiết kế lại bao bì kẹo Warheads. Khi ăn hết kẹo, một mặt hộp mở ra thành bàn cờ caro cho hai người, để người dùng có lý do giữ lại chiếc hộp. Mình phát triển từ phác thảo, layout vector đến ba vòng prototype in thật.",
     "l.case": "Đọc case study",
+    "l.model": "Xem mô hình 3D",
     "choi.role": "Thiết kế bao bì album và minh họa",
     "choi.output": "Hai phương án bìa, bìa sau, nhãn mặt A và B, mockup in",
     "sour.role": "Thiết kế bao bì và hình ảnh",
